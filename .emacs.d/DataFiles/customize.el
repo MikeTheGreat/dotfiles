@@ -53,6 +53,11 @@ Archived entries from all files
      ("~" org-code verbatim)
      ("+"
       (:background "steelblue" :foreground "midnightblue")))))
+ '(org-html-doctype "html5")
+ '(org-html-html5-fancy t)
+ '(org-html-table-default-attributes
+   (quote
+    (:border "2" :cellspacing "0" :cellpadding "6" :rules "all" :frame "border")))
  '(org-log-done t)
  '(org-mobile-directory "E:\\\\Pers\\\\Dropbox\\\\MobileOrg")
  '(org-mobile-inbox-for-pull
@@ -102,6 +107,7 @@ Archived entries from all files
     (".emacs.d/elpa" "/\\(\\(\\(COMMIT\\|NOTES\\|PULLREQ\\|TAG\\)_EDIT\\|MERGE_\\|\\)MSG\\|\\(BRANCH\\|EDIT\\)_DESCRIPTION\\)\\'" "c:/MikesStuff/Pers/Dropbox/Personal/home/.emacs.d/DataFiles/HomeworkSearchVars.el" "c:/Users/michp/AppData/Local/Temp" "C:/MikesStuff/Work/Student_Work/BIT" ".emacs.d/.cache")))
  '(recentf-max-menu-items 30)
  '(recentf-max-saved-items 0)
+ '(show-paren-mode t)
  '(show-trailing-whitespace t)
  '(sml/mode-width
    (if

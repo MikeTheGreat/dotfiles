@@ -236,7 +236,7 @@
     (defface org-my-highlight-green '((t (:foreground "black" :background "medium sea green"))) "")
 
     (add-to-list 'org-font-lock-extra-keywords '("\\(![^\n\r\t]+!\\)" (1 'org-my-highlight-yellow) ))
-    (add-to-list 'org-font-lock-extra-keywords '("\\(\\[[^\n\r\t]+\\]\\)" (1 'org-my-highlight-green) ))
+;;    (add-to-list 'org-font-lock-extra-keywords '("\\(!![^\n\r\t]+!!\\)" (1 'org-my-highlight-green) ))
 
     ;; (add-to-list 'org-font-lock-extra-keywords '("\\(!\\)\\([^\n\r\t]+\\)\\(!\\)" (1 '(face test-face invisible t)) (2 'test-face) (3 '(face test-face invisible t))))
     ;;    (add-to-list 'org-font-lock-extra-keywords '("\\(%\\)\\([^\n\r\t]+\\)\\(%\\)" (1 '(face org-habit-overdue-face invisible t)) (2 'org-habit-overdue-face) (3 '(face org-habit-overdue-face invisible t))))
@@ -2306,3 +2306,7 @@ _SPC_ cancel	_o_nly this   	_d_elete
   )
 ;;; Swift (lang)
 (use-package swift-mode)
+;;; Chess
+;;(use-package emacs-chess)
+(straight-use-package
+ '(emacs-chess :type git :host github :repo "jwiegley/emacs-chess"))
