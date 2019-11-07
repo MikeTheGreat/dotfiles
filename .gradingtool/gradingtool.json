@@ -11,11 +11,12 @@
         "exams": {
 	    // Note that there's a lot of overlap in the files that the final and the midterm use
             "2f": {
+		"szShortName": "BIT 142 Final",
                 "fnExam": "%Y |Q| BIT 142 Final %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Final Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Exams",
-                "filesToConcat_exam": [
+		"fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_Graded\\Final",
+		"filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "EXAM POINT TOTAL=150",
                     "BIT142_Midterm\\DocStart.tex",
@@ -43,10 +44,17 @@
                         "howMany": 1
                     },
                     {
-                        "pickFrom": "BIT142_Final\\PickFour\\Polymorphism_Part_A",
+                        "pickFrom": "BIT142_Final\\PickFour\\Polymorphism",
                         "howMany": 1
                     },
                     {
+                        "pickFrom": "BIT142_Final\\PickFour\\Demonstrate_BubbleSort",
+                        "howMany": 1
+                    },
+                    {
+                        "pickFrom": "BIT142_Final\\PickFour\\File_IO",
+                        "howMany": 1
+                    }, {
 			// we intentionally reuse a question from the midterm:
                         "pickFrom": "BIT142_Midterm\\PickFour\\NestedLoops",
                         "howMany": 1
@@ -62,11 +70,12 @@
                 ]
             },
             "2m": {
+		"szShortName": "BIT 142 Midterm",
                 "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Exams",
-                "filesToConcat_exam": [
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_Graded\\Midterm",
+		"filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "EXAM POINT TOTAL=150",
                     "BIT142_Midterm\\DocStart.tex",
@@ -122,6 +131,7 @@
                 ]
             },
             "2m-all": {
+		"szShortName": "BIT 142 Midterm",
                 "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
