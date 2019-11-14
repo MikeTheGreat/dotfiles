@@ -54,7 +54,8 @@
                     {
                         "pickFrom": "BIT142_Final\\PickFour\\File_IO",
                         "howMany": 1
-                    }, {
+                    },
+		    {
 			// we intentionally reuse a question from the midterm:
                         "pickFrom": "BIT142_Midterm\\PickFour\\NestedLoops",
                         "howMany": 1
@@ -230,7 +231,17 @@
                     },
 		    "QuestionPointValue=30",
 		    {
-                        "pickFrom": "BIT143_Final\\Linked_List_Manipulation",
+                        "pickFrom": "BIT143_Final\\Linked_List_Swap_Ends",
+                        "howMany": 1
+                    },
+   		    "QuestionPointValue=25",
+		    {
+                        "pickFrom": "BIT143_Final\\Partition_By_Hand",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=25",
+		    {
+                        "pickFrom": "BIT143_Midterm\\Linked_List_Sort_First_Two_Nodes",
                         "howMany": 1
                     },
                     "BIT142_Midterm\\DocEnd.tex"
