@@ -198,6 +198,62 @@
                     "BIT142_Midterm\\DocEnd_GradingGuide.tex"
                 ]
             },
+	    "3m": {
+		"szShortName": "BIT 143 Midterm",
+                "fnExam": "%Y |Q| BIT 143 Midterm %b %d  %H-%M-%S",
+                "fnGradingGuide": "%Y |Q| BIT 143 Midterm Grading Guide %b %d  %H-%M-%S",
+                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
+		"fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_Graded\\Midterm",
+		"filesToConcat_exam": [
+                    "BIT142_Midterm\\DocPreamble.tex",
+                    "ExamTotalPoints=150",
+                    "BIT142_Midterm\\DocStart.tex",
+                    "BIT142_Midterm\\FirstPage.tex",
+                    "BIT142_Midterm\\QuestionsStart.tex",
+                    "QuestionPointValue=22",
+                    {
+                        "pickFrom": "BIT143_Midterm\\Stack_Queue_Reading",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=25",
+		    {
+                        "pickFrom": "BIT143_Midterm\\SmartArray_Find_And_Fix",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=11",
+		    {
+                        "pickFrom": "BIT143_Midterm\\Exception_Handling_Reading",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=21",
+		    {
+                        "pickFrom": "BIT143_Midterm\\NUnit",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=27",
+		    {
+                        "pickFrom": "BIT143_Midterm\\Linked_List_Reading_Code",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=17",
+		    {
+                        "pickFrom": "BIT143_Midterm\\Linked_List_Sort_First_Two_Nodes",
+                        "howMany": 1
+                    },
+		    "QuestionPointValue=25",
+		    {
+                        "pickFrom": "BIT143_Midterm\\BigOh_Recall",
+                        "howMany": 1
+                    },
+                    "BIT142_Midterm\\DocEnd.tex"
+                ],
+                "filesToConcat_gradingguide": [
+                    "BIT142_Midterm\\DocPreamble.tex",
+                    "BIT142_Midterm\\DocStart_GradingGuide.tex",
+                    "ExamGradingGuideMiddle.tex", // this will appear in the temp dir when the exam is generated
+                    "BIT142_Midterm\\DocEnd_GradingGuide.tex"
+                ]
+            },
             "3f": {
 		"szShortName": "BIT 143 Final",
                 "fnExam": "%Y |Q| BIT 143 Final %b %d  %H-%M-%S",
