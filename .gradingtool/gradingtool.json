@@ -15,7 +15,7 @@
                 "fnExam": "%Y |Q| BIT 142 Final %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Final Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-		"fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_Graded\\Final",
+		"fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Final",
 		"filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -75,7 +75,7 @@
                 "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_Graded\\Midterm",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
 		"filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -136,7 +136,7 @@
                 "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Exams",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
                 "filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -203,7 +203,7 @@
                 "fnExam": "%Y |Q| BIT 143 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 143 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-		"fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_Graded\\Midterm",
+		"fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Midterm",
 		"filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -259,7 +259,7 @@
                 "fnExam": "%Y |Q| BIT 143 Final %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 143 Final Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-		"fpDefaultOutputDir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_Graded\\Final",
+		"fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Final",
 		"filesToConcat_exam": [
                     "BIT142_Midterm\\DocPreamble.tex",
                     "ExamTotalPoints=150",
