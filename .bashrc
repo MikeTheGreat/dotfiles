@@ -29,7 +29,38 @@ function gvim() { /c/Program\ Files\ \(x86\)/Vim/vim74/gvim.exe "$@" ;}
 
 # Adjust bash color scheme:
 # alias ll="ls -alF"
-alias ll="ls -alF --color=auto"
+case "$(uname -s)" in
+
+   Darwin)
+       echo 'Mac OS X'
+       alias ls="ls -G"
+       alias ll="ls -alFG"
+
+      # for nix
+      # . /Users/mikepanitz/.nix-profile/etc/profile.d/nix.sh
+
+
+
+       ;;
+
+ #  Linux)
+ #    echo 'Linux'
+ #    ;;
+
+   CYGWIN*|MINGW32*|MSYS*|MINGW*)
+       echo 'MS Windows'
+       alias ls="ls --color=auto"
+       alias ll="ls -alF --color=auto"
+       ;;
+
+   # Add here more strings to compare
+   # See correspondence table at the bottom of this answer
+
+   *)
+     echo 'Other OS' 
+     ;;
+esac
+
 alias gQ="cd /c/MikesStuff/Pers/Dropbox/Personal/Tech/DIY\ Keyboard/Firmware/qmk_firmware"
 #alias ll="ls -alF"
 eval "`/usr/bin/dircolors -b ~/DIR_COLORS_DB`"

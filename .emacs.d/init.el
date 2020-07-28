@@ -1531,13 +1531,14 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;;   ;; (global-set-key "\C-f" 'swiper-helm)
 ;;   )
 
-;;; Ctrl+F__ for grading
+;;; Grading related packages
 
-;; This allows me to load up F2, F3, and F4 (and onwards) with patterns to look for
-;; The patterns are persisted between sessions
-;; There's a command ('lgp') which sets up F2,3,and 4 with patterns for each lesson of 142 and 143
+;;;; Darkroom - remove distractions, increase font size
+;; (use-package darkroom)
+;; (add-hook 'csharp-mode-hook #'darkroom-tentative-mode)
+;; This didn't play well with the tabbar
 
-
+;;;; Display ^M as a newline
 ;; sometimes students have ^M at the end of lines
 ;; This leaves the buffer (and file) unchanged, but
 ;; displays the ^M as a newline (so things 'look right')
@@ -1553,11 +1554,14 @@ _SPC_ cancel	_o_nly this   	_d_elete
   (not-modified) ;; we're going to dump the buffer that we're grading anyways
   )
 
+;; students hand me weirdly encoded files - this will help fix it
+(add-hook 'csharp-mode-hook 'remove-dos-eol)
 ;; (add-hook 'text-mode-hook 'remove-dos-eol)
 
-;; students hand me weirdly encoded files - this will help fix it
-(add-hook 'csharp-mode-hook 'remove-dos-eol) 
-
+;;;; Ctrl+F__ for grading
+;; This allows me to load up F2, F3, and F4 (and onwards) with patterns to look for
+;; The patterns are persisted between sessions
+;; There's a command ('lgp') which sets up F2,3,and 4 with patterns for each lesson of 142 and 143
 (use-package mike-search
   ;; :ensure nil
   :demand t ;; when I grade, I want to grade fast
@@ -1612,15 +1616,15 @@ _SPC_ cancel	_o_nly this   	_d_elete
 	 (setq num-questions "N/A")
 	 )
        ( (equal lesson "2-1")
-	 (set-search-item 'f2 "HelloPrinter" )
-	 (set-search-item 'f3 "NumberPrinter" )
+	 (set-search-item 'f2 "Hello.*Printer" )
+	 (set-search-item 'f3 "Number.*Printer" )
 					; (set-search-item 'f4 "Define_An_Instance_Method" )
 	 (set-search-item 'f4 "Data_Type_Explanations" )
 	 (setq num-questions "45")
 	 )
        ( (equal lesson "2-1s")
-	 (set-search-item 'f2 "HelloPrinter" )
-	 (set-search-item 'f3 "NumberPrinter" )
+	 (set-search-item 'f2 "Hello.*Printer" )
+	 (set-search-item 'f3 "Number.*Printer" )
 					; (set-search-item 'f4 "Define_An_Instance_Method" )
 	 (set-search-item 'f4 "Data_Type_Explanations" )
 	 (setq num-questions "34")
@@ -1700,8 +1704,8 @@ _SPC_ cancel	_o_nly this   	_d_elete
 	 (setq num-questions "57")
 	 )
        ( (equal lesson "2-8") ; File I/O
-	 (set-search-item 'f2 "public.*Search" )
-	 (set-search-item 'f3 "Output_Maxes" )
+	 (set-search-item 'f2 "Output_Maxes" )
+	 (set-search-item 'f3 "public.*Search" )
 					;    (set-search-item 'f4 "" )
 	 (setq num-questions "58")
 	 )
@@ -2259,6 +2263,10 @@ _SPC_ cancel	_o_nly this   	_d_elete
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
+;; from https://dougie.io/emacs/indent-selection/
+(global-set-key (kbd "C->") 'indent-rigidly-right-to-tab-stop)
+(global-set-key (kbd "C-<") 'indent-rigidly-left-to-tab-stop)
+
 ;;;; org-gcal
 ;; I tried playing around with org-gcal, but couldn't get it to work :(
 ;; Client ID
@@ -2304,9 +2312,13 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;;; OpenSCAD
 (use-package scad-mode
   )
-;;; Swift (lang)
-(use-package swift-mode)
+
+;; Swift (lang)
+;;(use-package swift-mode)
+
 ;;; Chess
 ;;(use-package emacs-chess)
-(straight-use-package
- '(emacs-chess :type git :host github :repo "jwiegley/emacs-chess"))
+;;(straight-use-package
+;;'(emacs-chess :type git :host github :repo "jwiegley/emacs-chess"))
+
+;;(use-package xahk-mode)

@@ -1,337 +1,512 @@
 {
-    "app-wide_config": {
-	"autograder": {
-	    "csharp_nunit": {
-		//		"fpMSBuild": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\bin\\msbuild.exe"
-				"fpMSBuild": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\msbuild.exe"
-	    }
-	}
-    },
-    "generate_exam": {
-        "exams": {
-	    // Note that there's a lot of overlap in the files that the final and the midterm use
-            "2f": {
-		"szShortName": "BIT 142 Final",
-                "fnExam": "%Y |Q| BIT 142 Final %b %d  %H-%M-%S",
-                "fnGradingGuide": "%Y |Q| BIT 142 Final Grading Guide %b %d  %H-%M-%S",
-                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-		"fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Final",
-		"filesToConcat_exam": [
-                    "Common\\DocPreamble.tex",
-                    "ExamTotalPoints=150",
-                    "Common\\DocStart.tex",
-                    "Common\\FirstPage.tex",
-                    "Common\\QuestionsStart.tex",
-                    "QuestionPointValue=20",
-                    {
-                        "pickFrom": "BIT142_Final\\RequiredQuestions\\BigOh_Notation",
-                        "howMany": 1
-                    },
-                    "QuestionPointValue=15",
-                    {
-                        "pickFrom": "BIT142_Final\\RequiredQuestions\\Demonstrate_Binary_Search",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=15",
-                    {
-                        "pickFrom": "BIT142_Final\\RequiredQuestions\\Array_Of_Objects_And_Null",
-                        "howMany": 1
-                    },
-                    "Common\\PickFourFromFollowingQuestions.tex",
-		    "QuestionPointValue=25",
-                    {
-                        "pickFrom": "BIT142_Final\\PickFour\\OOP_Design",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Final\\PickFour\\Polymorphism",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Final\\PickFour\\Demonstrate_BubbleSort",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Final\\PickFour\\File_IO",
-                        "howMany": 1
-                    },
-		    {
-			// we intentionally reuse a question from the midterm:
-                        "pickFrom": "BIT142_Midterm\\PickFour\\NestedLoops",
-                        "howMany": 1
-                    },
-
-                    "Common\\DocEnd.tex"
-                ],
-                "filesToConcat_gradingguide": [
-                    "Common\\DocPreamble.tex",
-                    "Common\\DocStart_GradingGuide.tex",
-                    "ExamGradingGuideMiddle.tex", // this will appear in the temp dir when the exam is generated
-                    "Common\\DocEnd_GradingGuide.tex"
-                ]
-            },
-            "2m": {
-		"szShortName": "BIT 142 Midterm",
-                "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
-                "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
-                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
-		"filesToConcat_exam": [
-                    "Common\\DocPreamble.tex",
-                    "ExamTotalPoints=150",
-                    "Common\\DocStart.tex",
-                    "Common\\FirstPage.tex",
-                    "Common\\QuestionsStart.tex",
-                    "QuestionPointValue=30",
-                    {
-                        "pickFrom": "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics",
-                        "howMany": 1
-                    },
-                    "QuestionPointValue=10",
-                    {
-                        "pickFrom": "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division",
-                        "howMany": 1
-                    },
-                    "QuestionPointValue=10",
-                    {
-                        "pickFrom": "BIT142_Midterm\\RequiredQuestions\\RandomNumbers",
-                        "howMany": 1
-                    },
-                    "Common\\PickFourFromFollowingQuestions.tex",
-		    "QuestionPointValue=25",
-                    {
-                        "pickFrom": "BIT142_Midterm\\PickFour\\NestedLoops",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Midterm\\PickFour\\Arrays",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Midterm\\PickFour\\Params_Returns",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Midterm\\PickFour\\Params_Returns_Guessing_Game",
-                        "howMany": 1
-                    },
-                    {
-                        "pickFrom": "BIT142_Midterm\\PickFour\\Misc_Part_1",
-                        "howMany": 1
-                    },
-		    // There's only one option because it's identical to a PCE (exercise) that
-		    // was assigned but not graded:
-		    "BIT142_Midterm\\PickFour\\Misc_Part_2\\Misc_Arrays_1.tex",
-                    "Common\\DocEnd.tex"
-                ],
-                "filesToConcat_gradingguide": [
-                    "Common\\DocPreamble.tex",
-                    "Common\\DocStart_GradingGuide.tex",
-                    "ExamGradingGuideMiddle.tex", // this will appear in the temp dir when the exam is generated
-                    "Common\\DocEnd_GradingGuide.tex"
-                ]
-            },
-            "2m-all": {
-		"szShortName": "BIT 142 Midterm",
-                "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
-                "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
-                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
-                "filesToConcat_exam": [
-                    "Common\\DocPreamble.tex",
-                    "ExamTotalPoints=150",
-                    "Common\\DocStart.tex",
-                    "Common\\FirstPage.tex",
-                    "Common\\QuestionsStart.tex",
-                    "QuestionPointValue=30",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_1.tex",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_2.tex",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_3.tex",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_4.tex",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_5.tex",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_6.tex",
-		    "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_7.tex",
-                    "QuestionPointValue=10",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_1.tex",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_2.tex",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_3.tex",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_4.tex",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_5.tex",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_6.tex",
-                    "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_7.tex",
-		    "QuestionPointValue=10",
-                    "BIT142_Midterm\\RequiredQuestions\\RandomNumbers\\RandomNumbers_Pos_Pos.tex",
-                    "Common\\PickFourFromFollowingQuestions.tex",
-		    "QuestionPointValue=25",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_LeftV.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_RightV.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_X.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_Cube.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_ReverseL.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_HollowBox.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_UpsideDownL.tex",
-		    "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_ThreeQuartersBox.tex",
-    		    "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Evens_Up.tex",
-		    "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Evens_Down.tex",
-    		    "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Odds_Up.tex",
-		    "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Odds_Down.tex",
-                    "BIT142_Midterm\\PickFour\\Params_Returns\\TempConversion_Fahr_Kelvin.tex",
-                    "BIT142_Midterm\\PickFour\\Params_Returns\\TempConversion_Fahr_Celsius.tex",
-		    "BIT142_Midterm\\PickFour\\Params_Returns_Guessing_Game\\FillInGuessingGame.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_1.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_2.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_3.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_4.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_5.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_6.tex",
-		    "BIT142_Midterm\\PickFour\\Misc_Part_2\\Misc_Arrays_1.tex",
-                    "Common\\DocEnd.tex"
-                ],
-                "filesToConcat_gradingguide": [
-                    "Common\\DocPreamble.tex",
-                    "Common\\DocStart_GradingGuide.tex",
-                    "ExamGradingGuideMiddle.tex", // this will appear in the temp dir when the exam is generated
-                    "Common\\DocEnd_GradingGuide.tex"
-                ]
-            },
-	    "3m": {
-		"szShortName": "BIT 143 Midterm",
-                "fnExam": "%Y |Q| BIT 143 Midterm %b %d  %H-%M-%S",
-                "fnGradingGuide": "%Y |Q| BIT 143 Midterm Grading Guide %b %d  %H-%M-%S",
-                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-		"fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Midterm",
-		"filesToConcat_exam": [
-                    "Common\\DocPreamble.tex",
-                    "ExamTotalPoints=150",
-                    "Common\\DocStart.tex",
-                    "Common\\FirstPage.tex",
-                    "Common\\QuestionsStart.tex",
-                    "QuestionPointValue=22",
-                    {
-                        "pickFrom": "BIT143_Midterm\\Stack_Queue_Reading",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=25",
-		    {
-                        "pickFrom": "BIT143_Midterm\\SmartArray_Find_And_Fix",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=11",
-		    {
-                        "pickFrom": "BIT143_Midterm\\Exception_Handling_Reading",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=21",
-		    {
-                        "pickFrom": "BIT143_Midterm\\NUnit",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=27",
-		    {
-                        "pickFrom": "BIT143_Midterm\\Linked_List_Reading_Code",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=17",
-		    {
-                        "pickFrom": "BIT143_Midterm\\Linked_List_Sort_First_Two_Nodes",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=25",
-		    {
-                        "pickFrom": "BIT143_Midterm\\BigOh_Recall",
-                        "howMany": 1
-                    },
-                    "Common\\DocEnd.tex"
-                ],
-                "filesToConcat_gradingguide": [
-                    "Common\\DocPreamble.tex",
-                    "Common\\DocStart_GradingGuide.tex",
-                    "ExamGradingGuideMiddle.tex", // this will appear in the temp dir when the exam is generated
-                    "Common\\DocEnd_GradingGuide.tex"
-                ]
-            },
-            "3f": {
-		"szShortName": "BIT 143 Final",
-                "fnExam": "%Y |Q| BIT 143 Final %b %d  %H-%M-%S",
-                "fnGradingGuide": "%Y |Q| BIT 143 Final Grading Guide %b %d  %H-%M-%S",
-                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-		"fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Final",
-		"filesToConcat_exam": [
-                    "Common\\DocPreamble.tex",
-                    "ExamTotalPoints=150",
-                    "Common\\DocStart.tex",
-                    "Common\\FirstPage.tex",
-                    "Common\\QuestionsStart.tex",
-                    "QuestionPointValue=30",
-                    {
-                        "pickFrom": "BIT143_Final\\Recursion_Part_A",
-                        "howMany": 1
-                    },
-		    {
-                        "pickFrom": "BIT143_Final\\Recursion_Part_B",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=30",
-		    {
-                        "pickFrom": "BIT143_Final\\BST_Traversal",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=10",
-		    {
-                        "pickFrom": "BIT143_Final\\BST_Traversal_BigOh_Analysis",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=30",
-		    {
-                        "pickFrom": "BIT143_Final\\Linked_List_Swap_Ends",
-                        "howMany": 1
-                    },
-   		    "QuestionPointValue=25",
-		    {
-                        "pickFrom": "BIT143_Final\\Partition_By_Hand",
-                        "howMany": 1
-                    },
-		    "QuestionPointValue=25",
-		    {
-                        "pickFrom": "BIT143_Midterm\\Linked_List_Sort_First_Two_Nodes",
-                        "howMany": 1
-                    },
-                    "Common\\DocEnd.tex"
-                ],
-                "filesToConcat_gradingguide": [
-                    "Common\\DocPreamble.tex",
-                    "Common\\DocStart_GradingGuide.tex",
-                    "ExamGradingGuideMiddle.tex", // this will appear in the temp dir when the exam is generated
-                    "Common\\DocEnd_GradingGuide.tex"
-                ]
-            },
-            "DEMO": {
-                "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S", // |Q| is replaced w/ current quarter
-                "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
-                "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration",
-                "filesToConcat_exam": [
-                    "Common\\DocPreamble.tex",
-                    "ExamTotalPoints=150", // REQUIRED: this will spit out an \ExamTotalPoints into the exam
-                    "Common\\DocStart.tex",
-                    "Common\\FirstPage.tex",
-                    "Common\\QuestionsStart.tex",
-                    "QuestionPointValue=10", // NEED AT LEAST ONE: points for the questions following this
-                    {
-                        "pickFrom": "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics",
-                        "howMany": 1
-                    },
-                    "Common\\PickFourFromFollowingQuestions.tex",
-                    "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142_Storage\\ExamGeneration\\BIT142_Midterm\\PickFour\\Params_Returns\\TempConversion_Fahr_Kelvin.tex",
-                    "Common\\DocEnd.tex",
-                    "Junk entry - program should ignore this"
-                ],
-                "filesToConcat_gradingguide": [
-                    "Common\\DocPreamble.tex",
-                    "Common\\DocStart_GradingGuide.tex",
-                    "ExamGradingGuideMiddle.tex",
-                    "Common\\DocEnd_GradingGuide.tex"
-                ]
+  "app-wide_config": {
+  },
+  "courses": {
+      "142": {
+        "github": {
+          "org_name": "BIT-142-Classroom$",
+          // org URLs usually looks like https://api.github.com/orgs/2019-BIT-142
+          "do_not_delete": [
+            "^BIT-142-Lesson-\\d\\d$"
+          ],
+          "sz_re_student_repos": "bit-142-lesson-\\d\\d-.+"
+        },
+        "assignments": {
+          "PCE02": {
+            "name": "PCE02",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\PCE02\\FROM_GITHUB",
+            "github": {
+              "sz_re_repo": "bit-142-lesson-02-"
             }
+          }
         }
+      },
+      "143": {
+        "canvas_api" : {
+          "sz_re_course": "BIT\\s*143"
+        },
+        "github": {
+          "org_name": "BIT-143-Classroom$",
+          "do_not_delete": [
+            "^BIT-143-Lesson-\\d\\d$"
+          ],
+          "sz_re_student_repos": "bit-143-lesson-\\d\\d-.+"
+        },
+        "assignments": {
+          "PCE01": {
+            "name": "PCE01",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE01",
+             "github": {
+               "sz_re_repo": "bit-143-lesson-01-"
+             },
+            "canvas_api": {
+              "canvas_name": "Lesson 01"
+            }
+          },
+          "PCE02": {
+            "name": "PCE02",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE02",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-02-"
+            }
+          },
+          "PCE03": {
+            "name": "PCE03",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE03",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-03-"
+            }
+          },
+          "PCE04": {
+            "name": "PCE04",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE04",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-04-"
+            }
+          },
+          "PCE05": {
+            "name": "PCE05",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE05",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-05-"
+            }
+          },
+          "PCE06": {
+            "name": "PCE06",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE06",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-06-"
+            }
+          },
+          "PCE07": {
+            "name": "PCE07",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE07",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-07-"
+            }
+          },
+          "PCE08": {
+            "name": "PCE08",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE08",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-08-"
+            }
+          },
+          "PCE09": {
+            "name": "PCE09",
+            "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\PCE09",
+            "github": {
+              "sz_re_repo": "bit-143-lesson-09-"
+            }
+          }
+        }
+      }
+    },
+
+  "autograder": {
+    "default_config_file_name": "Assign.config.json",
+    "csharp_nunit": {
+      //		"fpMSBuild": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\bin\\msbuild.exe"
+      "fpMSBuild": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\msbuild.exe"
     }
+  },
+  "canvas": {
+    "api": {
+      "url": "https://cascadia.instructure.com/",
+      "key": "9~mHJN7aqNxsTuEpAsbsaMSi4gYvYXZDuA22xMHizUTnTq6YRqbIVTHiL886V5dqXf"
+    },
+    "StudentSubFolderMarker": "_FROM_CANVAS",
+    "InstructorFeedbackSlug": "_INSTRUCTORFEEDBACK",
+    "InstructorFeedbackFileNameRegex": "INSTRUCTOR.?FEEDBACK",
+    "StudentNameIDFileNum": "^[^~][a-zA-Z][a-zA-Z0-9]+_(LATE_)?[0-9]+_[0-9]+_",
+    //"StudentNameID_RemoveFileID": "([a-zA-z][a-zA-Z0-9]+_\\d+_)(?:\\d+?)",
+    "StudentNameAndID": "([a-zA-z][a-zA-Z0-9]+_(LATE_)?\\d+?_)",
+    "FileSubmissionNumber": "-\\d+(\\.[a-zA-z]+)$",
+    // to match e.g., "-1.cs" in "Program-1.cs"
+    "LateMarker": "_LATE",
+    "NewDirForMissingFeedbackFiles": "z_STUDENTS_WHO_DID_NOT_INCLUDE_FEEDBACK_FILES_IN_THEIR_SUBMISSION",
+    // 'z_' will put this at the end of the dirs, close to the _UPLOAD...
+    "ZipFileToUploadToCanvas": "_UPLOAD_TO_CANVAS.zip"
+  },
+  "github": {
+    "api_key": "c82720cdf29fb0e9ce5a1fd51cdbc5bf1f3d5cc7",
+    "grading_list" : {
+      "tag": "GradedByInstructor"
+    }
+   },
+  "misc_files": {
+    "BackupDirName": "GRADING_TOOL_BACKUPS",
+    "FileAlreadyProcessedMarker": "_TEMPLATE_COPIED"
+  },
+  "generate_exam": {
+    "exams": {
+      "115m": {
+        "szShortName": "BIT 115 Midterm",
+        "fnExam": "%Y |Q| BIT 115 Midterm %b %d  %H-%M-%S",
+        "fnGradingGuide": "%Y |Q| BIT 115 Midterm Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_115\\Exams\\Midterm",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\FirstPage_DittoMarksAllowed.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=20",
+          "BIT115_Midterm\\TrueFalse\\TF_Section_Start.tex",
+          {
+            "pickFrom": "BIT115_Midterm\\TrueFalse\\Compile_Time_Errors",
+            "howMany": 1
+          },
+          "BIT115_Midterm\\TrueFalse\\TF_Section_End.tex",
+          "QuestionPointValue=20",
+          {
+            "pickFrom": "BIT142_Final\\RequiredQuestions\\BigOh_Notation",
+            "howMany": 1
+          },
+          "Common\\DocEnd.tex"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          // this will appear in the temp dir when the exam is generated
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      },
+      // Note that there's a lot of overlap in the files that the final and the midterm use
+      "2f": {
+        "szShortName": "BIT 142 Final",
+        "fnExam": "%Y |Q| BIT 142 Final %b %d  %H-%M-%S",
+        "fnGradingGuide": "%Y |Q| BIT 142 Final Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Final",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\FirstPage_PickFourFromQ4AndHigher.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=20",
+          {
+            "pickFrom": "BIT142_Final\\RequiredQuestions\\BigOh_Notation",
+            "howMany": 1
+          },
+          "QuestionPointValue=15",
+          {
+            "pickFrom": "BIT142_Final\\RequiredQuestions\\Demonstrate_Binary_Search",
+            "howMany": 1
+          },
+          "QuestionPointValue=15",
+          {
+            "pickFrom": "BIT142_Final\\RequiredQuestions\\Array_Of_Objects_And_Null",
+            "howMany": 1
+          },
+          "Common\\PickFourFromFollowingQuestions.tex",
+          "QuestionPointValue=25",
+          {
+            "pickFrom": "BIT142_Final\\PickFour\\OOP_Design",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Final\\PickFour\\Demonstrate_BubbleSort",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Final\\PickFour\\Polymorphism",
+            "howMany": 1
+          },
+          {
+            // we intentionally reuse a question from the midterm:
+            "pickFrom": "BIT142_Midterm\\PickFour\\NestedLoops",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Final\\PickFour\\File_IO",
+            "howMany": 1
+          },
+          "Common\\DocEnd.tex"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          // this will appear in the temp dir when the exam is generated
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      },
+      "2m": {
+        "szShortName": "BIT 142 Midterm",
+        "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
+        "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\FirstPage_PickFourFromQ4AndHigher.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=30",
+          {
+            "pickFrom": "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics",
+            "howMany": 1
+          },
+          "QuestionPointValue=10",
+          {
+            "pickFrom": "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division",
+            "howMany": 1
+          },
+          "QuestionPointValue=10",
+          {
+            "pickFrom": "BIT142_Midterm\\RequiredQuestions\\RandomNumbers",
+            "howMany": 1
+          },
+          "Common\\PickFourFromFollowingQuestions.tex",
+          "QuestionPointValue=25",
+          {
+            "pickFrom": "BIT142_Midterm\\PickFour\\NestedLoops",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Midterm\\PickFour\\Arrays",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Midterm\\PickFour\\Params_Returns",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Midterm\\PickFour\\Params_Returns_Guessing_Game",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT142_Midterm\\PickFour\\Misc_Part_1",
+            "howMany": 1
+          },
+          // There's only one option because it's identical to a PCE (exercise) that
+          // was assigned but not graded:
+          "BIT142_Midterm\\PickFour\\Misc_Part_2\\Misc_Arrays_1.tex",
+          "Common\\DocEnd.tex"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          // this will appear in the temp dir when the exam is generated
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      },
+      "2m-all": {
+        "szShortName": "BIT 142 Midterm",
+        "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
+        "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=30",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_1.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_2.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_3.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_4.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_5.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_6.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics\\Basics_Syntax_Semantics_7.tex",
+          "QuestionPointValue=10",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_1.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_2.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_3.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_4.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_5.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_6.tex",
+          "BIT142_Midterm\\RequiredQuestions\\Modulus_Integer_Division\\Modulus_Int_Div_7.tex",
+          "QuestionPointValue=10",
+          "BIT142_Midterm\\RequiredQuestions\\RandomNumbers\\RandomNumbers_Pos_Pos.tex",
+          "Common\\PickFourFromFollowingQuestions.tex",
+          "QuestionPointValue=25",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_LeftV.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_RightV.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_X.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_Cube.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_ReverseL.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_HollowBox.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_UpsideDownL.tex",
+          "BIT142_Midterm\\PickFour\\NestedLoops\\PrintingShapes_ThreeQuartersBox.tex",
+          "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Evens_Up.tex",
+          "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Evens_Down.tex",
+          "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Odds_Up.tex",
+          "BIT142_Midterm\\PickFour\\Arrays\\FillThenSumArray_Odds_Down.tex",
+          "BIT142_Midterm\\PickFour\\Params_Returns\\TempConversion_Fahr_Kelvin.tex",
+          "BIT142_Midterm\\PickFour\\Params_Returns\\TempConversion_Fahr_Celsius.tex",
+          "BIT142_Midterm\\PickFour\\Params_Returns_Guessing_Game\\FillInGuessingGame.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_1.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_2.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_3.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_4.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_5.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_1\\Misc_Strings_6.tex",
+          "BIT142_Midterm\\PickFour\\Misc_Part_2\\Misc_Arrays_1.tex",
+          "Common\\DocEnd.tex"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          // this will appear in the temp dir when the exam is generated
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      },
+      "3m": {
+        "szShortName": "BIT 143 Midterm",
+        "fnExam": "%Y |Q| BIT 143 Midterm %b %d  %H-%M-%S",
+        "fnGradingGuide": "%Y |Q| BIT 143 Midterm Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Midterm",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=22",
+          {
+            "pickFrom": "BIT143_Midterm\\Stack_Queue_Reading",
+            "howMany": 1
+          },
+          "QuestionPointValue=25",
+          {
+            "pickFrom": "BIT143_Midterm\\SmartArray_Find_And_Fix",
+            "howMany": 1
+          },
+          "QuestionPointValue=11",
+          {
+            "pickFrom": "BIT143_Midterm\\Exception_Handling_Reading",
+            "howMany": 1
+          },
+          "QuestionPointValue=21",
+          {
+            "pickFrom": "BIT143_Midterm\\NUnit",
+            "howMany": 1
+          },
+          "QuestionPointValue=27",
+          {
+            "pickFrom": "BIT143_Midterm\\Linked_List_Reading_Code",
+            "howMany": 1
+          },
+          "QuestionPointValue=17",
+          {
+            "pickFrom": "BIT143_Midterm\\Linked_List_Sort_First_Two_Nodes",
+            "howMany": 1
+          },
+          "QuestionPointValue=25",
+          {
+            "pickFrom": "BIT143_Midterm\\BigOh_Recall",
+            "howMany": 1
+          },
+          "Common\\DocEnd.tex"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          // this will appear in the temp dir when the exam is generated
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      },
+      "3f": {
+        "szShortName": "BIT 143 Final",
+        "fnExam": "%Y |Q| BIT 143 Final %b %d  %H-%M-%S",
+        "fnGradingGuide": "%Y |Q| BIT 143 Final Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Final",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=30",
+          {
+            "pickFrom": "BIT143_Final\\Recursion_Part_A",
+            "howMany": 1
+          },
+          {
+            "pickFrom": "BIT143_Final\\Recursion_Part_B",
+            "howMany": 1
+          },
+          "QuestionPointValue=30",
+          {
+            "pickFrom": "BIT143_Final\\BST_Traversal",
+            "howMany": 1
+          },
+          "QuestionPointValue=10",
+          {
+            "pickFrom": "BIT143_Final\\BST_Traversal_BigOh_Analysis",
+            "howMany": 1
+          },
+          "QuestionPointValue=30",
+          {
+            "pickFrom": "BIT143_Final\\Linked_List_Swap_Ends",
+            "howMany": 1
+          },
+          "QuestionPointValue=25",
+          {
+            "pickFrom": "BIT143_Final\\Partition_By_Hand",
+            "howMany": 1
+          },
+          "QuestionPointValue=25",
+          {
+            "pickFrom": "BIT143_Midterm\\Linked_List_Sort_First_Two_Nodes",
+            "howMany": 1
+          },
+          "Common\\DocEnd.tex"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          // this will appear in the temp dir when the exam is generated
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      },
+      "DEMO": {
+        "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
+        // |Q| is replaced w/ current quarter
+        "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
+        "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
+        "filesToConcat_exam": [
+          "Common\\DocPreamble.tex",
+          "ExamTotalPoints=150",
+          // REQUIRED: this will spit out an \ExamTotalPoints into the exam
+          "Common\\DocStart.tex",
+          "Common\\FirstPage.tex",
+          "Common\\QuestionsStart.tex",
+          "QuestionPointValue=10",
+          // NEED AT LEAST ONE: points for the questions following this
+          {
+            "pickFrom": "BIT142_Midterm\\RequiredQuestions\\Basics_Syntax_Semantics",
+            "howMany": 1
+          },
+          "Common\\PickFourFromFollowingQuestions.tex",
+          "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration\\BIT142_Midterm\\PickFour\\Params_Returns\\TempConversion_Fahr_Kelvin.tex",
+          "Common\\DocEnd.tex",
+          "Junk entry - program should ignore this"
+        ],
+        "filesToConcat_gradingguide": [
+          "Common\\DocPreamble.tex",
+          "Common\\DocStart_GradingGuide.tex",
+          "ExamGradingGuideMiddle.tex",
+          "Common\\DocEnd_GradingGuide.tex"
+        ]
+      }
+    }
+  }
 }
