@@ -1,6 +1,7 @@
-;;;
+
 ;;; .Emacs file for Mike Panitz
 ;;;
+
 
 ;;; Useful stuff that I keep forgetting
 ;; Find source code for an extension: M-x find-library
@@ -132,6 +133,10 @@
 ;;; straight.el - package manager that works via GitHub
 
 (defvar bootstrap-version)
+
+;; move the straight build dir / temp dir outside of DropBox, so it doesn't get replicated across OS's)
+(setq straight-base-dir "~/emacs_straight/")
+(setq straight-repository-branch "develop")
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
       (bootstrap-version 5))
@@ -155,12 +160,16 @@
 ;; which holds the directory of the init.el, .recentf, etc, that's specific to this computer
 ;; This allows us to define DROPBOX_ROOT, and STUDENT_WORK_ROOT, so that
 ;; they can live at different places on differnt computers
+
+
 (setq COMPUTER_SPECIFIC_DIR (getenv "EMACS_COMPUTER_SPECIFIC_CONFIG") )
 ;;(message COMPUTER_SPECIFIC_DIR)
 (load (concat COMPUTER_SPECIFIC_DIR "/init.el") )
 ;;(message (concat "STUDENT_WORK_ROOT: " STUDENT_WORK_ROOT))
 
 (setq recentf-save-file (concat COMPUTER_SPECIFIC_DIR "/.recentf"))
+
+(setq bookmark-default-file (concat COMPUTER_SPECIFIC_DIR "/BookMarks.txt"))
 
 ;;; Org-mode, outline
 
@@ -186,6 +195,7 @@
          ("C-c l" . org-store-link)
          ("C-c c" . org-capture)
          ("C-c a" . org-agenda)
+	 ("M-=" . org-ctrl-c-minus)
          )
   :config
   (setq org-support-shift-select t)
@@ -236,7 +246,7 @@
     (defface org-my-highlight-green '((t (:foreground "black" :background "medium sea green"))) "")
 
     (add-to-list 'org-font-lock-extra-keywords '("\\(![^\n\r\t]+!\\)" (1 'org-my-highlight-yellow) ))
-;;    (add-to-list 'org-font-lock-extra-keywords '("\\(!![^\n\r\t]+!!\\)" (1 'org-my-highlight-green) ))
+    ;;    (add-to-list 'org-font-lock-extra-keywords '("\\(!![^\n\r\t]+!!\\)" (1 'org-my-highlight-green) ))
 
     ;; (add-to-list 'org-font-lock-extra-keywords '("\\(!\\)\\([^\n\r\t]+\\)\\(!\\)" (1 '(face test-face invisible t)) (2 'test-face) (3 '(face test-face invisible t))))
     ;;    (add-to-list 'org-font-lock-extra-keywords '("\\(%\\)\\([^\n\r\t]+\\)\\(%\\)" (1 '(face org-habit-overdue-face invisible t)) (2 'org-habit-overdue-face) (3 '(face org-habit-overdue-face invisible t))))
@@ -635,6 +645,9 @@
 ;; (define-key keymap-meta-space (kbd "M-n") 'suspend-frame)
 
 ;;; Key bindings
+
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 
 (global-set-key [C-tab] 'other-window)
 
@@ -1579,7 +1592,9 @@ _SPC_ cancel	_o_nly this   	_d_elete
          ("S-<f4>" . repeat-search-thing-at-point-backward)
          ("S-<f5>" . repeat-search-thing-at-point-backward)
          )
-  :straight (:type git :local-repo "mike-search")
+  ;; :straight (:type git :local-repo "mike-search")
+  ;; :straight (:type git :files "~/.emacs.d/MyPackages/MikeSearch.el")
+  :straight (:type git :repo "MikeTheGreat/mike-search" )
   )
 
 ;;; Pre-defined search patterns for BIT 142, 143
@@ -2090,60 +2105,60 @@ _SPC_ cancel	_o_nly this   	_d_elete
 
 ;; not currently using this, so remove it
 
-(use-package treemacs
-  ;; :ensure t
-  :defer 5
-  :init
-  (with-eval-after-load 'winum
-    (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-  :config
-  (progn
-    (setq treemacs-collapse-dirs              (if (executable-find "python") 3 0)
-          treemacs-deferred-git-apply-delay   0.5
-          treemacs-display-in-side-window     t
-          treemacs-file-event-delay           5000
-          treemacs-file-follow-delay          0.2
-          treemacs-follow-after-init          t
-          treemacs-follow-recenter-distance   0.1
-          treemacs-goto-tag-strategy          'refetch-index
-          treemacs-indentation                2
-          treemacs-indentation-string         " "
-          treemacs-is-never-other-window      nil
-          treemacs-no-png-images              nil
-          treemacs-project-follow-cleanup     nil
-          treemacs-persist-file               (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
-          treemacs-recenter-after-file-follow nil
-          treemacs-recenter-after-tag-follow  nil
-          treemacs-show-hidden-files          t
-          treemacs-silent-filewatch           nil
-          treemacs-silent-refresh             nil
-          treemacs-sorting                    'alphabetic-desc
-          treemacs-space-between-root-nodes   t
-          treemacs-tag-follow-cleanup         t
-          treemacs-tag-follow-delay           1.5
-          treemacs-width                      35)
+;; (use-package treemacs
+;;   ;; :ensure t
+;;   :defer 5
+;;   :init
+;;   (with-eval-after-load 'winum
+;;     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
+;;   :config
+;;   (progn
+;;     (setq treemacs-collapse-dirs              (if (executable-find "python") 3 0)
+;;           treemacs-deferred-git-apply-delay   0.5
+;;           treemacs-display-in-side-window     t
+;;           treemacs-file-event-delay           5000
+;;           treemacs-file-follow-delay          0.2
+;;           treemacs-follow-after-init          t
+;;           treemacs-follow-recenter-distance   0.1
+;;           treemacs-goto-tag-strategy          'refetch-index
+;;           treemacs-indentation                2
+;;           treemacs-indentation-string         " "
+;;           treemacs-is-never-other-window      nil
+;;           treemacs-no-png-images              nil
+;;           treemacs-project-follow-cleanup     nil
+;;           treemacs-persist-file               (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+;;           treemacs-recenter-after-file-follow nil
+;;           treemacs-recenter-after-tag-follow  nil
+;;           treemacs-show-hidden-files          t
+;;           treemacs-silent-filewatch           nil
+;;           treemacs-silent-refresh             nil
+;;           treemacs-sorting                    'alphabetic-desc
+;;           treemacs-space-between-root-nodes   t
+;;           treemacs-tag-follow-cleanup         t
+;;           treemacs-tag-follow-delay           1.5
+;;           treemacs-width                      35)
 
-    ;; The default width and height of the icons is 22 pixels. If you are
-    ;; using a Hi-DPI display, uncomment this to double the icon size.
-    ;;(treemacs-resize-icons 44)
+;;     ;; The default width and height of the icons is 22 pixels. If you are
+;;     ;; using a Hi-DPI display, uncomment this to double the icon size.
+;;     ;;(treemacs-resize-icons 44)
 
-    (treemacs-follow-mode t)
-    (treemacs-filewatch-mode t)
-    (treemacs-fringe-indicator-mode t)
-    (pcase (cons (not (null (executable-find "git")))
-                 (not (null (executable-find "python3"))))
-      (`(t . t)
-       (treemacs-git-mode 'extended))
-      (`(t . _)
-       (treemacs-git-mode 'simple))))
-  :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t 1"   . treemacs-delete-other-windows)
-        ("C-x t t"   . treemacs)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)))
+;;     (treemacs-follow-mode t)
+;;     (treemacs-filewatch-mode t)
+;;     (treemacs-fringe-indicator-mode t)
+;;     (pcase (cons (not (null (executable-find "git")))
+;;                  (not (null (executable-find "python3"))))
+;;       (`(t . t)
+;;        (treemacs-git-mode 'extended))
+;;       (`(t . _)
+;;        (treemacs-git-mode 'simple))))
+;;   :bind
+;;   (:map global-map
+;;         ("M-0"       . treemacs-select-window)
+;;         ("C-x t 1"   . treemacs-delete-other-windows)
+;;         ("C-x t t"   . treemacs)
+;;         ("C-x t B"   . treemacs-bookmark)
+;;         ("C-x t C-t" . treemacs-find-file)
+;;         ("C-x t M-t" . treemacs-find-tag)))
 
 ;; (use-package treemacs-projectile
 ;;   :after treemacs projectile
@@ -2183,12 +2198,12 @@ _SPC_ cancel	_o_nly this   	_d_elete
 
 ;;; Python
 ;; Is this actually doing anything?  And how does this relate to flycheck?
-(use-package elpy
-  ;; :ensure t
-  :mode ("\\.py[iw]?\\'" . python-mode)
-  :config
-  (elpy-enable)
-  )
+;; (use-package elpy
+;;   ;; :ensure t
+;;   :mode ("\\.py[iw]?\\'" . python-mode)
+;;   :config
+;;   (elpy-enable)
+;;   )
 
 ;; (use-package py-autopep8
 ;;   ;; :ensure t
@@ -2233,11 +2248,11 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;;; Docker
 
 
-(use-package dockerfile-mode
-  ;; :ensure t
-  :defer 5
-  :mode (("Dockerfile" . dockerfile-mode))
-  )
+;; (use-package dockerfile-mode
+;;   ;; :ensure t
+;;   :defer 5
+;;   :mode (("Dockerfile" . dockerfile-mode))
+;;   )
 
 ;; https://github.com/proofit404/company-tern
 ;; (use-package company-tern
@@ -2310,8 +2325,8 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;;       (message "%s" file)
 ;;       (delete-file file))))
 ;;; OpenSCAD
-(use-package scad-mode
-  )
+;; (use-package scad-mode
+;;   )
 
 ;; Swift (lang)
 ;;(use-package swift-mode)
