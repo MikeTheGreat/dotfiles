@@ -1,0 +1,3 @@
+[submodule ".emacs.d/MyPackages/mike-search"]
+	path = .emacs.d/MyPackages/mike-search
+	url = https://github.com/MikeTheGreat/mike-search.git

@@ -135,7 +135,7 @@
 (defvar bootstrap-version)
 
 ;; move the straight build dir / temp dir outside of DropBox, so it doesn't get replicated across OS's)
-(setq straight-base-dir "~/emacs_straight/")
+;; (setq straight-base-dir "~/emacs_straight/") ;; instead of moving this, use git to hold dotfiles and then ignore the straight dir
 (setq straight-repository-branch "develop")
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -1577,6 +1577,7 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;; There's a command ('lgp') which sets up F2,3,and 4 with patterns for each lesson of 142 and 143
 (use-package mike-search
   ;; :ensure nil
+  :load-path "MyPackages/mike-search"
   :demand t ;; when I grade, I want to grade fast
   :bind (
          ("C-<f2>" . search-thing-at-point)
@@ -1594,7 +1595,7 @@ _SPC_ cancel	_o_nly this   	_d_elete
          )
   ;; :straight (:type git :local-repo "mike-search")
   ;; :straight (:type git :files "~/.emacs.d/MyPackages/MikeSearch.el")
-  :straight (:type git :repo "MikeTheGreat/mike-search" )
+  ;; :straight (:type git :repo "MikeTheGreat/mike-search" )
   )
 
 ;;; Pre-defined search patterns for BIT 142, 143
