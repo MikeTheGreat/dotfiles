@@ -2,6 +2,9 @@
 ;;; .Emacs file for Mike Panitz
 ;;;
 
+;;; how to exclude a dir or file from DropBox:
+;;; https://superuser.com/a/1521834/116727
+
 
 ;;; Useful stuff that I keep forgetting
 ;; Find source code for an extension: M-x find-library
@@ -1157,14 +1160,14 @@ _SPC_ cancel	_o_nly this   	_d_elete
 
 ;;; Markdown mode
 
-(use-package markdown-mode
-  ;; :ensure t
-  :defer 3
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+;; (use-package markdown-mode
+;;   ;; :ensure t
+;;   :defer 3
+;;   :commands (markdown-mode gfm-mode)
+;;   :mode (("README\\.md\\'" . gfm-mode)
+;;          ("\\.md\\'" . markdown-mode)
+;;          ("\\.markdown\\'" . markdown-mode))
+;;   :init (setq markdown-command "multimarkdown"))
 
 ;;; Appearance
 ;;;; General
@@ -1576,9 +1579,7 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;; The patterns are persisted between sessions
 ;; There's a command ('lgp') which sets up F2,3,and 4 with patterns for each lesson of 142 and 143
 (use-package mike-search
-  ;; :ensure nil
-  :load-path "MyPackages/mike-search"
-  :demand t ;; when I grade, I want to grade fast
+  :demand t ;; when I grade, I want to grade fast :)
   :bind (
          ("C-<f2>" . search-thing-at-point)
          ("C-<f3>" . search-thing-at-point)
@@ -1593,9 +1594,7 @@ _SPC_ cancel	_o_nly this   	_d_elete
          ("S-<f4>" . repeat-search-thing-at-point-backward)
          ("S-<f5>" . repeat-search-thing-at-point-backward)
          )
-  ;; :straight (:type git :local-repo "mike-search")
-  ;; :straight (:type git :files "~/.emacs.d/MyPackages/MikeSearch.el")
-  ;; :straight (:type git :repo "MikeTheGreat/mike-search" )
+  :straight (:type git :host github :repo "MikeTheGreat/mike-search")
   )
 
 ;;; Pre-defined search patterns for BIT 142, 143
@@ -1969,23 +1968,23 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;; or maybe:
 ;; https://github.com/phillord/lentic
 
-(use-package web-mode
-  :mode "\\.html\\'"
+;; (use-package web-mode
+;;   :mode "\\.html\\'"
 
-  :config
-  (setq web-mode-enable-auto-pairing t)
-  (setq web-mode-enable-css-colorization nil)
-  (setq web-mode-enable-auto-closing t)
+;;   :config
+;;   (setq web-mode-enable-auto-pairing t)
+;;   (setq web-mode-enable-css-colorization nil)
+;;   (setq web-mode-enable-auto-closing t)
 
-  (defun open-in-browser()
-    "open buffer in browser, unless it is not a file. Then fail silently (ouch)."
-    (interactive)
-    (if (buffer-file-name)
-	(let ((filename (buffer-file-name)))
-          (shell-command (concat "start chrome.exe \"" filename "\"")))))
-  ;;  (define-key web-mode-map (kbd "C-n") 'web-mode-tag-match)
-  (define-key web-mode-map (kbd "C-c C-v") 'open-in-browser)
-  )
+;;   (defun open-in-browser()
+;;     "open buffer in browser, unless it is not a file. Then fail silently (ouch)."
+;;     (interactive)
+;;     (if (buffer-file-name)
+;; 	(let ((filename (buffer-file-name)))
+;;           (shell-command (concat "start chrome.exe \"" filename "\"")))))
+;;   ;;  (define-key web-mode-map (kbd "C-n") 'web-mode-tag-match)
+;;   (define-key web-mode-map (kbd "C-c C-v") 'open-in-browser)
+;;   )
 
 ;;(require 'web-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -2173,23 +2172,23 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;; MELPA-stable's version (0.1) requires wrong fringe-helper
 ;; (require `git-gutter-fringe+)
 
-(use-package magit
-  ;; :ensure t
-  :bind (
-         ("C-x g s" . magit-status)
-	 )
-  )
+;;(use-package magit
+;;   ;; :ensure t
+;;   :bind (
+;;          ("C-x g s" . magit-status)
+;; 	 )
+;;   )
 
-;; from https://github.com/dgutov/diff-hl
-(use-package diff-hl
-  :config
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
-  (setq diff-hl-fringe-bmp-function 'diff-hl-fringe-bmp-from-type)
-  (setq diff-hl-margin-side 'left)
-  ;;(diff-hl-mode t)
-  (global-diff-hl-mode)
-  (diff-hl-flydiff-mode)
-  )
+;; ;; from https://github.com/dgutov/diff-hl
+;; (use-package diff-hl
+;;   :config
+;;   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+;;   (setq diff-hl-fringe-bmp-function 'diff-hl-fringe-bmp-from-type)
+;;   (setq diff-hl-margin-side 'left)
+;;   ;;(diff-hl-mode t)
+;;   (global-diff-hl-mode)
+;;   (diff-hl-flydiff-mode)
+;;   )
 ;; git-gutter kept adding blank spaces into the margin
 ;; (1 space per move of the cursor)
 ;; git-gutter+ worked better, but only showed changes when the file

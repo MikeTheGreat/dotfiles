@@ -1,8 +1,9 @@
 ######### Mike specific stuff
 
-EMACS_COMPUTER_SPECIFIC_CONFIG=~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC
-export EMACS_COMPUTER_SPECIFIC_CONFIG
-
+# This is no longer needed, since the SetupMyMac.sh will add a launchd config file to do this
+# across the entire mac (and on Windows we'll set the environment variable)
+# EMACS_COMPUTER_SPECIFIC_CONFIG=~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC
+# export EMACS_COMPUTER_SPECIFIC_CONFIG
 # echo "EMACS_COMPUTER_SPECIFIC_CONFIG is set to '$EMACS_COMPUTER_SPECIFIC_CONFIG'";
 
 PATH=$PATH:/Users/mikepanitz/Dropbox/Work/bin
@@ -22,23 +23,6 @@ eval "$(ssh-agent -s)"
 
 CYGWIN=winsymlinks:nativestrict
 export CYGWIN
-
-# set_iterm2_tab_to_current() {
-#     # zstyle sets up the format string for vcs_info
-#     zstyle ':vcs_info:git:*' formats '%r'
-
-#     # vcs_info then sets the $vcs_info_msg_0_
-#     vcs_info
-
-#     # Now we can use the vcs information :)
-#     if [[ "${vcs_info_msg_0_}" != "" ]] # if we're in a git repo
-#     then
-#         echo -ne "\e]1;${vcs_info_msg_0_}\a" # set the iTerm2 tab title to be the repo name
-#     else
-#         echo -ne "\e]1;In `basename $PWD`\a" # otherwise print out the current folder's name
-#     fi
-# }
-# precmd_functions+=( set_iterm2_tab_to_current )
 
 # # Scripts to bulk-commit repos:
 # CSTR_MSG="No message"
@@ -88,8 +72,14 @@ autoload -U colors && colors
 # If echo $TERM says 'xterm-256color' then you can use the following colors:
 # https://jonasjacek.github.io/colors/
 
+{
+preexec()
+  echo -ne "\e[0m" # Resetting color to default white.
+}
+
 
 autoload -Uz vcs_info
+
 
 # Before each command prompt this will print
 # PWD: <pwd> (In repo <repo> on branch <branch>)
@@ -112,10 +102,24 @@ prompts_for_NTs() {
 }
 precmd_functions+=( prompts_for_NTs )
 
-{
-preexec()
-  echo -ne "\e[0m" # Resetting color to default white.
+set_iterm2_tab_to_current() {
+    # zstyle sets up the format string for vcs_info
+    zstyle ':vcs_info:git:*' formats '%r'
+
+    # vcs_info then sets the $vcs_info_msg_0_
+    vcs_info
+
+    # Now we can use the vcs information :)
+    if [[ "${vcs_info_msg_0_}" != "" ]] # if we're in a git repo
+    then
+        echo -ne "\e]1;In Repo: ${vcs_info_msg_0_}\a" # set the iTerm2 tab title to be the repo name
+    else
+        echo -ne "\e]1;In Folder: `basename $PWD`\a" # otherwise print out the current folder's name
+    fi
 }
+precmd_functions+=( set_iterm2_tab_to_current )
+
+
 
 # Turn on tab completion for git & zsh:
 # https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
