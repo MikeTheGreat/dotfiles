@@ -1,10 +1,30 @@
-
 ;;; .Emacs file for Mike Panitz
 ;;;
 
-;;; how to exclude a dir or file from DropBox:
-;;; https://superuser.com/a/1521834/116727
+;; how to exclude a dir or file from DropBox:
+;; https://superuser.com/a/1521834/116727
+;; How to set up per-computer config: use hostname:
+;;;;; https://nicolas.petton.fr/blog/per-computer-emacs-settings.html
 
+
+;; Debugging tips
+;; (toggle-debug-on-error) ;; to get a full stack trace on error
+
+;; Lookup later
+
+;;;; Breadcrumb (bookmarking)
+;; https://github.com/pheaver/breadcrumb
+;;(use-package breadcrumb
+;;  :ensure t
+;;  :after hydra
+;;  :config
+;;  (message "Hi")
+;;  )
+;; https://github.com/abo-abo/hydra/wiki/Breadcrumb
+
+;;;; https://github.com/emacscollective/no-littering
+;; Keeps .emacs.d clean
+;; They said that they're eagerly accepting contributions
 
 ;;; Useful stuff that I keep forgetting
 ;; Find source code for an extension: M-x find-library
@@ -50,25 +70,6 @@
 ;; Insert line numbers along the left edge of the region-rectangle
 ;; (‘rectangle-number-lines’).  This pushes the previous contents of
 ;; the region-rectangle to the right.
-
-;;; Debugging tips
-;; (toggle-debug-on-error) ;; to get a full stack trace on error
-
-;;; Lookup later
-
-;;;; Breadcrumb (bookmarking)
-;; https://github.com/pheaver/breadcrumb
-;;(use-package breadcrumb
-;;  :ensure t
-;;  :after hydra
-;;  :config
-;;  (message "Hi")
-;;  )
-;; https://github.com/abo-abo/hydra/wiki/Breadcrumb
-
-;;;; https://github.com/emacscollective/no-littering
-;; Keeps .emacs.d clean
-;; They said that they're eagerly accepting contributions
 
 ;;; Perf stuff
 ;;(package-initialize)
@@ -159,20 +160,42 @@
 
 ;;; computer-specific config
 
+(let* (
+       (host (downcase (substring (shell-command-to-string "hostname") 0 -1)))
+       (host-dir (concat "~/.emacs.d/Computer_Specific_Config_Files/" host ))
+       (init-host-feature (concat host-dir "/init.el")))
+
+  (message (concat "host: " host " host-dir: " host-dir))
+
+  (if (not (file-directory-p host-dir))
+      (make-directory host-dir t) ;; t means "create parents if needed"
+    (message "ERROR: No config files for this computer!")
+    )
+
+  (if (file-exists-p init-host-feature)
+      (load init-host-feature)
+    )
+  (setq recentf-save-file (concat host-dir "/.recentf"))
+  (setq bookmark-default-file (concat host-dir "/BookMarks.txt"))
+  (message (concat "Loaded computer-specific info from\n\t" init-host-feature "\n\trecentf: " recentf-save-file "\n\tbookmarks: " bookmark-default-file))
+  )
+
 ;; EMACCS_COMPUTER_SPECIFIC_CONFIG should be an environment variable
 ;; which holds the directory of the init.el, .recentf, etc, that's specific to this computer
 ;; This allows us to define DROPBOX_ROOT, and STUDENT_WORK_ROOT, so that
 ;; they can live at different places on differnt computers
 
+;; (setq COMPUTER_SPECIFIC_DIR (getenv "EMACS_COMPUTER_SPECIFIC_CONFIG") )
+;; (message COMPUTER_SPECIFIC_DIR)
+;; (load (concat COMPUTER_SPECIFIC_DIR "/init.el") )
+;; (message (concat "STUDENT_WORK_ROOT: " STUDENT_WORK_ROOT))
+;; (setq recentf-save-file (concat COMPUTER_SPECIFIC_DIR "/.recentf"))
+;; (setq bookmark-default-file (concat COMPUTER_SPECIFIC_DIR "/BookMarks.txt"))
 
-(setq COMPUTER_SPECIFIC_DIR (getenv "EMACS_COMPUTER_SPECIFIC_CONFIG") )
-;;(message COMPUTER_SPECIFIC_DIR)
-(load (concat COMPUTER_SPECIFIC_DIR "/init.el") )
-;;(message (concat "STUDENT_WORK_ROOT: " STUDENT_WORK_ROOT))
+;;; Move customize.el settings to a separate file
 
-(setq recentf-save-file (concat COMPUTER_SPECIFIC_DIR "/.recentf"))
-
-(setq bookmark-default-file (concat COMPUTER_SPECIFIC_DIR "/BookMarks.txt"))
+(setq custom-file "~/.emacs.d/DataFiles/customize.el")
+(load custom-file)
 
 ;;; Org-mode, outline
 
@@ -198,6 +221,7 @@
          ("C-c l" . org-store-link)
          ("C-c c" . org-capture)
          ("C-c a" . org-agenda)
+;;	 ("M-<ins>" . org-shiftmetadown)
 	 ("M-=" . org-ctrl-c-minus)
          )
   :config
@@ -486,12 +510,6 @@
 (use-package navi-mode
   :after (outshine)
   )
-;;; Move customize.el settings to a separate file
-
-(setq custom-file "~/.emacs.d/DataFiles/customize.el")
-(load custom-file)
-
-
 ;;; General Emacs config
 
 (setq backup-directory-alist
@@ -1175,6 +1193,12 @@ _SPC_ cancel	_o_nly this   	_d_elete
 (setq inhibit-splash-screen t)
 
 
+;; Tried to set the cursor color:
+;; (add-to-list 'default-frame-alist '(cursor-color . "turquoise2"))
+;; (add-hook 'after-init-hook
+;; (lambda () (run-with-timer 5 nil #'set-cursor-color "turquoise2")))
+
+
 ;; This allows for a different font for each level of nested ()'s
 (use-package rainbow-delimiters
   ;; :ensure t
@@ -1191,10 +1215,6 @@ _SPC_ cancel	_o_nly this   	_d_elete
 (global-visual-line-mode t)
 (global-linum-mode 1)                  ; Turn on line numbering
 (show-paren-mode 1) ; when point is immediately to the right of a ) [or on a ( ] highlight the match
-
-;; Set up the cursor so it's more clear where edits happen
-;; This was moved to customize
-;; (global-hl-line-mode)
 
 ;; (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 (add-hook 'window-setup-hook '(lambda() (set-frame-parameter nil 'fullscreen 'maximized)) t)
@@ -1745,14 +1765,16 @@ _SPC_ cancel	_o_nly this   	_d_elete
 	 )
 
        ( (equal lesson "3-1")
-	 (set-search-item 'f2 "public.*PrintBarChart" )
-	 (set-search-item 'f3 "class.*Circle" )
-					;    (set-search-item 'f4 "" )
+	 (set-search-item 'f2 "class.*Circle" )
+	 (set-search-item 'f3 "class.*SmartArray" )
+	 (set-search-item 'f4 "public.*PrintBarChart" )
 	 (setq num-questions "13")
 	 )
        ( (equal lesson "3-2")
-	 (read-string "There are two files to read: Enums test for 6-B (Big Oh + Impl) and PCE_Starter\\Program.cs for 7-B<press enter>")
+	 (read-string "NOTE: 3-B and 5-B are in GitHub")
 	 (setq num-questions "61 + 4 outlines")
+	 (set-search-item 'f2 "class.*SmartArray" )
+	 (set-search-item 'f3 "class.*Using_DotNets_Stack" )
 	 )
        ( (equal lesson "3-3")
 	 (set-search-item 'f2 "public.*Stack" )
@@ -2337,3 +2359,10 @@ _SPC_ cancel	_o_nly this   	_d_elete
 ;;'(emacs-chess :type git :host github :repo "jwiegley/emacs-chess"))
 
 ;;(use-package xahk-mode)
+;;; Trim extra whitespace
+
+(use-package ethan-wspace
+  ;; :ensure t
+  :config
+  (global-ethan-wspace-mode 1)
+  )

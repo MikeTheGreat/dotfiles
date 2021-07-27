@@ -2,8 +2,9 @@
 
 # This is no longer needed, since the SetupMyMac.sh will add a launchd config file to do this
 # across the entire mac (and on Windows we'll set the environment variable)
-# EMACS_COMPUTER_SPECIFIC_CONFIG=~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC
-# export EMACS_COMPUTER_SPECIFIC_CONFIG
+# launchd.conf doesn't seem to be working (either GUI or terminal)
+EMACS_COMPUTER_SPECIFIC_CONFIG=~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC
+export EMACS_COMPUTER_SPECIFIC_CONFIG
 # echo "EMACS_COMPUTER_SPECIFIC_CONFIG is set to '$EMACS_COMPUTER_SPECIFIC_CONFIG'";
 
 PATH=$PATH:/Users/mikepanitz/Dropbox/Work/bin
@@ -124,3 +125,61 @@ precmd_functions+=( set_iterm2_tab_to_current )
 # Turn on tab completion for git & zsh:
 # https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
 autoload -Uz compinit && compinit
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/completion.zsh.inc'; fi
+
+#wcd () {
+#        typeset go="${WCDHOME:-${HOME}}/bin/wcd.go"
+#        rm -f "$go" 2> /dev/null
+#        /usr/lib/wcd/wcd.exe "$@"
+#        [ -f "$go" ] && . "$go"
+#}
+alias g='wcd $@'
+
+##### VIM STUFF
+# Pressing Esc puts us in vim-editting mode:
+bindkey '\e' vi-cmd-mode 
+# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1 
+function zle-line-init zle-keymap-select {         
+  RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"    
+  RPS2=$RPS1    
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+##### HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl
+
+### End of Zinit's installer chunk

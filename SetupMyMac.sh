@@ -5,17 +5,8 @@
 # chmod +x SetupMyMac.sh
 # ./SetupMyMac.sh
 
-# Next steps:
+# Sign into the Mac App Store (otherwise we can't install anything that starts with "gas", below)
 
-# How to install software from .dmg on the command line:
-# https://zeckli.github.io/en/2017/10/06/mac-install-dmg-through-command-line-en.html
-
-# Software to install from .dmg files:
-# 		None! :)
-# Usage:
-# Start Terminal
-# chmod +x SetupMyMac.sh
-# ./SetupMyMac.sh
 
 # Next steps:
 
@@ -49,12 +40,12 @@ else
 fi
 
 # Next, use homebrew to get a browsers, which is where I keep all my passwords:
-brew cask install google-chrome
+brew install --cask google-chrome
 
-#brew cask install microsoft-edge
+#brew install --cask microsoft-edge
 
 # Next, install DropBox, which contains my home directory:
-brew cask install dropbox
+brew install --cask dropbox
 # TODO: install the DropBox desktop app?
 # https://www.dropbox.com/downloading
 # https://help.dropbox.com/en-us/files-folders/restore-delete/ignored-files
@@ -77,6 +68,21 @@ mas install 540348655
 # Giphy capture, to make GIFs
 mas install 668208984
 
+###### Screen Annotation:
+
+# SwordSoft Screenink Free
+mas install 953841977
+
+# Epic Pen:
+# mas install 1523853410
+
+# Screenbrush:
+mas install 
+
+# Mouse Locator:
+# NOTE: Doesn't work with current MacOS (May 2021)
+brew install --cask mouse-locator
+
 
 ########################## System upgrades ##################################
 
@@ -90,24 +96,32 @@ mas install 668208984
 brew install tree
 
 #better window management:
-brew cask install rectangle
+brew install --cask rectangle
 
 # remaps keys:
 # Useful for using PC keyboards with Mac
-brew cask install karabiner-elements 
+brew install --cask karabiner-elements 
 
 #clipboard management:
-brew cask install jumpcut
+brew install --cask jumpcut
+
+# Fix mouse-wheel scrolling for non-Apple mice:
+# SmoothScroll is nicer, but it's also paid software (it does have a free trial)
+# brew install --cask smoothscroll
+
+# another option:
+brew install --cask discretescroll
+# (Not as nice, but definitely fixes the problem w/ MacOS applying acceleration per wheel 'tick')
 
 # Date & time in the menu bar, click to see calendar
 # using Lilius:
 mas install 1459465139
 
 # alt-tab makes command-tab work like it does on Windows:
-brew cask install alt-tab
+brew install --cask alt-tab
 
 # Dual-pane file manager
-brew cask install double-commander
+brew install --cask double-commander
 
 # Command line jump to dir:
 brew install cdargs
@@ -125,31 +139,40 @@ brew install git
 git config --global user.name "Mike Panitz"
 git config --global user.email "michpa@hotmail.com"
 
+# use 'main' instead of 'master' when creating new repos:
+git config --global init.defaultBranch main
+
 brew install node
 brew install yarn
 
 # graphical diff tool:
-brew cask install meld
+brew install --cask meld
 
-brew cask install iterm2
+brew install --cask iterm2
 
-brew cask install visual-studio-code 
+brew install --cask visual-studio-code 
 
 # Markdown editor:
-brew cask install typora
+brew install --cask typora
 
 # Different Markdown editor:
-# brew cask install Zettlr
+# brew install --cask Zettlr
 
 ########################## Screen recording ##################################
 
 # Open Broadcaster Suite
-brew cask install obs
+brew install --cask obs
 
 ########################## Comms ##############################################
-brew cask install microsoft-teams
+brew install --cask microsoft-teams
 
-brew cask install zoomus
+brew install --cask zoom
+
+# Outlook:
+mas install 985367838
+
+#Slack:
+mas install 803453959
 
 
 ############################ MacOS Defaults ###################################
@@ -177,7 +200,7 @@ sudo chflags nohidden /Volumes
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 # 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+# sudo nvram SystemAudioVolume=" "
 
 
 # Set highlight color to green
@@ -394,8 +417,8 @@ for app in "Activity Monitor" \
 	"Finder" \
 	"Google Chrome Canary" \
 	"Google Chrome" \
-	"SystemUIServer" \
-	"Terminal";
+	"SystemUIServer" # \
+	# "Terminal"; # We should quit this too, but we're probably using it to install everything :(
 do
 	killall "${app}" &> /dev/null
 done
@@ -440,7 +463,7 @@ cat << EOF | sudo tee /Library/LaunchDaemons/setenv.EMACS_COMPUTER_SPECIFIC_CONF
     <string>/bin/launchctl</string>
     <string>setenv</string>
     <string>EMACS_COMPUTER_SPECIFIC_CONFIG</string>
-    <string>~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC</string>
+    <string>~/.emacs.d/Computer_Specific_Config_Files/TNT_Macbook</string>
   </array>
   <key>RunAtLoad</key>
   <true/>

@@ -1,5 +1,5 @@
 (deftheme obsidian-MikePanitz
-  "Created 2019-04-23.")
+  "Created 2021-02-21.")
 
 (custom-theme-set-faces
  'obsidian-MikePanitz
@@ -7,7 +7,6 @@
  '(region ((t (:background "#804000" :foreground "#e0e2e4"))))
  '(highlight ((t (:background "#3c414c"))))
  '(fringe ((t (:background "#232323" :foreground "#cfbfad"))))
- '(cursor ((t (:background "#626262"))))
  '(isearch ((t (:bold t :foreground "#616161" :background "#e2e2e5"))))
  '(mode-line ((t (:foreground "#b2b2b2" :background "#293134" :box nil))))
  '(mode-line-inactive ((t (:foreground "#949494" :background "#293134" :box nil))))
