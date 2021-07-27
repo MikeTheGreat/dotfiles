@@ -1,0 +1,268 @@
+{
+  "presets": [
+    {
+      "name": "BIT 142 Assignment 1",
+      "abbrev": "2-a1",
+      "msgWhenLoaded": "Quiz questions: N/A",
+      "searches": [
+        "USING 'IF STATEMENTS' SHOULD",
+        "SOLUTION USING 'IF/ELSE STATEMENTS' SHOULD",
+        "SOLUTION USING 'SWITCH STATEMENTS' SHOULD"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 01",
+      "abbrev": "2-1",
+      "msgWhenLoaded": "Quiz questions: 45",
+      "searches": [
+        "Hello.*Printer",
+        "Number.*Printer",
+        "Data_Type_Explanations",
+        "Define_An_Instance_Method - UNUSED"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 01 - Summer",
+      "abbrev": "2-1s",
+      "msgWhenLoaded": "Quiz questions: 34",
+      "searches": [
+        "Hello.*Printer",
+        "Number.*Printer",
+        "Data_Type_Explanations"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 02",
+      "abbrev": "2-2",
+      "msgWhenLoaded": "Quiz questions: 34",
+      "searches": [
+        "class.*Modulus_Operator",
+        "class.*Fahrenheit_To_Celsius",
+        "class.*Fahrenheit_To_Celsius",
+        "class.*Modulus_Operator - UNUSED"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 02 - Summer",
+      "abbrev": "2-2s",
+      "msgWhenLoaded": "Quiz questions: 78",
+      "searches": [
+        "class.*Fahrenheit_To_Celsius",
+        "class.*Fahrenheit_To_Celsius"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 03",
+      "abbrev": "2-3",
+      "msgWhenLoaded": "Quiz questions: 45",
+      "searches": [
+        "class.*RandomNumbersBasic",
+        "class.*Print_A_Range_Of_Numbers",
+        "class.*Nested_Loops_Hollow_Rectangles"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 03 - Summer",
+      "abbrev": "2-3s",
+      "msgWhenLoaded": "Quiz questions: 106",
+      "searches": [
+        "class.*Nested_Loops_Hollow_Rectangles",
+        "return[Mm]ax",
+        "public.*CalculateSum"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 04",
+      "abbrev": "2-4",
+      "msgWhenLoaded": "Quiz questions: 53",
+      "searches": [
+        "public.*CalculateSum",
+        "returnMax",
+        "public.*CalculateSum",
+        "class.*max - UNUSED",
+        "Square_Of_Numbers_Parameters_Return - UNUSED"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 04 - Summer",
+      "abbrev": "2-4",
+      "msgWhenLoaded": "Quiz questions: 10",
+      "searches": [
+        "class.*Television",
+        "class.*TelevisionHandler",
+        "public.*PrintArrayOfPossiblyNullTVs"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 05",
+      "abbrev": "2-5",
+      "msgWhenLoaded": "Quiz questions: 62",
+      "searches": [
+        "class.*Access_Control",
+        "class.*Blender",
+        "public.*PrintArrayOfPossiblyNullTVs"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 05 - Summer",
+      "abbrev": "2-5",
+      "msgWhenLoaded": "Quiz questions: 69",
+      "searches": [
+        "public.*PickMoreExpensiveTV",
+        "public.*GetAverage",
+        "class.*Car",
+        "public.*SpecificPrinter"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 06",
+      "abbrev": "2-6",
+      "msgWhenLoaded": "Quiz questions: 33",
+      "searches": [
+        "public.*PickMoreExpensiveTV",
+        "public.*PrintBarChart",
+        "public.*GetAverage"
+      ]
+    },
+    {
+      "name": "BIT 142 Lesson 06 - Summer",
+      "abbrev": "2-6s",
+      "msgWhenLoaded": "  * No Quizes - 8 outlines (ONLY,; Look in DebuggerExplanations.doc and Fireworks.cs",
+      "searches": [""]
+    },
+    {
+      "name": "BIT 142 Lesson 07",
+      "abbrev": "2-7",
+      "msgWhenLoaded": "Quiz questions: 36",
+      "searches": ["class.*Car", "class.*Prius", "public.*SpecificPrinter"]
+    },
+    {
+      "name": "BIT 142 Lesson 07 - Summer",
+      "abbrev": "2-7s",
+      "msgWhenLoaded": "Quiz questions: 57",
+      "searches": ["public.*Binary.*Measured", "public.*BubbleSort.*Measured"]
+    },
+    {
+      "name": "BIT 142 Lesson 08",
+      "abbrev": "2-8",
+      "msgWhenLoaded": "Quiz questions: 58",
+      "searches": ["Output_Maxes", "public.*Search"]
+    },
+    {
+      "name": "BIT 142 Lesson 09",
+      "abbrev": "2-9",
+      "msgWhenLoaded": "Quiz questions: 57",
+      "searches": [
+        "public.*Binary.*Measured",
+        "public.*BubbleSort.*Measured",
+        "public.*BubbleSort.*Measured"
+      ]
+    },
+    {
+      "name": "BIT 143 Assignment 3",
+      "abbrev": "3-a3",
+      "msgWhenLoaded": "Quiz questions: N/A",
+      "searches": [
+        "STUDENTS: YOUR ERROR",
+        "private class Book",
+        "ErrorCode Add"
+      ]
+    },
+    {
+      "name": "BIT 143 Lesson 01",
+      "abbrev": "3-1",
+      "msgWhenLoaded": "Quiz questions: 13",
+      "searches": ["public.*PrintBarChart", "class.*Circle"]
+    },
+    {
+      "name": "BIT 143 Lesson 02",
+      "abbrev": "3-2",
+      "msgWhenLoaded": "Quiz questions: 61 questions + 4 outlines\nThere are two files to read: Enums test for 6-B (Big Oh + Impl, and PCE_Starter\\Program.cs for 7-B\n",
+      "searches": []
+    },
+    {
+      "name": "BIT 143 Lesson 03",
+      "abbrev": "3-3",
+      "msgWhenLoaded": "Quiz questions: 28",
+      "searches": ["public.*Stack", "public.*Queue"]
+    },
+    {
+      "name": "BIT 143 Lesson 04",
+      "abbrev": "3-4",
+      "msgWhenLoaded": "Quiz questions: 50",
+      "searches": ["public.*front"]
+    },
+    {
+      "name": "BIT 143 Lesson 04 - Summer",
+      "abbrev": "3-4s",
+      "msgWhenLoaded": "Quiz questions: 77",
+      "searches": ["public.*Front", "void.*InsertAt", "void.*RemoveAt"]
+    },
+    {
+      "name": "BIT 143 Lesson 05",
+      "abbrev": "3-5",
+      "msgWhenLoaded": "Quiz questions: 31",
+      "searches": ["void.*InsertAt", "void.*RemoveAt"]
+    },
+    {
+      "name": "BIT 143 Lesson 05 - Summer",
+      "abbrev": "3-5s",
+      "msgWhenLoaded": "Quiz questions: 20",
+      "searches": ["public.*MultR", "public.*RecursivelyPrint"]
+    },
+    {
+      "name": "BIT 143 Lesson 06",
+      "abbrev": "3-6",
+      "msgWhenLoaded": "Quiz questions: 20",
+      "searches": ["public.*MultR", "public.*RecursivelyPrint"]
+    },
+    {
+      "name": "BIT 143 Lesson 06 - Summer",
+      "abbrev": "3-6s",
+      "msgWhenLoaded": "Quiz questions: 76",
+      "searches": [
+        "\\(public\\|private\\,.*Add",
+        "\\(public\\|private\\,.*Find",
+        "private.*Print"
+      ]
+    },
+    {
+      "name": "BIT 143 Lesson 07",
+      "abbrev": "3-7",
+      "msgWhenLoaded": "Quiz questions: 35",
+      "searches": ["public.*Add", "public.*Find"]
+    },
+    {
+      "name": "BIT 143 Lesson 07 - Summer",
+      "abbrev": "3-7s",
+      "msgWhenLoaded": "Quiz questions: 73",
+      "searches": [
+        "void.*RemoveNonrootNode",
+        "private.*FindAndRemoveNextSmallerValue",
+        "int.*Partition"
+      ]
+    },
+    {
+      "name": "BIT 143 Lesson 08",
+      "abbrev": "3-8",
+      "msgWhenLoaded": "Quiz questions: 25",
+      "searches": ["private.*Print", "private.*Find", "private.*Add"]
+    },
+    {
+      "name": "BIT 143 Lesson 09",
+      "abbrev": "3-9",
+      "msgWhenLoaded": "Quiz questions: 73",
+      "searches": [
+        "void.*RemoveNonrootNode",
+        "public.*Partition",
+        "int.*partition"
+      ]
+    },
+    {
+      "name": "BIT 143 Lesson 10",
+      "abbrev": "3-10",
+      "msgWhenLoaded": "No viewing quiz - outlines are required instead",
+      "searches": ["public.*Fibonnaci_With_List", "public.*Push", "public.*Pop"]
+    }
+  ]
+}
