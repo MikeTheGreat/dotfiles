@@ -56,6 +56,7 @@ Archived entries from all files
      ("~" org-code verbatim)
      ("+"
       (:background "steelblue" :foreground "midnightblue")))))
+ '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(org-html-doctype "html5")
  '(org-html-html5-fancy t)
  '(org-html-table-default-attributes

@@ -35,7 +35,7 @@ case "$(uname -s)" in
        echo 'Mac OS X'
        alias ls="ls -G"
        alias ll="ls -alFG"
-
+       alias lld="ls -alFGd */"
       # for nix
       # . /Users/mikepanitz/.nix-profile/etc/profile.d/nix.sh
 
@@ -51,6 +51,7 @@ case "$(uname -s)" in
        echo 'MS Windows'
        alias ls="ls --color=auto"
        alias ll="ls -alF --color=auto"
+       alias lld="ls -alF --color=auto -d */"
        ;;
 
    # Add here more strings to compare
