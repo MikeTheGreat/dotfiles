@@ -64,14 +64,18 @@ export CYGWIN
 
 
 alias ll='ls -al'
+# zsh will ignore dups on pushd by default (apparently)
+# this will mess up the symmetry for popd if we pushd .
+unsetopt pushdignoredups
 function lx() {
-    if [[ -z "${1}" ]]; then
-        dir=$1
-    else
-        dir=~
-    fi
-    push $dir > /dev/null
+    # if $1 is undefined then use ~:
+    dir=${1:-~}
+    #echo "Dir is: " $dir
+    
+    pushd $dir > /dev/null
 
+    # Regex removes files that start with a .
+    # sed removes the ./ from the file names (b/c of relative path - . )
     find . -maxdepth 1 -type f -executable -regex '\.\/[^.].*' | sed -e "s/^\.\///g"
 
     popd > /dev/null
