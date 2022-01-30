@@ -1,185 +1,103 @@
-######### Mike specific stuff
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# This is no longer needed, since the SetupMyMac.sh will add a launchd config file to do this
-# across the entire mac (and on Windows we'll set the environment variable)
-# launchd.conf doesn't seem to be working (either GUI or terminal)
-EMACS_COMPUTER_SPECIFIC_CONFIG=~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC
-export EMACS_COMPUTER_SPECIFIC_CONFIG
-# echo "EMACS_COMPUTER_SPECIFIC_CONFIG is set to '$EMACS_COMPUTER_SPECIFIC_CONFIG'";
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-PATH=$PATH:/Users/mikepanitz/Dropbox/Work/bin
-# add the current dir to the search path:
-PATH=$PATH:.
-export PATH
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="amuse"
 
-# Helper function to make better use of the 'cdargs' util (for faster dir switching)
-function cv () {
-       cdargs "$1" && cd "`cat "$HOME/.cdargsresult"`" &&
-       rm -f "$HOME/.cdargsresult";
-}
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Turn on ssh-agent:
-echo -n "Turning on ssh-agent: "
-eval "$(ssh-agent -s)"
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-CYGWIN=winsymlinks:nativestrict
-export CYGWIN
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# # Scripts to bulk-commit repos:
-# CSTR_MSG="No message"
-# commit_student_team_repos() {
-#     echo "$CSTR_MSG"
-#     pushd "/Users/mikepanitz/Desktop/Repos/"
-#     for team in Team31-AppPrototype Team32-AppPrototype Team33-AppPrototype Team34-AppPrototype Team35-AppPrototype
-#     do
-#         echo "$team ==================================================================================================="
-#         add_commit_push "$team" "$CSTR_MSG"
-#     done
-#     popd
-# }
-# alias cstr='commit_student_team_repos'
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-# add_commit_push()  {
-#     pushd $1
-#     echo "Pushed to $1"
-#     git add .
-#     git commit -m "$2"
-#     git push
-#     echo "Done - popping"
-#     popd    
-# }
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-# format_prompts() {
-#     zstyle ':vcs_info:git:*' formats '🔀 %F{240}%b%f '  # format: <gray color:> 🔀 branch
-#     zstyle ':vcs_info:*' enable git
-#     vcs_info
-#     setopt prompt_subst
-#     export PROMPT='$vcs_info_msg_0_%F{blue}>%f '
-#     export RPROMPT='%d%>:%{\e[0m%}'
-# }
-# precmd_functions+=( format_prompts )
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-######### End Mike specific stuff
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-alias ll='ls -al'
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-autoload -U colors && colors
-# For ANSI/VT100 colors and formatting:
-# https://misc.flogisoft.com/bash/tip_colors_and_formatting
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
-# If echo $TERM says 'xterm-256color' then you can use the following colors:
-# https://jonasjacek.github.io/colors/
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-{
-preexec()
-  echo -ne "\e[0m" # Resetting color to default white.
-}
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
+source $ZSH/oh-my-zsh.sh
 
-autoload -Uz vcs_info
+# User configuration
 
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# Before each command prompt this will print
-# PWD: <pwd> (In repo <repo> on branch <branch>)
-# when not in a repo the (In...) part disappears
-# info for messing around with colors (for echo): https://misc.flogisoft.com/bash/tip_colors_and_formatting
-prompts_for_NTs() {
-    #zstyle ':vcs_info:git:*' formats '(In repo \e[36m%r\e[0m on branch \e[1;93m%b\e[0m)'
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-    # It's really important that the formats string is inside DOUBLE quotes :/
-    zstyle ':vcs_info:git:*' formats "(In repo $fg_bold[green]%r$reset_color on branch $fg_bold[yellow]%b\e[0m)"
-    zstyle ':vcs_info:*' enable git
-    vcs_info
-    #echo "\e[2mPWD:\e[0m \e[1m$PWD\e[0m $vcs_info_msg_0_" 
-    print -P "\e[2mPWD:\e[0m $fg_bold[cyan]$PWD\e[0m $vcs_info_msg_0_" 
-    setopt prompt_subst
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-    # rainbows, wheeeee!
-    export PROMPT='%B%F{196}>%F{214}>%F{226}>%F{10}>%F{51}>%F{128}>%F{207}> '
-    export RPROMPT=''
-}
-precmd_functions+=( prompts_for_NTs )
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-set_iterm2_tab_to_current() {
-    # zstyle sets up the format string for vcs_info
-    zstyle ':vcs_info:git:*' formats '%r'
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-    # vcs_info then sets the $vcs_info_msg_0_
-    vcs_info
-
-    # Now we can use the vcs information :)
-    if [[ "${vcs_info_msg_0_}" != "" ]] # if we're in a git repo
-    then
-        echo -ne "\e]1;In Repo: ${vcs_info_msg_0_}\a" # set the iTerm2 tab title to be the repo name
-    else
-        echo -ne "\e]1;In Folder: `basename $PWD`\a" # otherwise print out the current folder's name
-    fi
-}
-precmd_functions+=( set_iterm2_tab_to_current )
-
-
-
-# Turn on tab completion for git & zsh:
-# https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
-autoload -Uz compinit && compinit
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mikepanitz/Desktop/BIT 382/google-cloud-sdk/completion.zsh.inc'; fi
-
-#wcd () {
-#        typeset go="${WCDHOME:-${HOME}}/bin/wcd.go"
-#        rm -f "$go" 2> /dev/null
-#        /usr/lib/wcd/wcd.exe "$@"
-#        [ -f "$go" ] && . "$go"
-#}
-alias g='wcd $@'
-
-##### VIM STUFF
-# Pressing Esc puts us in vim-editting mode:
-bindkey '\e' vi-cmd-mode 
-# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
-export KEYTIMEOUT=1 
-function zle-line-init zle-keymap-select {         
-  RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"    
-  RPS2=$RPS1    
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-##### HISTORY
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
-
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl
-
-### End of Zinit's installer chunk

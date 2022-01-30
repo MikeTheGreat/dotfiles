@@ -3,7 +3,7 @@
     "courses": {
         "115": {
             "canvas_api": {
-                "sz_re_course": "Mike's\\s*115"
+                "sz_re_course": "Mike's BIT 115 \\(2022 Winter\\)"
             },
             "assignments": {
                 "A1": {
@@ -68,8 +68,8 @@
             "github": {
                 "org_name": "BIT-142-Classroom$",
                 // org URLs usually looks like https://api.github.com/orgs/2019-BIT-142
-                "do_not_delete": ["^BIT-142-Lesson-\\d\\d$"],
-                "sz_re_student_repos": "bit-142-lesson-\\d\\d-.+"
+                "do_not_delete": ["^BIT-142-TEMPLATE-"],
+                "sz_re_student_repos": "^(lecture-\\d\\d-.+|assignment.+)"
                 //"sz_re_student_repos": "assignment-space-needle-.+"
             },
             "assignments": {
@@ -236,8 +236,8 @@
             },
             "github": {
                 "org_name": "BIT-143-Classroom$",
-                "do_not_delete": ["^BIT-143-Lesson-\\d\\d$"],
-                "sz_re_student_repos": "lecture-\\d\\d-.+"
+                "do_not_delete": ["^BIT-143-TEMPLATE-"],
+                "sz_re_student_repos": "^(lecture-\\d\\d-.+|assignment.+)"
             },
             "assignments": {
                 "a1": {
@@ -297,7 +297,7 @@
                     "name": "ICE04",
                     "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE04",
                     "github": {
-                        "sz_re_repo": "lecture-?04-" // TODO: Remove the ? after 2021 Fall quarter ends
+                        "sz_re_repo": "lecture-04-"
                     }
                 },
                 "I5": {
@@ -412,7 +412,7 @@
     "canvas": {
         "api": {
             "url": "https://cascadia.instructure.com/",
-            "key": "9~mHJN7aqNxsTuEpAsbsaMSi4gYvYXZDuA22xMHizUTnTq6YRqbIVTHiL886V5dqXf"
+            "key": "NOT COMMITTED TO GITHUB :)"
         },
         "StudentSubFolderMarker": "_FROM_CANVAS",
         "InstructorFeedbackSlug": "_INSTRUCTORFEEDBACK",
@@ -428,9 +428,7 @@
         "ZipFileToUploadToCanvas": "_UPLOAD_TO_CANVAS.zip"
     },
     "github": {
-        "api_key": "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",
-        // possible new, updated / regenerated key:
-        // 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
+        "api_key": "NOT COMMITTED TO GITHUB :)",
         // for "PyCharm Github Integration Plugin access token"
         "grading_list": {
             "tag": "GradedByInstructor"
