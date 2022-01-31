@@ -26,9 +26,9 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}! "
 ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$fg[green]%}? "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)'
-RPROMPT=''
 
+PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)%{$reset_color%}'
+RPROMPT=''
 
 #This was used back with plain zsh:
 # format_prompts() {
