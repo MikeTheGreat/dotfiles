@@ -5,7 +5,7 @@ autoload -Uz vcs_info
 # rainbows, wheeeee!
 rainbowPrompt() {
     echo ' '
-    echo '%B%F{196}>%F{214}>%F{226}>%F{10}>%F{51}>%F{128}>%F{207}> '
+    echo '%B%F{196}>%F{214}>%F{226}>%F{10}>%F{51}>%F{128}>%F{207}>'
 }
 
 printPWD() {
@@ -30,5 +30,5 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$fg[green]%}? "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 
-PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)'
+PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)%{$reset_color%} '
 RPROMPT=''
