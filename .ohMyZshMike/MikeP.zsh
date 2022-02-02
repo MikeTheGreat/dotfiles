@@ -7,9 +7,10 @@ EMACS_COMPUTER_SPECIFIC_CONFIG=~/.emacs.d/Computer_Specific_Config_Files/Mac_CCC
 export EMACS_COMPUTER_SPECIFIC_CONFIG
 # echo "EMACS_COMPUTER_SPECIFIC_CONFIG is set to '$EMACS_COMPUTER_SPECIFIC_CONFIG'";
 
-PATH=$PATH:/Users/mikepanitz/Dropbox/Work/bin
+# PATH=$PATH:/Users/mikepanitz/Dropbox/Work/bin
 # add the current dir to the search path:
 # PATH=$PATH:.
+PATH=$PATH:~
 export PATH
 
 # Helper function to make better use of the 'cdargs' util (for faster dir switching)
@@ -61,7 +62,7 @@ export CYGWIN
 
 ######### End Mike specific stuff
 
-
+eval $(dircolors ~/.dir_colors)
 
 alias ll='ls -al'
 # zsh will ignore dups on pushd by default (apparently)
@@ -82,20 +83,22 @@ function lx() {
 }
 
 
-autoload -U colors && colors
+# This doesn't appear to be needed on oh-my-zsh:
+# autoload -U colors && colors
+
+
 # For ANSI/VT100 colors and formatting:
 # https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
 # If echo $TERM says 'xterm-256color' then you can use the following colors:
 # https://jonasjacek.github.io/colors/
 
-{
-preexec()
-  echo -ne "\e[0m" # Resetting color to default white.
-}
+# {
+# preexec()
+#   echo -ne "\e[0m" # Resetting color to default white.
+# }
 
 
-autoload -Uz vcs_info
 
 
 # Before each command prompt this will print
