@@ -1,0 +1,47 @@
+#FOLDER='/path/to/somewhere'
+# ANOTHER='/path/to/another'
+
+if [ $# -eq 0 ]
+then
+    echo ""
+    echo "ERROR: No arguments supplied"
+    echo ""
+    echo "USAGE:"
+    echo "      $0 <dir to clean>"
+    echo "  <optional second argument, meaning delete .git dirs too"
+    exit 1
+fi
+
+FOLDER="$1"
+
+if [ $# -gt 1 ]
+then
+    echo "In deep clean mode - removing .git and AG folders too"
+
+    echo "Are you sure you want to remove those extra files too?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) echo "Ok, deleting git repos too!"; DEEP_CLEAN=1; break;;
+            No ) exit;;
+        esac
+    done
+fi
+
+
+# -D search   -exec rm -rf '{}' \;
+find  "$PWD/$FOLDER"  \( -name '*.sln' -or -name 'app.config' -or -name 'App.config' -or -name 'packages' -or -name 'bin' -or -name 'obj' -or -name '.vs' -or -name '.idea' -or -name 'Properties' -or -name '__MACOSX' -or -name '.DS_Store' -or -name '*.suo' -or -name '*.csproj' -or -name '*.csproj.user' -or -name '*.userprefs' -or -name '_UPLOAD_TO_CANVAS.zip' -or -name 'z_STUDENTS_WHO_DID_NOT_INCLUDE_FEEDBACK_FILES_IN_THEIR_SUBMISSION' -or -name '*.class' \) -prune -print -exec rm -rf {} \;
+
+if [ -z ${DEEP_CLEAN+x} ];
+then
+    echo "skipping deep clean";
+else
+    echo ""
+    echo ""
+    echo ""
+    echo "Deep Clean - deleting git stuff, AG, etc ==================================================="
+    echo ""
+    echo ""
+    echo ""
+    
+    find  "$PWD/$FOLDER"  \( -name '*.git' -or -name 'AG' -or -name 'UPLOAD.zip' -or -name 'submissions*zip' \) -prune -print -exec rm -rf {} \;
+fi

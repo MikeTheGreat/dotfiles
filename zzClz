@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+if [ $# -eq 0 ]
+then
+    echo ""
+    echo "ERROR: No arguments supplied"
+    echo ""
+    echo "USAGE:"
+    echo "      $0 <dir to clean>"
+    echo "  <optional second argument, meaning delete .git dirs too"
+    exit 1
+fi
+
+FOLDER="$1"
+
+find "$FOLDER" -type f -iname '*.zip' | while read FILE; do
+    #unzip -lqq "$FILE" '*_xx.xml' >/dev/null && echo mv -v "$FILE" "$ANOTHER"/
+
+    echo "****************************"
+    echo "Cleaning $FILE:"
+    zip -d "$FILE" "*/_vti_cnf/*" "*/bin/*" "*/obj/*" "*/\.vs/*" "*/packages/*" "*/\.idea/*" "*/app.config" "*/App.config" "*/Properties/*" "__MACOSX*" "*.DS_Store" "*.sln" "*.suo" "*.csproj" "*.csproj.user" "*.userprefs" "app.config" "*.class" "*/BUILD_VARS.bash" "*/PROJECT_CUSTOMIZER.bash"
+
+    echo ""
+done
