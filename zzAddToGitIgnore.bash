@@ -25,7 +25,7 @@ function main() {
     pushd $SRC > /dev/null 2>&1
     echo "Searching for .gitignore files in: " `pwd` 
     echo "    Adding \*_TEMPLATE_COPIED.txt to the following files:"
-    find . -iname ".gitignore" ! -exec grep -q '_TEMPLATE_COPIED.txt' {} \;  -print -exec sh -c "echo $'\n'    \*_TEMPLATE_COPIED.txt >> \"{}\"" \;
+    find . -iname ".gitignore" ! -exec grep -q '_TEMPLATE_COPIED.txt' {} \;  -print -exec sh -c "echo $'\n'\*_TEMPLATE_COPIED.txt >> \"{}\"" \;
     popd > /dev/null 2>&1
 }
 
