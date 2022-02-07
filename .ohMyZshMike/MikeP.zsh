@@ -159,18 +159,26 @@ function lx() {
 #}
 alias g='wcd $@'
 
-# ##### VIM STUFF
-# # Pressing Esc puts us in vim-editting mode:
-# bindkey '\e' vi-cmd-mode 
-# # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
-# export KEYTIMEOUT=1 
-# function zle-line-init zle-keymap-select {         
-#   RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"    
-#   RPS2=$RPS1    
-#   zle reset-prompt
-# }
-# zle -N zle-line-init
-# zle -N zle-keymap-select
+##### VIM STUFF
+# Pressing Esc puts us in vim-editting mode:
+bindkey '\e' vi-cmd-mode 
+# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1 
+
+# from https://stackoverflow.com/questions/14316463/zsh-clear-rps1-before-adding-line-to-linebuffer
+vim_ins_mode="%{$fg[white]%}-INSERT-%{$reset_color%}"
+vim_cmd_mode="%{$fg_bold[red]%}-COMMAND-%{$reset_color%}"
+#vim_cmd_mode="%{$fg_bold[yellow]$bg[white]%}-COMMAND-%{$reset_color%}"
+
+vim_mode=$vim_ins_mode
+setopt transientrprompt # clear right-side prompt after we press 'enter'
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 ##### HISTORY
 HISTFILE=~/.zsh_history

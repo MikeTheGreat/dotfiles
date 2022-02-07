@@ -10,7 +10,7 @@ function WordToPdf() {
     #echo $PDF_FILE
     #echo `pwd`
 
-    echo "CONVERTING $1 ==to=> $PDF_FILE"
+    echo "CONVERTING $1 => $PDF_FILE"
     #/cygdrive/c/Users/michp/AppData/Roaming/Python/Python38/Scripts/docx2pdf.exe "$1"
     # Turns out, pandoc & Word take about the same amount of time
     # and Word converts DOCX files waaaaay better (much higher fidelity)
