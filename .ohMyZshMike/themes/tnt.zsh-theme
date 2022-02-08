@@ -19,12 +19,12 @@ printRepo() {
 
     if [[ -n $output ]]
     then
-        printf " (In repo $fg_bold[green]%s$reset_color" "$output"
+        printf " (In repo $fg[green]%s$reset_color" "$output"
         git_prompt_info
     fi
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" on branch $fg_bold[yellow]"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on branch $FG[226]"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}! "
 ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$fg[green]%}? "
