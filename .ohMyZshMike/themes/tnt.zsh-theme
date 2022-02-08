@@ -9,7 +9,8 @@ rainbowPrompt() {
 }
 
 printPWD() {
-    printf "\e[2mPWD:\e[0m $fg_bold[cyan]$PWD\e[0m"
+    # FG is in OMZ, accepts spectrum_ls codes
+    echo "$FG[243]PWD: $fg_bold[cyan]$PWD$reset_color"
 }
 
 printRepo() {
@@ -32,3 +33,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)%{$reset_color%} '
 RPROMPT=''
+
+# set color for the text that we type in:
+zle_highlight=(default:bold,fg=#F5F)

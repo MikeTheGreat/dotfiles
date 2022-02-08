@@ -74,8 +74,9 @@ bindkey '\e' vi-cmd-mode
 export KEYTIMEOUT=1 
 
 # from https://stackoverflow.com/questions/14316463/zsh-clear-rps1-before-adding-line-to-linebuffer
-vim_ins_mode="%{$fg[white]%}-INSERT-%{$reset_color%}"
-vim_cmd_mode="%{$fg_bold[red]%}-COMMAND-%{$reset_color%}"
+#vim_ins_mode="%{$fg[white]%}-INSERT-%{$reset_color%}"
+vim_ins_mode="%{$FG[243]%}-INSERT-%{$reset_color%}"
+vim_cmd_mode="%{$FG[160]%}-COMMAND-%{$reset_color%}"
 #vim_cmd_mode="%{$fg_bold[yellow]$bg[white]%}-COMMAND-%{$reset_color%}"
 
 vim_mode=$vim_ins_mode
