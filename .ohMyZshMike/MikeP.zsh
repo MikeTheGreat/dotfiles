@@ -58,9 +58,23 @@ function lx() {
 # }
 # precmd_functions+=( set_iterm2_tab_to_current )
 
+# for more info: omz plugin info jump
+# | Command              | Description                                                                                     |
+# |----------------------|-------------------------------------------------------------------------------------------------|
+# | `jump <mark-name>`   | Jump to the given mark                                                                          |
+# | `mark [mark-name]`   | Create a mark with the given name or with the name of the current directory if none is provided |
+# | `unmark <mark-name>` | Remove the given mark                                                                           |
+# | `marks`              | List the existing marks and the directories they point to                                       |
+## Key bindings
+# Pressing `CTRL`+`G` substitutes the written mark name for the full path of the mark.
+
+#  Note that the plugin is added in ~/.zshrc
+alias g='jump $@'
+
 
 # My current way of jumping to dirs:
-alias g='wcd $@'
+#alias g='wcd $@'
+
 # # Helper function to make better use of the 'cdargs' util (for faster dir switching)
 # function cv () {
 #        cdargs "$1" && cd "`cat "$HOME/.cdargsresult"`" &&

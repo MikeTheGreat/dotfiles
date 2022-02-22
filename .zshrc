@@ -75,6 +75,7 @@ ZSH_CUSTOM=~/.ohMyZshMike/
 plugins=(
     git
     zsh-autosuggestions
+    jump # for more info: omz plugin info jump
 )
 
 source $ZSH/oh-my-zsh.sh
