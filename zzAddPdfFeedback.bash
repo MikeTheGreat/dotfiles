@@ -31,6 +31,13 @@ function main() {
     # convert to cygwin, (idempotent if it's already in cygpath format)
     SRC="$1"
     
+    if [ ! -d "$SRC" ]
+    then
+        # echo the name of the script, without the leading path:
+        echo "${0//*\//}: $SRC does not exist."
+        exit -1
+    fi
+
     #find . -iname ".gitignore" -exec sh -c "echo $'\n'\*_TEMPLATE_COPIED.txt >> {}" \;
     pushd $SRC > /dev/null 2>&1
     echo "Searching for Word files to export to .PDF in: " `pwd` 
@@ -43,7 +50,7 @@ function main() {
     #find . -iregex "In Class Exercises\.*docx$" -print  -execdir bash -c 'WordToPdf "$0"' {}  \;  
     #find . -iname "A1_SpaceNeedle*.docx"  -execdir bash -c 'WordToPdf "$0"' {}  \;  
 #    find . -regex "\(.*In Class Exercises - Lecture .*docx$\|.*A1_SpaceNeedle.*docx\|.*A2_BirthdayInfo.*docx\|.*A3_Adding_Large_Integers.*docx\|.*A4_Grocery_List.*docx\)" -execdir bash -c 'WordToPdf "$0"' {}  \;
-    find . -regex "\(.*In Class Exercises - Lecture .*docx$\|\./A[1234567890].*docx\)" -execdir bash -c 'WordToPdf "$0"' {}  \;
+    find . -regex "\(.*In Class Exercises - Lecture .*docx$\|.*A[1234567890].*docx\)" -execdir bash -c 'WordToPdf "$0"' {}  \;
 
     popd > /dev/null 2>&1
 }

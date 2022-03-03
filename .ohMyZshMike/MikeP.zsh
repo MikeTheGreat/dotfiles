@@ -21,6 +21,9 @@ export CYGWIN
 eval $(dircolors ~/.dir_colors)
 
 alias ll='ls -al'
+alias h=history
+
+alias gdt='git difftool'
 
 # List out all the executable files in my ~ directory 
 # (so I can see all the zz* helper scripts)
