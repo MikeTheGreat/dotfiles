@@ -18,12 +18,27 @@ eval "$(ssh-agent -s)"
 CYGWIN=winsymlinks:nativestrict
 export CYGWIN
 
+# ~./dir_colors is the human-readable file
+# describing which colors to use
 eval $(dircolors ~/.dir_colors)
+
+# Nicely formatted tab completion:
+# from https://stackoverflow.com/a/16149200/250610
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
+
+# Turn on menu completion, and allow me to use arrow keys to move around
+# https://stackoverflow.com/questions/29196718/zsh-highlight-on-tab
+zstyle ':completion:*' menu select
+
+# DISABLE colors for tab-completion:
+# from https://unix.stackexchange.com/a/447002/158311
+#zstyle ':completion:*' list-colors
 
 alias ll='ls -al'
 alias h=history
 
 alias gdt='git difftool'
+alias gal='less /cygdrive/c/MikesStuff/Pers/Dropbox/Personal/home/.oh-my-zsh/plugins/git/README.md'
 
 # List out all the executable files in my ~ directory 
 # (so I can see all the zz* helper scripts)
