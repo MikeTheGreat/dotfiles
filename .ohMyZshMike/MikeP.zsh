@@ -36,9 +36,23 @@ zstyle ':completion:*' menu select
 
 alias ll='ls -al'
 alias h=history
+# Using this we can open files, such as "o Code.java".  "o" by itself starts the File Explorer
+alias o='explorer.exe'
+
+#alias do='"/cygdrive/c/Program Files/GPSoftware/Directory Opus/dopus.exe"'
 
 alias gdt='git difftool'
 alias gal='less /cygdrive/c/MikesStuff/Pers/Dropbox/Personal/home/.oh-my-zsh/plugins/git/README.md'
+# git - recently changed (by a student)
+# --date is strftime format
+alias grc='for d in * ; do
+echo " "
+echo $d "=========================================="
+pushd $d &> /dev/null
+git --no-pager log --date=format:"%Y-%m-%d %I:%M %p" --pretty=format:"%ad %Cred %an %Creset %s" --after="Mar 11" | grep -v -e Panitz -e bot -
+popd &> /dev/null
+done'
+
 
 # List out all the executable files in my ~ directory 
 # (so I can see all the zz* helper scripts)
