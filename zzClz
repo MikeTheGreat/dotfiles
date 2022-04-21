@@ -8,6 +8,8 @@ then
     echo "USAGE:"
     echo "      $0 <dir to clean>"
     echo "  <optional second argument, meaning delete .git dirs too"
+    echo ""
+    echo "This script removes 'junk' files from directories (like \*.class files)"
     exit 1
 fi
 

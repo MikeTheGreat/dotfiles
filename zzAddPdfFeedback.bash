@@ -51,8 +51,11 @@ function main() {
     #find . -iname "A1_SpaceNeedle*.docx"  -execdir bash -c 'WordToPdf "$0"' {}  \;  
 #    find . -regex "\(.*In Class Exercises - Lecture .*docx$\|.*A1_SpaceNeedle.*docx\|.*A2_BirthdayInfo.*docx\|.*A3_Adding_Large_Integers.*docx\|.*A4_Grocery_List.*docx\)" -execdir bash -c 'WordToPdf "$0"' {}  \;
     find . -regex "\(.*In Class Exercises - Lecture .*docx$\|.*A[1234567890].*docx\)" -execdir bash -c 'WordToPdf "$0"' {}  \;
+    retVal=$? # save results of the replacement
 
     popd > /dev/null 2>&1
+
+    return $retVal
 }
 
 # Remove the last item in my path (which is my .)

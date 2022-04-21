@@ -9,6 +9,8 @@ then
     echo "USAGE:"
     echo "      $0 <dir to clean>"
     echo "  <optional second argument, meaning delete .git dirs too"
+    echo ""
+    echo ""
     exit 1
 fi
 
