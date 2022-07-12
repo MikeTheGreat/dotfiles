@@ -95,6 +95,10 @@ brew install --cask mouse-locator
 # │   │   ├── Ob\ suggested\ Curriculum.md
 brew install tree
 
+# Navigate directories using a tree-list CLI:
+# https://dystroy.org/broot/
+brew install broot
+
 #better window management:
 brew install --cask rectangle
 
@@ -153,7 +157,10 @@ brew install --cask iterm2
 brew install --cask visual-studio-code 
 
 # Markdown editor:
-brew install --cask typora
+#brew install --cask typora # now requires purchase
+# brew install --cask yu-writer # really nice EXCEPT that it kept copying images into $resources subfolder
+# brew install --cask abricotine # pretty nice, but didn't actually do the Live Preview thing
+brew install --cask mark-text
 
 # Different Markdown editor:
 # brew install --cask Zettlr
@@ -432,14 +439,17 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 
 ########################## Org Mode ###########################################
 
+#Try this instead:
+brew install --cask obsidian
+
 # Emacs-plus:
-brew tap d12frosted/emacs-plus
-brew install emacs-plus
-ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+#brew tap d12frosted/emacs-plus
+#brew install emacs-plus
+#ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
 
 # straight.el gets installed outside of DropBox:
-mkdir ~/emacs_straight
-chmod 777 ~/emacs_straight
+#mkdir ~/emacs_straight
+#chmod 777 ~/emacs_straight
 
 
 echo -n "Press the 'Return' key once you've downloaded the 'home' directory from DropBox into ~/DropBox/home.  "
@@ -447,36 +457,36 @@ read answer
 echo "Great, proceeding with installation"
 
 # Link the .emacs.d into my DropBox copy:
-ln -s ~/Dropbox/Personal/home/.emacs.d ~/.emacs.d
+#ln -s ~/Dropbox/Personal/home/.emacs.d ~/.emacs.d
 
 # For MacOS GUI apps we'll need to set these another way:
 # http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-mac-os-x-launchd-plist/
-cat << EOF | sudo tee /Library/LaunchDaemons/setenv.EMACS_COMPUTER_SPECIFIC_CONFIG.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-  <plist version="1.0">
-  <dict>
-  <key>Label</key>
-  <string>setenv.BAR</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/bin/launchctl</string>
-    <string>setenv</string>
-    <string>EMACS_COMPUTER_SPECIFIC_CONFIG</string>
-    <string>~/.emacs.d/Computer_Specific_Config_Files/TNT_Macbook</string>
-  </array>
-  <key>RunAtLoad</key>
-  <true/>
-  <key>ServiceIPC</key>
-  <false/>
-</dict>
-</plist>
-EOF
+# cat << EOF | sudo tee /Library/LaunchDaemons/setenv.EMACS_COMPUTER_SPECIFIC_CONFIG.plist
+# <?xml version="1.0" encoding="UTF-8"?>
+# <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+#   <plist version="1.0">
+#   <dict>
+#   <key>Label</key>
+#   <string>setenv.BAR</string>
+#   <key>ProgramArguments</key>
+#   <array>
+#     <string>/bin/launchctl</string>
+#     <string>setenv</string>
+#     <string>EMACS_COMPUTER_SPECIFIC_CONFIG</string>
+#     <string>~/.emacs.d/Computer_Specific_Config_Files/TNT_Macbook</string>
+#   </array>
+#   <key>RunAtLoad</key>
+#   <true/>
+#   <key>ServiceIPC</key>
+#   <false/>
+# </dict>
+# </plist>
+# EOF
 
-launchctl load -w /Library/LaunchDaemons/setenv.EMACS_COMPUTER_SPECIFIC_CONFIG.plist
+# launchctl load -w /Library/LaunchDaemons/setenv.EMACS_COMPUTER_SPECIFIC_CONFIG.plist
 
 
-brew services start emacs-plus
+# brew services start emacs-plus
 
 # There are emacs reminders printed out at the end of this script
 
@@ -485,9 +495,11 @@ brew services start emacs-plus
 
 ln -s ~/Dropbox/Personal/home/.bashrc ~/.bashrc
 ln -s ~/Dropbox/Personal/home/.zshrc ~/.zshrc
+ln -s ~/DropBox/Personal/home/.oh-my-zsh ~/.oh-my-zsh
+ln -s ~/DropBox/Personal/home/.ohMyZshMike ~/.ohMyZshMike
 
 ############################ Reminders ########################################
-echo "REMEMBER: Set up the environment variables that emacs needs"
-echo "namely,"
-echo "EMACS_COMPUTER_SPECIFIC_CONFIG"
-echo "Remember that there's example configs inside ~/.emacs.d/Computer_Specific_Config_Files"
+# echo "REMEMBER: Set up the environment variables that emacs needs"
+# echo "namely,"
+# echo "EMACS_COMPUTER_SPECIFIC_CONFIG"
+# echo "Remember that there's example configs inside ~/.emacs.d/Computer_Specific_Config_Files"

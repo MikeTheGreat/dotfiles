@@ -9,6 +9,8 @@
 # BIT 143:
 # UpdateZIPFILEs.bash /cygdrive/c/MikesStuff/Pers/Dropbox/Work/Courses/BIT_143_Starter_ZIPFILEs /cygdrive/c/MikesStuff/Pers/Dropbox/Work/Courses/BIT_143_Starter_ZIPFILEs_New
 
+LINE_TO_ADD="GitCommitsAndGitHubPushes.txt"
+
 function main() {
     ONLY_EXTRACT_THESE=".*"
 
@@ -24,8 +26,8 @@ function main() {
     #find . -iname ".gitignore" -exec sh -c "echo $'\n'\*_TEMPLATE_COPIED.txt >> {}" \;
     pushd $SRC > /dev/null 2>&1
     echo "Searching for .gitignore files in: " `pwd` 
-    echo "    Adding \*_TEMPLATE_COPIED.txt to the following files:"
-    find . -iname ".gitignore" ! -exec grep -q '_TEMPLATE_COPIED.txt' {} \;  -print -exec sh -c "echo $'\n'\*_TEMPLATE_COPIED.txt >> \"{}\"" \;
+    echo "    Adding ${LINE_TO_ADD} to the following files:"
+    find . -iname ".gitignore" ! -exec grep -q "${LINE_TO_ADD}" {} \;  -print  -exec sh -c "echo $'\n'${LINE_TO_ADD} >> \"{}\"" \;
     popd > /dev/null 2>&1
 }
 
