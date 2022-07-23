@@ -399,6 +399,55 @@
                     }
                 }
             }
+        },
+        "265": {
+            "canvas_api": {
+                "sz_re_course": "Mike's BIT 265 \\(2022 Spring\\)"
+            },
+            "assignments": {
+                "A1": {
+                    "name": "A1",
+                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Assignment_1",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 (first version)"
+                    }
+                },
+                "A1R": {
+                    "name": "A1R",
+                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\Assignment_1_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 Revision"
+                    }
+                },
+                "Al1": {
+                    "name": "Al1",
+                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_1",
+                    "canvas_api": {
+                        "canvas_name": "Algorithm #1 First Version"
+                    }
+                },
+                "Al1R": {
+                    "name": "Al1R",
+                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_1_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Algorithm #1 Final, Revised Version"
+                    }
+                },
+                "Al2": {
+                    "name": "Al2",
+                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_2",
+                    "canvas_api": {
+                        "canvas_name": "Algorithm #2 First Version"
+                    }
+                },
+                "Al2R": {
+                    "name": "Al2R",
+                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_2_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Algorithm #2 Final, Revised Version"
+                    }
+                }
+            }
         }
     },
 

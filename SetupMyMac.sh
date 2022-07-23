@@ -77,7 +77,7 @@ mas install 953841977
 # mas install 1523853410
 
 # Screenbrush:
-mas install 
+mas install 1233965871
 
 # Mouse Locator:
 # NOTE: Doesn't work with current MacOS (May 2021)
@@ -169,6 +169,9 @@ brew install --cask mark-text
 
 # Open Broadcaster Suite
 brew install --cask obs
+
+# Shotcut:
+brew install --cask shotcut
 
 ########################## Comms ##############################################
 brew install --cask microsoft-teams
@@ -497,6 +500,8 @@ ln -s ~/Dropbox/Personal/home/.bashrc ~/.bashrc
 ln -s ~/Dropbox/Personal/home/.zshrc ~/.zshrc
 ln -s ~/DropBox/Personal/home/.oh-my-zsh ~/.oh-my-zsh
 ln -s ~/DropBox/Personal/home/.ohMyZshMike ~/.ohMyZshMike
+
+brew install fzf
 
 ############################ Reminders ########################################
 # echo "REMEMBER: Set up the environment variables that emacs needs"
