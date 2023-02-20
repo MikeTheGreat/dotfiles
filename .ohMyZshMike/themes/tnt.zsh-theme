@@ -31,7 +31,12 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$fg[green]%}? "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 
-PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)%{$reset_color%} '
+# There's an issue with git on windows that causes the zsh to lock up
+# when window resizes: https://github.com/msys2/MSYS2-packages/issues/2820
+# So I'll disable the git stuff...
+#PROMPT='$(printPWD)$(printRepo)$(rainbowPrompt)%{$reset_color%} '
+# ... and go with a plain-er prompt instead:
+PROMPT='$(printPWD)$(rainbowPrompt)%{$reset_color%} '
 RPROMPT=''
 
 # set color for the text that we type in:

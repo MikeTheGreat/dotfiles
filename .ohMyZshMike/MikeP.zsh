@@ -1,3 +1,9 @@
+# TODO / Stuff to look into:
+#  CDPATH (on zsh, lower case cdpath is the array version) - shortcut for jumping to directories
+#  fzf for searching for files / through stdin
+
+
+
 # This is no longer needed, since the SetupMyMac.sh will add a launchd config file to do this
 # across the entire mac (and on Windows we'll set the environment variable)
 # launchd.conf doesn't seem to be working (either GUI or terminal)
@@ -12,8 +18,8 @@ PATH=$PATH:~
 export PATH
 
 # Turn on ssh-agent:
-echo -n "Turning on ssh-agent: "
-eval "$(ssh-agent -s)"
+#echo -n "Turning on ssh-agent: "
+#eval "$(ssh-agent -s)"
 
 CYGWIN=winsymlinks:nativestrict
 export CYGWIN
@@ -44,16 +50,30 @@ alias o='explorer.exe'
 git config --global core.pager off
 alias gdt='git difftool'
 alias gal='less /cygdrive/c/MikesStuff/Pers/Dropbox/Personal/home/.oh-my-zsh/plugins/git/README.md'
+alias gtt='gt g t '
 # git - recently changed (by a student)
 # --date is strftime format
-alias grc='for d in * ; do
-echo " "
-echo $d "=========================================="
-pushd $d &> /dev/null
-git --no-pager log --date=format:"%Y-%m-%d %I:%M %p" --pretty=format:"%ad %Cred %an %Creset %s" --after="Mar 11" | grep -v -e Panitz -e bot -
-popd &> /dev/null
-done'
+function grc() {
 
+    # How to check for an argument:
+    if [[ ! -v 1 ]]; then
+        afterTime="Jan 1 1970"
+    else
+        afterTime="$*"
+    fi
+
+    for d in * ; do
+        echo " "
+        echo $d "=========================================="
+        pushd $d &> /dev/null
+        git --no-pager log --date=format:"%Y-%m-%d %I:%M %p" --pretty=format:"%ad %Cred %an %Creset %s" --after="$afterTime" | grep -v -e Panitz -e bot -
+        popd &> /dev/null
+    done
+}
+
+function t() {
+    # echo $1
+}
 
 # List out all the executable files in my ~ directory 
 # (so I can see all the zz* helper scripts)
@@ -105,7 +125,7 @@ function lx() {
 alias g='jump $@'
 
 
-# My current way of jumping to dirs:
+# My previous way of jumping to dirs:
 #alias g='wcd $@'
 
 # # Helper function to make better use of the 'cdargs' util (for faster dir switching)
@@ -114,29 +134,29 @@ alias g='jump $@'
 #        rm -f "$HOME/.cdargsresult";
 # }
 
-##### VIM STUFF
-# Pressing Esc puts us in vim-editting mode:
-bindkey '\e' vi-cmd-mode 
-# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
-export KEYTIMEOUT=1 
+# ##### VIM STUFF
+# # Pressing Esc puts us in vim-editting mode:
+# bindkey '\e' vi-cmd-mode 
+# # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+# export KEYTIMEOUT=1 
 
-# from https://stackoverflow.com/questions/14316463/zsh-clear-rps1-before-adding-line-to-linebuffer
-#vim_ins_mode="%{$fg[white]%}-INSERT-%{$reset_color%}"
-vim_ins_mode="%{$FG[243]%}-INSERT-%{$reset_color%}"
-vim_cmd_mode="%{$FG[160]%}-COMMAND-%{$reset_color%}"
-#vim_cmd_mode="%{$fg_bold[yellow]$bg[white]%}-COMMAND-%{$reset_color%}"
+# # from https://stackoverflow.com/questions/14316463/zsh-clear-rps1-before-adding-line-to-linebuffer
+# #vim_ins_mode="%{$fg[white]%}-INSERT-%{$reset_color%}"
+# vim_ins_mode="%{$FG[243]%}-INSERT-%{$reset_color%}"
+# vim_cmd_mode="%{$FG[160]%}-COMMAND-%{$reset_color%}"
+# #vim_cmd_mode="%{$fg_bold[yellow]$bg[white]%}-COMMAND-%{$reset_color%}"
 
-vim_mode=$vim_ins_mode
-setopt transientrprompt # clear right-side prompt after we press 'enter'
+# vim_mode=$vim_ins_mode
+# setopt transientrprompt # clear right-side prompt after we press 'enter'
 
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-#zle -N zle-line-init
-#  WARNING: The following sometimes deletes the previous line CLI line :(
-#zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#     RPS1="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# #zle -N zle-line-init
+# #  WARNING: The following sometimes deletes the previous line CLI line :(
+# #zle -N zle-keymap-select
 
 ##### HISTORY
 HISTFILE=~/.zsh_history

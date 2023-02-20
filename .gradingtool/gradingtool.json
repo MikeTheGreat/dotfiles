@@ -3,63 +3,70 @@
     "courses": {
         "115": {
             "canvas_api": {
-                "sz_re_course": "Mike's BIT 115 \\(2022 Winter\\)"
+                "sz_re_course": "Mike's BIT 115 \\(2023 Winter\\)"
             },
             "assignments": {
                 "A1": {
                     "name": "A1",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A1_User_Input",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A1_User_Input",
                     "canvas_api": {
                         "canvas_name": "Assignment 1 - User's Input"
                     }
                 },
                 "A1R": {
                     "name": "A1R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A1_User_Input_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A1_User_Input_REVISION",
                     "canvas_api": {
                         "canvas_name": "Assignment 1 Final, Revised Version"
                     }
                 },
                 "A2": {
                     "name": "A2",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A2_Employees_Hourly_Wages",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A2_Employees_Hourly_Wages",
                     "canvas_api": {
                         "canvas_name": "Assignment 2 - Employees Hourly Wages"
                     }
                 },
                 "A2R": {
                     "name": "A2R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A2_Employees_Hourly_Wages_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A2_Employees_Hourly_Wages_REVISION",
                     "canvas_api": {
                         "canvas_name": "Assignment 2 Final, Revised Version"
                     }
                 },
                 "A3": {
                     "name": "A3",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A3_College_Admission",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A3_College_Admission",
                     "canvas_api": {
                         "canvas_name": "Assignment 3 - College Admission"
                     }
                 },
                 "A3R": {
                     "name": "A3R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A3_College_Admission_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A3_College_Admission_REVISION",
                     "canvas_api": {
                         "canvas_name": "Assignment 3 Final, Revised Version"
                     }
                 },
                 "A4": {
                     "name": "A4",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A4_Password_Testing_System",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A4_Password_Testing_System",
                     "canvas_api": {
                         "canvas_name": "Assignment 4 - Password Testing System"
                     }
                 },
                 "A4R": {
                     "name": "A4R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\A4_Password_Testing_System_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A4_Password_Testing_System_REVISION",
                     "canvas_api": {
                         "canvas_name": "Assignment 4 Final, Revised Version"
+                    }
+                },
+                "ICE51": {
+                    "name": "ICE51",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\Exercise 05-1_ Conditional Code Tracing, Finding, and Fixing Errors",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 05-1: Conditional Code Tracing, Finding, and Fixing Errors"
                     }
                 }
             }
@@ -75,28 +82,28 @@
             "assignments": {
                 "a1": {
                     "name": "Assignment_01_Space_Needle",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\A1_SpaceNeedle",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A1_SpaceNeedle",
                     "github": {
                         "sz_re_repo": "assignment_space_needle-"
                     }
                 },
                 "a2": {
                     "name": "Assignment_02_Birthdays",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\A2_Birthdays",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A2_Birthdays",
                     "github": {
                         "sz_re_repo": "assignment_birthdays-"
                     }
                 },
                 "a3": {
                     "name": "Assignment_03_Adding_Large_Integers",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\A3_Adding_Large_Integers",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A3_Adding_Large_Integers",
                     "github": {
                         "sz_re_repo": "assignment_adding_large_integers-"
                     }
                 },
                 "a4": {
                     "name": "Assignment_04_Grocery_List",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\A4_Grocery_List",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A4_Grocery_List",
                     "github": {
                         "sz_re_repo": "assignment_grocery_list-"
                     }
@@ -104,126 +111,126 @@
 
                 "I1": {
                     "name": "ICE01",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE01",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE01",
                     "github": {
                         "sz_re_repo": "lecture-01-"
                     }
                 },
                 "I2": {
                     "name": "ICE02",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE02",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE02",
                     "github": {
                         "sz_re_repo": "lecture-02-"
                     }
                 },
                 "I3": {
                     "name": "ICE03",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE03",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE03",
                     "github": {
                         "sz_re_repo": "lecture-03-"
                     }
                 },
                 "I4": {
                     "name": "ICE04",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE04",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE04",
                     "github": {
                         "sz_re_repo": "lecture-04-"
                     }
                 },
                 "I5": {
                     "name": "ICE05",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE05",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE05",
                     "github": {
                         "sz_re_repo": "lecture-05-"
                     }
                 },
                 "I6": {
                     "name": "ICE06",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE06",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE06",
                     "github": {
                         "sz_re_repo": "lecture-06-"
                     }
                 },
                 "I7": {
                     "name": "ICE07",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE07",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE07",
                     "github": {
                         "sz_re_repo": "lecture-07-"
                     }
                 },
                 "I8": {
                     "name": "ICE08",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE08",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE08",
                     "github": {
                         "sz_re_repo": "lecture-08-"
                     }
                 },
-                "I9": {
-                    "name": "ICE09",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE09",
-                    "github": {
-                        "sz_re_repo": "lecture-09-"
-                    }
-                },
-                "I10": {
-                    "name": "ICE10",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE10",
-                    "github": {
-                        "sz_re_repo": "lecture-10-"
-                    }
-                },
+                // "I9": {
+                //     "name": "ICE09",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE09",
+                //     "github": {
+                //         "sz_re_repo": "lecture-09-"
+                //     }
+                // },
+                // "I10": {
+                //     "name": "ICE10",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE10",
+                //     "github": {
+                //         "sz_re_repo": "lecture-10-"
+                //     }
+                // },
                 "I11": {
                     "name": "ICE11",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE11",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE11",
                     "github": {
                         "sz_re_repo": "lecture-11-"
                     }
                 },
                 "I12": {
                     "name": "ICE12",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE12",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE12",
                     "github": {
                         "sz_re_repo": "lecture-12-"
                     }
                 },
                 "I13": {
                     "name": "ICE13",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE13",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE13",
                     "github": {
                         "sz_re_repo": "lecture-13-"
                     }
                 },
                 "I14": {
                     "name": "ICE14",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE14",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE14",
                     "github": {
                         "sz_re_repo": "lecture-14-"
                     }
                 },
                 "I15": {
                     "name": "ICE15",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE15",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE15",
                     "github": {
                         "sz_re_repo": "lecture-15-"
                     }
                 },
                 "I16": {
                     "name": "ICE16",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE16",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE16",
                     "github": {
                         "sz_re_repo": "lecture-16-"
                     }
                 },
                 "I17": {
                     "name": "ICE17",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE17",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE17",
                     "github": {
                         "sz_re_repo": "lecture-17-"
                     }
                 },
                 "I18": {
                     "name": "ICE18",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_142_New\\ICE18",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE18",
                     "github": {
                         "sz_re_repo": "lecture-18-"
                     }
@@ -242,28 +249,35 @@
             "assignments": {
                 "a1": {
                     "name": "Assignment_01_Shopping_Cart",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\A1_Shopping_Cart",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A1_Shopping_Cart",
                     "github": {
                         "sz_re_repo": "assignment_shopping_cart-"
                     }
                 },
-                "a2": {
-                    "name": "Assignment_02_Stable_Marriage",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\A2_Stable_Marriage",
+                 "a2": {
+                    "name": "Assignment_02_Ranked_Choice_Voting",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Ranked_Choice_Voting",
                     "github": {
-                        "sz_re_repo": "assignment_stable_marriage-"
+                        "sz_re_repo": "assignment_ranked_choice_voting-"
                     }
                 },
+                // "a2_stable_marriage": {
+                //     "name": "Assignment_02_Stable_Marriage",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Stable_Marriage",
+                //     "github": {
+                //         "sz_re_repo": "assignment_stable_marriage-"
+                //     }
+                // },
                 "a3": {
                     "name": "Assignment_03_Student_Services_Desk",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\A3_Student_Services_Desk",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A3_Student_Services_Desk",
                     "github": {
                         "sz_re_repo": "assignment_student_services_desk-"
                     }
                 },
                 "a4": {
                     "name": "Assignment_04_Reverse_Polish_Notation",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\A4_Reverse_Polish_Notation",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A4_Reverse_Polish_Notation",
                     "github": {
                         "sz_re_repo": "assignment_reverse_polish_notation-"
                     }
@@ -271,7 +285,7 @@
 
                 "I1": {
                     "name": "ICE01",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE01",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE01",
                     "github": {
                         "sz_re_repo": "lecture-01-"
                     },
@@ -281,119 +295,119 @@
                 },
                 "I2": {
                     "name": "ICE02",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE02",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE02",
                     "github": {
                         "sz_re_repo": "lecture-02-"
                     }
                 },
                 "I3": {
                     "name": "ICE03",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE03",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE03",
                     "github": {
                         "sz_re_repo": "lecture-03-"
                     }
                 },
                 "I4": {
                     "name": "ICE04",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE04",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE04",
                     "github": {
                         "sz_re_repo": "lecture-04-"
                     }
                 },
                 "I5": {
                     "name": "ICE05",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE05",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE05",
                     "github": {
                         "sz_re_repo": "lecture-05-"
                     }
                 },
                 "I6": {
                     "name": "ICE06",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE06",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE06",
                     "github": {
                         "sz_re_repo": "lecture-06-"
                     }
                 },
                 "I7": {
                     "name": "ICE07",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE07",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE07",
                     "github": {
                         "sz_re_repo": "lecture-07-"
                     }
                 },
                 "I8": {
                     "name": "ICE08",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE08",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE08",
                     "github": {
                         "sz_re_repo": "lecture-08-"
                     }
                 },
                 // "I9": {
                 //     "name": "ICE09",
-                //     "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE09",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE09",
                 //     "github": {
                 //         "sz_re_repo": "lecture-09-"
                 //     }
                 // },
                 // "I10": {
                 //     "name": "ICE10",
-                //     "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE10",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE10",
                 //     "github": {
                 //         "sz_re_repo": "lecture-10-"
                 //     }
                 // },
                 "I11": {
                     "name": "ICE11",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE11",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE11",
                     "github": {
                         "sz_re_repo": "lecture-11-"
                     }
                 },
                 "I12": {
                     "name": "ICE12",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE12",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE12",
                     "github": {
                         "sz_re_repo": "lecture-12-"
                     }
                 },
                 "I13": {
                     "name": "ICE13",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE13",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE13",
                     "github": {
                         "sz_re_repo": "lecture-13-"
                     }
                 },
                 "I14": {
                     "name": "ICE14",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE14",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE14",
                     "github": {
                         "sz_re_repo": "lecture-14-"
                     }
                 },
                 "I15": {
                     "name": "ICE15",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE15",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE15",
                     "github": {
                         "sz_re_repo": "lecture-15-"
                     }
                 },
                 "I16": {
                     "name": "ICE16",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE16",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE16",
                     "github": {
                         "sz_re_repo": "lecture-16-"
                     }
                 },
                 "I17": {
                     "name": "ICE17",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE17",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE17",
                     "github": {
                         "sz_re_repo": "lecture-17-"
                     }
                 },
                 "I18": {
                     "name": "ICE18",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_143_New\\ICE18",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE18",
                     "github": {
                         "sz_re_repo": "lecture-18-"
                     }
@@ -407,42 +421,42 @@
             "assignments": {
                 "A1": {
                     "name": "A1",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Assignment_1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Assignment_1",
                     "canvas_api": {
                         "canvas_name": "Assignment 1 (first version)"
                     }
                 },
                 "A1R": {
                     "name": "A1R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_115_New\\Assignment_1_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\Assignment_1_REVISION",
                     "canvas_api": {
                         "canvas_name": "Assignment 1 Revision"
                     }
                 },
                 "Al1": {
                     "name": "Al1",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_1",
                     "canvas_api": {
                         "canvas_name": "Algorithm #1 First Version"
                     }
                 },
                 "Al1R": {
                     "name": "Al1R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_1_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_1_REVISION",
                     "canvas_api": {
                         "canvas_name": "Algorithm #1 Final, Revised Version"
                     }
                 },
                 "Al2": {
                     "name": "Al2",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_2",
                     "canvas_api": {
                         "canvas_name": "Algorithm #2 First Version"
                     }
                 },
                 "Al2R": {
                     "name": "Al2R",
-                    "dest_dir": "C:\\MikesStuff\\Work\\Student_Work\\BIT_265_New\\Algorithm_2_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_2_REVISION",
                     "canvas_api": {
                         "canvas_name": "Algorithm #2 Final, Revised Version"
                     }
@@ -450,7 +464,6 @@
             }
         }
     },
-
     "autograder": {
         "default_config_file_name": "Assign.config.json",
         "csharp_nunit": {
@@ -461,7 +474,7 @@
     "canvas": {
         "api": {
             "url": "https://cascadia.instructure.com/",
-            "key": "NOT COMMITTED TO GITHUB :)"
+            "key": ""
         },
         "StudentSubFolderMarker": "_FROM_CANVAS",
         "InstructorFeedbackSlug": "_INSTRUCTORFEEDBACK",
@@ -477,7 +490,7 @@
         "ZipFileToUploadToCanvas": "_UPLOAD_TO_CANVAS.zip"
     },
     "github": {
-        "api_key": "NOT COMMITTED TO GITHUB :)",
+        "api_key": "",
         // for "PyCharm Github Integration Plugin access token"
         "grading_list": {
             "tag": "GradedByInstructor"
@@ -485,7 +498,8 @@
     },
     "misc_files": {
         "BackupDirName": "GRADING_TOOL_BACKUPS",
-        "FileAlreadyProcessedMarker": "_TEMPLATE_COPIED"
+        "FileAlreadyProcessedMarker": "_TEMPLATE_COPIED",
+        "WordFilesToConvert": "(.*In Class Exercises - Lecture.* docx$|.*A[1234567890].*docx$)"
     },
     "generate_exam": {
         "exams": {
