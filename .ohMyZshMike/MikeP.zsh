@@ -53,25 +53,25 @@ git config --global core.pager off
 alias gdt='git difftool'
 alias gal='less /cygdrive/c/MikesStuff/Pers/Dropbox/Personal/home/.oh-my-zsh/plugins/git/README.md'
 alias gtt='gt g t '
-# git - recently changed (by a student)
-# --date is strftime format
-function grc() {
+# # git - recently changed (by a student)
+# # --date is strftime format
+# function grc() {
 
-    # How to check for an argument:
-    if [[ ! -v 1 ]]; then
-        afterTime="Jan 1 1970"
-    else
-        afterTime="$*"
-    fi
+#     # How to check for an argument:
+#     if [[ ! -v 1 ]]; then
+#         afterTime="Jan 1 1970"
+#     else
+#         afterTime="$*"
+#     fi
 
-    for d in * ; do
-        echo " "
-        echo $d "=========================================="
-        pushd $d &> /dev/null
-        git --no-pager log --date=format:"%Y-%m-%d %I:%M %p" --pretty=format:"%ad %Cred %an %Creset %s" --after="$afterTime" | grep -v -e Panitz -e bot -
-        popd &> /dev/null
-    done
-}
+#     for d in * ; do
+#         echo " "
+#         echo $d "=========================================="
+#         pushd $d &> /dev/null
+#         git --no-pager log --date=format:"%Y-%m-%d %I:%M %p" --pretty=format:"%ad %Cred %an %Creset %s" --after="$afterTime" | grep -v -e Panitz -e bot -
+#         popd &> /dev/null
+#     done
+# }
 
 # List out all the executable files in my ~ directory 
 # (so I can see all the zz* helper scripts)
