@@ -74,6 +74,7 @@ ZSH_CUSTOM=~/.ohMyZshMike/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    git-patch # my custom plugin, to replace git's "g" alias
     zsh-autosuggestions
     jump # for more info: omz plugin info jump
 )
