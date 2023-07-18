@@ -47,7 +47,8 @@ alias o='explorer.exe'
 # Download all the 265 homework:
 alias d265='g 265; gt c d 265 Al1 ; gt c d 265 Al1R ; gt c d 265 Al2 ; gt c d 265 Al2r'
 
-alias do='"/cygdrive/c/Program Files/GPSoftware/Directory Opus/dopus.exe"'
+#alias dio='"/cygdrive/c/Program Files/GPSoftware/Directory Opus/dopus.exe" $1'
+alias dio='PWD=`pwd` && PWD=`cygpath -w "$PWD"` &&  "/cygdrive/c/Program Files/GPSoftware/Directory Opus/dopus.exe" "$PWD"'
 
 git config --global core.pager off
 alias gdt='git difftool'

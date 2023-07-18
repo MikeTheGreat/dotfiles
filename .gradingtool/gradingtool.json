@@ -78,6 +78,9 @@
         },
         "142": {
             "full_name": "BIT 142",
+            "canvas_api": {
+                "sz_re_course": "IT-CS 142 \\(2023 Summer\\)"
+            },
             "github": {
                 "org_name": "BIT-142-Classroom$",
                 // org URLs usually looks like https://api.github.com/orgs/2019-BIT-142
@@ -94,6 +97,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A1_SpaceNeedle",
                     "github": {
                         "sz_re_repo": "assignment_space_needle-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 First Version"
+                    }
+                },
+                "a1r": {
+                    "name": "Assignment_01_Space_Needle_REVISION",
+                    "full_name": "Assignment 1 (Space_Needle) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A1_SpaceNeedle_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 Final, Revised Version"
                     }
                 },
                 "a2": {
@@ -102,6 +116,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A2_Birthdays",
                     "github": {
                         "sz_re_repo": "assignment_birthdays-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 2 First Version"
+                    }
+                },
+                "a2r": {
+                    "name": "Assignment_02_Birthdays_REVISION",
+                    "full_name": "Assignment 2 (Birthdays) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A2_Birthdays_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 2 Final, Revised Version"
                     }
                 },
                 "a3": {
@@ -110,6 +135,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A3_Adding_Large_Integers",
                     "github": {
                         "sz_re_repo": "assignment_adding_large_integers-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 First Version"
+                    }
+                },
+                "a3r": {
+                    "name": "Assignment_03_Adding_Large_Integers_REVISION",
+                    "full_name": "Assignment 3 (Adding Large Integers) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A3_Adding_Large_Integers_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 Final, Revised Version"
                     }
                 },
                 "a4": {
@@ -118,6 +154,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A4_Grocery_List",
                     "github": {
                         "sz_re_repo": "assignment_grocery_list-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 4 First Version"
+                    }
+                },
+                "a4r": {
+                    "name": "Assignment_04_Grocery_List_REVISION",
+                    "full_name": "Assignment 4 (Grocery List) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A4_Grocery_List_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 4 Final, Revised Version"
                     }
                 },
                 "I1": {
@@ -126,6 +173,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE01",
                     "github": {
                         "sz_re_repo": "lecture-01-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 01"
                     }
                 },
                 "I2": {
@@ -134,6 +184,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE02",
                     "github": {
                         "sz_re_repo": "lecture-02-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 02"
                     }
                 },
                 "I3": {
@@ -142,6 +195,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE03",
                     "github": {
                         "sz_re_repo": "lecture-03-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 03"
                     }
                 },
                 "I4": {
@@ -150,6 +206,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE04",
                     "github": {
                         "sz_re_repo": "lecture-04-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 04"
                     }
                 },
                 "I5": {
@@ -158,6 +217,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE05",
                     "github": {
                         "sz_re_repo": "lecture-05-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 05"
                     }
                 },
                 "I6": {
@@ -166,6 +228,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE06",
                     "github": {
                         "sz_re_repo": "lecture-06-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 06"
                     }
                 },
                 "I7": {
@@ -174,6 +239,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE07",
                     "github": {
                         "sz_re_repo": "lecture-07-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 07"
                     }
                 },
                 "I8": {
@@ -182,6 +250,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE08",
                     "github": {
                         "sz_re_repo": "lecture-08-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 08"
                     }
                 },
                 // "I9": {
@@ -190,7 +261,10 @@
                 //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE09",
                 //     "github": {
                 //         "sz_re_repo": "lecture-09-"
-                //     }
+                //     },
+                // "canvas_api": {
+                //     "canvas_name": "In Class Exercises: Lecture 09"
+                // }
                 // },
                 // "I10": {
                 //     "name": "ICE10",
@@ -198,7 +272,10 @@
                 //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE10",
                 //     "github": {
                 //         "sz_re_repo": "lecture-10-"
-                //     }
+                //     },
+                // "canvas_api": {
+                //     "canvas_name": "In Class Exercises: Lecture 10"
+                // }
                 // },
                 "I11": {
                     "name": "ICE11",
@@ -206,6 +283,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE11",
                     "github": {
                         "sz_re_repo": "lecture-11-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 11"
                     }
                 },
                 "I12": {
@@ -214,6 +294,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE12",
                     "github": {
                         "sz_re_repo": "lecture-12-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 12"
                     }
                 },
                 "I13": {
@@ -222,6 +305,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE13",
                     "github": {
                         "sz_re_repo": "lecture-13-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 13"
                     }
                 },
                 "I14": {
@@ -230,6 +316,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE14",
                     "github": {
                         "sz_re_repo": "lecture-14-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 14"
                     }
                 },
                 "I15": {
@@ -238,22 +327,31 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE15",
                     "github": {
                         "sz_re_repo": "lecture-15-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 15"
                     }
                 },
-                "I16": {
-                    "name": "ICE16",
-                    "full_name": "ICE 16",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE16",
-                    "github": {
-                        "sz_re_repo": "lecture-16-"
-                    }
-                },
+                // "I16": {
+                //     "name": "ICE16",
+                //     "full_name": "ICE 16",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE16",
+                //     "github": {
+                //         "sz_re_repo": "lecture-16-"
+                //     },
+                //     "canvas_api": {
+                //         "canvas_name": "In Class Exercises: Lecture 16"
+                //     }
+                // },
                 "I17": {
                     "name": "ICE17",
                     "full_name": "ICE 17",
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE17",
                     "github": {
                         "sz_re_repo": "lecture-17-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 17"
                     }
                 },
                 "I18": {
@@ -262,6 +360,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE18",
                     "github": {
                         "sz_re_repo": "lecture-18-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 18"
                     }
                 }
             }
@@ -269,7 +370,7 @@
         "143": {
             "full_name": "BIT 143",
             "canvas_api": {
-                "sz_re_course": "BIT\\s*143"
+                "sz_re_course": "IT-CS 143 \\(2023 Summer\\)"
             },
             "github": {
                 "org_name": "BIT-143-Classroom$",
@@ -285,6 +386,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A1_Shopping_Cart",
                     "github": {
                         "sz_re_repo": "assignment_shopping_cart-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 First Version"
+                    }
+                },
+                "a1r": {
+                    "name": "Assignment_01_Shopping_Cart_REVISION",
+                    "full_name": "Assignment 1 (Shopping Cart) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A1_Shopping_Cart_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 Final, Revised Version"
                     }
                 },
                 "a2": {
@@ -293,6 +405,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Ranked_Choice_Voting",
                     "github": {
                         "sz_re_repo": "assignment_ranked_choice_voting-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 2 First Version"
+                    }
+                },
+                "a2r": {
+                    "name": "Assignment_02_Ranked_Choice_Voting_REVISION",
+                    "full_name": "Assignment 2 (Ranked Choice Voting) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Ranked_Choice_Voting_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 2 Final, Revised Version"
                     }
                 },
                 // "a2_stable_marriage": {
@@ -308,6 +431,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A3_Student_Services_Desk",
                     "github": {
                         "sz_re_repo": "assignment_student_services_desk-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 First Version"
+                    }
+                },
+                "a3r": {
+                    "name": "Assignment_03_Student_Services_Desk_REVISION",
+                    "full_name": "Assignment 3 (Student Services Desk) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A3_Student_Services_Desk_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 Final, Revised Version"
                     }
                 },
                 "a4": {
@@ -316,6 +450,17 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A4_Reverse_Polish_Notation",
                     "github": {
                         "sz_re_repo": "assignment_reverse_polish_notation-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "Assignment 4 First Version"
+                    }
+                },
+                "a4r": {
+                    "name": "Assignment_04_Reverse_Polish_Notation_REVISION",
+                    "full_name": "Assignment 4 (Reverse Polish Notation) - Final, Revised Version",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A4_Reverse_Polish_Notation_REVISION",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 4 Final, Revised Version"
                     }
                 },
                 "I1": {
@@ -326,7 +471,7 @@
                         "sz_re_repo": "lecture-01-"
                     },
                     "canvas_api": {
-                        "canvas_name": "In Class Exercises: Lecture 1"
+                        "canvas_name": "In Class Exercises: Lecture 01"
                     }
                 },
                 "I2": {
@@ -335,6 +480,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE02",
                     "github": {
                         "sz_re_repo": "lecture-02-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 02"
                     }
                 },
                 "I3": {
@@ -343,6 +491,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE03",
                     "github": {
                         "sz_re_repo": "lecture-03-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 03"
                     }
                 },
                 "I4": {
@@ -351,6 +502,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE04",
                     "github": {
                         "sz_re_repo": "lecture-04-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 04"
                     }
                 },
                 "I5": {
@@ -359,6 +513,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE05",
                     "github": {
                         "sz_re_repo": "lecture-05-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 05"
                     }
                 },
                 "I6": {
@@ -367,6 +524,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE06",
                     "github": {
                         "sz_re_repo": "lecture-06-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 06"
                     }
                 },
                 "I7": {
@@ -375,6 +535,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE07",
                     "github": {
                         "sz_re_repo": "lecture-07-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 07"
                     }
                 },
                 "I8": {
@@ -383,6 +546,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE08",
                     "github": {
                         "sz_re_repo": "lecture-08-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 08"
                     }
                 },
                 // "I9": {
@@ -391,7 +557,10 @@
                 //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE09",
                 //     "github": {
                 //         "sz_re_repo": "lecture-09-"
-                //     }
+                //     },
+                // "canvas_api": {
+                //     "canvas_name": "In Class Exercises: Lecture 09"
+                // }
                 // },
                 // "I10": {
                 //     "name": "ICE10",
@@ -399,7 +568,10 @@
                 //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE10",
                 //     "github": {
                 //         "sz_re_repo": "lecture-10-"
-                //     }
+                //     },
+                // "canvas_api": {
+                //     "canvas_name": "In Class Exercises: Lecture 10"
+                // }
                 // },
                 "I11": {
                     "name": "ICE11",
@@ -407,6 +579,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE11",
                     "github": {
                         "sz_re_repo": "lecture-11-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 11"
                     }
                 },
                 "I12": {
@@ -415,6 +590,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE12",
                     "github": {
                         "sz_re_repo": "lecture-12-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 12"
                     }
                 },
                 "I13": {
@@ -423,6 +601,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE13",
                     "github": {
                         "sz_re_repo": "lecture-13-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 13"
                     }
                 },
                 "I14": {
@@ -431,6 +612,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE14",
                     "github": {
                         "sz_re_repo": "lecture-14-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 14"
                     }
                 },
                 "I15": {
@@ -439,6 +623,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE15",
                     "github": {
                         "sz_re_repo": "lecture-15-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 15"
                     }
                 },
                 "I16": {
@@ -447,6 +634,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE16",
                     "github": {
                         "sz_re_repo": "lecture-16-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 16"
                     }
                 },
                 "I17": {
@@ -455,6 +645,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE17",
                     "github": {
                         "sz_re_repo": "lecture-17-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 17"
                     }
                 },
                 "I18": {
@@ -463,6 +656,9 @@
                     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE18",
                     "github": {
                         "sz_re_repo": "lecture-18-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 18"
                     }
                 }
             }
@@ -528,23 +724,28 @@
     "canvas": {
         "api": {
             "url": "https://cascadia.instructure.com/",
-            "key": ""
+            "key": "9~mHJN7aqNxsTuEpAsbsaMSi4gYvYXZDuA22xMHizUTnTq6YRqbIVTHiL886V5dqXf"
         },
+        "NewDirForMissingFeedbackFiles": "z_STUDENTS_WHO_DID_NOT_INCLUDE_FEEDBACK_FILES_IN_THEIR_SUBMISSION",
+        // 'z_' will put this at the end of the dirs, close to the _UPLOAD...
+        "ZipFileToUploadToCanvas": "_UPLOAD_TO_CANVAS.zip",
+        "LateMarker": "_LATE",
         "StudentSubFolderMarker": "_FROM_CANVAS",
         "InstructorFeedbackSlug": "_INSTRUCTORFEEDBACK",
         "InstructorFeedbackFileNameRegex": "INSTRUCTOR.?FEEDBACK",
-        "StudentNameIDFileNum": "^[^~][a-zA-Z][a-zA-Z0-9]+_(LATE_)?[0-9]+_[0-9]+_",
-        //"StudentNameID_RemoveFileID": "([a-zA-z][a-zA-Z0-9]+_\\d+_)(?:\\d+?)",
-        "StudentNameAndID": "([a-zA-z][a-zA-Z0-9]+_(LATE_)?\\d+?_)",
+        // Remember that Canvas allows for nicknames (instead of firstnames), write as "(Niko)", so we'll need to allow for the parens in names
+        "StudentName": "^[^~][a-zA-Z][a-zA-Z0-9\\-)]+_[a-zA-Z][a-zA-Z0-9]+",
+        "StudentNameIDFileNum": "^[^~][a-zA-Z][a-zA-Z0-9\\-)]+_[a-zA-Z][a-zA-Z0-9]+_(LATE_)?[0-9]+_[0-9]+_",
+        "StudentNameAndID": "([a-zA-z\\(][a-zA-Z0-9\\)-]+_[a-zA-z][a-zA-Z0-9]+_(LATE_)?\\d+?_)", // this one has spaced 
         "FileSubmissionNumber": "-\\d+(\\.[a-zA-z]+)$",
-        // to match e.g., "-1.cs" in "Program-1.cs"
-        "LateMarker": "_LATE",
-        "NewDirForMissingFeedbackFiles": "z_STUDENTS_WHO_DID_NOT_INCLUDE_FEEDBACK_FILES_IN_THEIR_SUBMISSION",
-        // 'z_' will put this at the end of the dirs, close to the _UPLOAD...
-        "ZipFileToUploadToCanvas": "_UPLOAD_TO_CANVAS.zip"
+        "OptionalFileSubmissionNumber": "(-\\d+)?", // used in packaging feedback files for Canvas
+        // to match e.g., "-1.cs" in "Program-1.cs",
+        "FileExtension": "\\.[a-zA-z]+$"
+        //"StudentNameID_RemoveFileID": "([a-zA-z][a-zA-Z0-9]+_\\d+_)(?:\\d+?)",
+        //"StudentNameAndID": "([a-zA-z][a-zA-Z0-9]+_(LATE_)?\\d+?_)", // orig
     },
     "github": {
-        "api_key": "",
+        "api_key": "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",
         // for "PyCharm Github Integration Plugin access token"
         "grading_list": {
             "tag": "GradedByInstructor"

@@ -114,8 +114,11 @@ brew install --cask jumpcut
 # brew install --cask smoothscroll
 
 # another option:
-brew install --cask discretescroll
+#brew install --cask discretescroll
 # (Not as nice, but definitely fixes the problem w/ MacOS applying acceleration per wheel 'tick')
+
+# Let's try this one? 
+brew install --cask linearmouse
 
 # Date & time in the menu bar, click to see calendar
 # using Lilius:
