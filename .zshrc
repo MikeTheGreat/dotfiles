@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX="true"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -105,4 +107,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias ohmyzsh="mate ~/.oh-my-zsh"export MODULAR_HOME="/home/mike/.modular"
+export PATH="/bin:$PATH"
+export MODULAR_HOME="/home/mike/.modular"
+export PATH="/home/mike/.modular/pkg/packages.modular.com_mojo/bin:$PATH"

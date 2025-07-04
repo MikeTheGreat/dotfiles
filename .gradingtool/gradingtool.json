@@ -2,84 +2,1417 @@
     "app-wide_config": {
         "preferred_time_zone": "US/Pacific"
     },
+    "due_date_info": {
+        "name_of_quarter": "Summer",
+        "date_of_first_day_of_the_quarter": "2025-07-01",
+        "date_of_last_day_of_the_quarter": "2025-08-21",
+        "assignment_default_due_time": "23:59",
+        "noninstructional_days": [
+            {
+                "title": "Non-Instructional Day - (no classes / offices closed)",
+                "date": "2025-10-22"
+            },
+            {
+                "title": "Holiday - Veterans Day",
+                "date": "2025-11-11"
+            },
+            {
+                "title": "Holiday - Thanksgiving",
+                "date": "2025-11-27"
+            },
+            {
+                "title": "Holiday - Native American Heritage Day",
+                "date": "2025-11-28"
+            }
+        ]
+    },
     "courses": {
-        "115": {
-            "full_name": "BIT 115",
+        "aliases": [
+            // Make sure that "aliases" does NOT have an "inherits_from" field (since it's not a course)
+            {
+                "overall_pattern": "^22([a|i][\\da-zA-Z]+)$",
+                "course_match_pattern": "^.*$",
+                "course_replacement_pattern": "142-2",
+                "hw_match_pattern": "^(22)([a|i][\\da-zA-Z]+)$",
+                "hw_replacement_pattern": "\\2"
+            },
+            {
+                "overall_pattern": "^2([a|i][\\da-zA-Z]+)$",
+                "course_match_pattern": "^.*$",
+                "course_replacement_pattern": "142",
+                "hw_match_pattern": "^(2)([a|i][\\da-zA-Z]+)$",
+                "hw_replacement_pattern": "\\2"
+            },
+            {
+                "overall_pattern": "^3([a|i][\\da-zA-Z]+)$",
+                "course_match_pattern": "^.*$",
+                "course_replacement_pattern": "143",
+                "hw_match_pattern": "^(3)([a|i][\\da-zA-Z]+)$",
+                "hw_replacement_pattern": "\\2"
+            },
+            {
+                "overall_pattern": "^5([a|i][\\da-zA-Z]+)$",
+                "course_match_pattern": "^.*$",
+                "course_replacement_pattern": "115",
+                "hw_match_pattern": "^(5)([a|i][\\da-zA-Z]+)$",
+                "hw_replacement_pattern": "\\2"
+            },
+            {
+                "overall_pattern": "^t([a|i][\\da-zA-Z]+)$",
+                "course_match_pattern": "^.*$",
+                "course_replacement_pattern": "test",
+                "hw_match_pattern": "^(t)([a|i][\\da-zA-Z]+)$",
+                "hw_replacement_pattern": "\\2"
+            }
+        ],
+        "windows_config": {
+            "full_name": "windows_config",
+            "string_replacements": {
+                "conditions": [
+                    {
+                        "condition": "dir_exists",
+                        "dir": "C:\\MikesStuff"
+                    }
+                ],
+                "strings_to_replace": {
+                    "courses_base_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses",
+                    "student_work_base_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work"
+                }
+            }
+        },
+        "base_course": {
+            "full_name": "base_course",
+            "inherits_from": "windows_config",
+            "announcement_templates": {
+                "title_weekly": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_weekly.html",
+                "message_weekly": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_weekly.html",
+                "title_weekly_no_feedback": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_weekly_no_feedback.html",
+                "message_weekly_no_feedback": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_weekly_no_feedback.html",
+                "title_hwv1": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_hwv1.html",
+                "message_hwv1": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_hwv1.html",
+                "title_hwr": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_hwr.html",
+                "message_hwr": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_hwr.html"
+            }
+        },
+        "101": {
+            "string_replacements": {
+                "conditions": [
+                    {
+                        "condition": "dir_exists",
+                        "dir": "C:\\work"
+                    }
+                ],
+                "strings_to_replace": {
+                    "student_work_base": "C:\\work"
+                }
+            },
+            "full_name": "101",
+            "inherits_from": "base_course",
             "canvas_api": {
-                "sz_re_course": "Mike's BIT 115 \\(2023 Winter\\)"
+                "sz_re_course": "IT-CS 101 \\(2025 Fall\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Tue",
+                    "Thu"
+                ],
+                "class_on_noninstructional_days": false
             },
             "assignments": {
-                "A1": {
-                    "name": "A1",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A1_User_Input",
+                "ICE01": {
+                    "name": "ICE01",
                     "canvas_api": {
-                        "canvas_name": "Assignment 1 - User's Input"
+                        "canvas_name": "Exercise 01 - Introduction to class; Overview of Computer Science"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": []
                     }
                 },
-                "A1R": {
-                    "name": "A1R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A1_User_Input_REVISION",
+                "Introduce_Yourself": {
+                    "name": "Introduce_Yourself",
                     "canvas_api": {
-                        "canvas_name": "Assignment 1 Final, Revised Version"
+                        "canvas_name": "Introduce Yourself"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE01"
+                        },
+                        "offsets": [
+                            "+2 CALENDAR_DAY"
+                        ]
                     }
                 },
-                "A2": {
-                    "name": "A2",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A2_Employees_Hourly_Wages",
+                "Prep_Gosling_Explains_ChatGPT": {
+                    "name": "Prep_Gosling_Explains_ChatGPT",
                     "canvas_api": {
-                        "canvas_name": "Assignment 2 - Employees Hourly Wages"
+                        "canvas_name": "Viewing Comprehension Quiz: Deepfake Ryan Gosling Explains ChatGPT"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE02"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
                     }
                 },
-                "A2R": {
-                    "name": "A2R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A2_Employees_Hourly_Wages_REVISION",
+                "ICE02": {
+                    "name": "ICE02",
                     "canvas_api": {
-                        "canvas_name": "Assignment 2 Final, Revised Version"
+                        "canvas_name": "Exercise 02 - Exploring ChatGPT"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE01"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
-                "A3": {
-                    "name": "A3",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A3_College_Admission",
+                "Chapter_1_Discussion": {
+                    "name": "Chapter_1_Discussion",
                     "canvas_api": {
-                        //"canvas_name": "Assignment 3 - College Admission"
-                        "canvas_name": "Assignment 3 - ART 120 Collaboration"
+                        "canvas_name": "Chapter 1 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE02"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
                     }
                 },
-                "A3R": {
-                    "name": "A3R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A3_College_Admission_REVISION",
+                "ICE03": {
+                    "name": "ICE03",
                     "canvas_api": {
-                        "canvas_name": "Assignment 3 Final, Revised Version"
+                        "canvas_name": "Exercise 03 - VSCode and Copilot"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE02"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
-                "A4": {
-                    "name": "A4",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A4_Password_Testing_System",
+                "Prep_Suggest_Topics": {
+                    "name": "Prep_Suggest_Topics",
                     "canvas_api": {
-                        // "canvas_name": "Assignment 4 - Password Testing System"
-                        "canvas_name": "Assignment 4 - College Admission"
+                        "canvas_name": "Topics you're interested in covering"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE03"
+                        },
+                        "offsets": []
                     }
                 },
-                "A4R": {
-                    "name": "A4R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\A4_Password_Testing_System_REVISION",
+                "Chapters_2_3_Discussion": {
+                    "name": "Chapters_2_3_Discussion",
                     "canvas_api": {
-                        "canvas_name": "Assignment 4 Final, Revised Version"
+                        "canvas_name": "Chapters 2, 3 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_1_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
                     }
                 },
-                "ICE51": {
-                    "name": "ICE51",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\Exercise 05-1_ Conditional Code Tracing, Finding, and Fixing Errors",
+                "Chapter_4_Discussion": {
+                    "name": "Chapter_4_Discussion",
                     "canvas_api": {
-                        "canvas_name": "Exercise 05-1: Conditional Code Tracing, Finding, and Fixing Errors"
+                        "canvas_name": "Chapter 4 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapters_2_3_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Chapter_5_Discussion": {
+                    "name": "Chapter_5_Discussion",
+                    "canvas_api": {
+                        "canvas_name": "Chapter 5 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_4_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Chapter_6_Discussion": {
+                    "name": "Chapter_6_Discussion",
+                    "canvas_api": {
+                        "canvas_name": "Chapter 6 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_5_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Chapter_7_Discussion": {
+                    "name": "Chapter_7_Discussion",
+                    "canvas_api": {
+                        "canvas_name": "Chapter 7 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_6_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Chapter_8_Discussion": {
+                    "name": "Chapter_8_Discussion",
+                    "canvas_api": {
+                        "canvas_name": "Chapter 8 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_7_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Chapter_9_Discussion": {
+                    "name": "Chapter_9_Discussion",
+                    "canvas_api": {
+                        "canvas_name": "Chapter 9 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_8_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Chapter_10_Discussion": {
+                    "name": "Chapter_10_Discussion",
+                    "canvas_api": {
+                        "canvas_name": "Chapter 10 Discussion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Chapter_9_Discussion"
+                        },
+                        "offsets": [
+                            "+7 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "ICE04": {
+                    "name": "ICE04",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 04",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 04 - User's Input"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE03"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE05": {
+                    "name": "ICE05",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 05_ Conditional Code Tracing, Finding, and Fixing Errors",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 05: Conditional Code Tracing, Finding, and Fixing Errors"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE04"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE06": {
+                    "name": "ICE06",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 06",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 06 - Conditionals"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE05"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE07": {
+                    "name": "ICE07",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 07",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 07: Code Tracing and Error Identification with Logical Expressions"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE06"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE08": {
+                    "name": "ICE08",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 08",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 08 - Logical Expressions"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE07"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE09": {
+                    "name": "ICE09",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 09",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 09: Code Tracing and Fixing Errors with Iterative Statements (Loops)"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE08"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE10": {
+                    "name": "ICE10",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 10",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 10  - Iterative Statements (Loops)"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE09"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "Midterm": {
+                    "name": "Midterm",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Midterm",
+                    "canvas_api": {
+                        "canvas_name": "Midterm Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE10"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE11": {
+                    "name": "ICE11",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 11",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 11: Conditionals and Loops"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE10"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE14": {
+                    "name": "ICE14",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 14",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 14: Code Tracing and Fixing Errors with Methods and Parameters"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE15": {
+                    "name": "ICE15",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 15",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 15 - Methods and Parameters"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE14"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE16": {
+                    "name": "ICE16",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 16",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 16: Methods, Parameters, & Return Values"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE15"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE17": {
+                    "name": "ICE17",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 17",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 17: Code Tracing and Error Fixing with Arrays"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE16"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE18": {
+                    "name": "ICE18",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 18",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 18: Code Tracing and Error Fixing with Arrays and Random Numbers"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE17"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE19": {
+                    "name": "ICE19",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 19 - Arrays Continued",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 19 - Arrays Continued"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE18"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "ICE20": {
+                    "name": "ICE20",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_101_New\\Exercise 20 - Arrays Continued, Part 2",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 20 - Arrays Continued, Part 2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE19"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "FinalExam": {
+                    "name": "FinalExam",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Final Exam",
+                    "canvas_api": {
+                        "canvas_name": "Final Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "ICE20"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 }
             }
         },
-        "142": {
-            "full_name": "BIT 142",
+        "115": {
+            "full_name": "115",
+            "inherits_from": "base_course",
             "canvas_api": {
-                "sz_re_course": "IT-CS 142 \\(2023 Summer\\)"
+                // "sz_re_course": "IT-CS 115 \\(2023 Fall\\)"
+                "sz_re_course": "IT-CS 115 \\(2025 Fall\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Mon",
+                    "Wed"
+                ],
+                "class_on_noninstructional_days": false
+            },
+            "assignments": {
+                "A1": {
+                    "name": "A1",
+                    "full_name": "Assignment 1 - User's Input - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A1_User_Input",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A1_UserInput.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a1r",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 - User's Input - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": []
+                    },
+                    "grading_search_strings": [
+                        "public static void main(String[] args)",
+                        "// Put you answer for question #2 here:"
+                    ]
+                },
+                "A1R": {
+                    "name": "A1R",
+                    "full_name": "Assignment 1 - User's Input - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A1_User_Input_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A1_UserInput.docx",
+                    "default_announcement_template": "hwr",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 1 - User's Input - Opportunity #2"
+                    },
+                    "prior_version": "a1",
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "A2": {
+                    "name": "A2",
+                    "full_name": "Assignment 2 - Employees Hourly Wages - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A2_Employees_Hourly_Wages",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A2_Employees_Hourly_Wages.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a2r",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 2 - Employees Hourly Wages - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": []
+                    }
+                },
+                "A2R": {
+                    "name": "A2R",
+                    "full_name": "Assignment 2 - Employees Hourly Wages - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A2_Employees_Hourly_Wages_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A2_Employees_Hourly_Wages.docx",
+                    "default_announcement_template": "hwr",
+                    "prior_version": "a2",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 2 - Employees Hourly Wages - Opportunity #2"
+                    },
+                    "prior_version": "a2",
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "A3ap": {
+                    "name": "A3ap",
+                    "full_name": "Assignment 3 - ART Collab - Plan For Success",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A3_Art_Collab_Plan_For_Success",
+                    //"grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A3_Grade_Calculator.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a3r",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 - ART Collab - Plan For Success"
+                    }
+                },
+                "A3tc": {
+                    "name": "A3tc",
+                    "full_name": "Assignment 3 - ART 120 Collaboration - TinkerCAD design",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A3_Art_Collab_TinkerCAD",
+                    //"grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A3_Grade_Calculator.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a3r",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 - ART 120 Collaboration - TinkerCAD design"
+                    }
+                },
+                "A3f": {
+                    "name": "A3f",
+                    "full_name": "Assignment 3 - ART 120 Collaboration - Finished Product",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A3_Art_Collab_Finished_Product",
+                    //"grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A3_Grade_Calculator.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a3r",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 - ART 120 Collaboration - Finished Product"
+                    }
+                },
+                "A3": {
+                    "name": "A3",
+                    "full_name": "Assignment 3 - ART 120 Collaboration - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A3_Grade_Calculator",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A3_Grade_Calculator.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a3r",
+                    "canvas_api": {
+                        //"canvas_name": "Assignment 3 - College Admission"
+                        "canvas_name": "Assignment 3 - ART 120 Collaboration - Opportunity #1"
+                        //"canvas_name": "Assignment 3 - Grade Calculator - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": []
+                    }
+                },
+                "A3R": {
+                    "name": "A3R",
+                    "full_name": "Assignment 3 - ART 120 Collaboration - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A3_Grade_Calculator_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A3_Grade_Calculator.docx",
+                    "default_announcement_template": "hwr",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 3 - ART 120 Collaboration - Opportunity #2"
+                        //"canvas_name": "Assignment 3 - Grade Calculator - Opportunity #2"
+                    },
+                    "prior_version": "a3",
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "A4": {
+                    "name": "A4",
+                    "full_name": "Assignment 4 - College Admission - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A4_College_Admissions",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A4_College_Admissions.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a4r",
+                    "canvas_api": {
+                        // "canvas_name": "Assignment 4 - Password Testing System"
+                        "canvas_name": "Assignment 4 - College Admission - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": []
+                    }
+                },
+                "A4R": {
+                    "name": "A4R",
+                    "full_name": "Assignment 4 - College Admission - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\A4_College_Admissions_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Rubrics_Java\\A4_College_Admissions.docx",
+                    "default_announcement_template": "hwr",
+                    "canvas_api": {
+                        "canvas_name": "Assignment 4 - College Admission - Opportunity #2"
+                    },
+                    "prior_version": "a4",
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Introduce_Yourself": {
+                    "name": "Introduce_Yourself",
+                    "canvas_api": {
+                        "canvas_name": "Introduce Yourself"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "+1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_01_Forum": {
+                    "name": "Week_01_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 01 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I2"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_02_Forum": {
+                    "name": "Week_02_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 02 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I4"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_03_Forum": {
+                    "name": "Week_03_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 03 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I6"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_04_Forum": {
+                    "name": "Week_04_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 04 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_05_Forum": {
+                    "name": "Week_05_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 05 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I9"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_06_Forum": {
+                    "name": "Week_06_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 06 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_07_Forum": {
+                    "name": "Week_07_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 07 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_08_Forum": {
+                    "name": "Week_08_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 08 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_09_Forum": {
+                    "name": "Week_09_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 09 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_10_Forum": {
+                    "name": "Week_10_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 10 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I19"
+                        },
+                        "offsets": [
+                            "Sun NEAREST_CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I1": {
+                    "name": "I1",
+                    "full_name": "Exercise 01 - Introduction and jGRASP Setup",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\\\Exercise 01",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 01 - Introduction and jGRASP Setup"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I2": {
+                    "name": "I2",
+                    "full_name": "Exercise 02: Variables & Expressions",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\\\Exercise 02",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 02: Variables & Expressions"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I3": {
+                    "name": "I3",
+                    "full_name": "Exercise 03 - Variables and Expressions",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\\\Exercise 03",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 03 - Variables and Expressions"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I2"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I4": {
+                    "name": "I4",
+                    "full_name": "Exercise 04 - User's Input",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 04",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 04 - User's Input"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I5": {
+                    "name": "I5",
+                    "full_name": "Exercise 05: Conditional Code Tracing, Finding, and Fixing Errors",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 05_ Conditional Code Tracing, Finding, and Fixing Errors",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 05: Conditional Code Tracing, Finding, and Fixing Errors"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I4"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I6": {
+                    "name": "I6",
+                    "full_name": "Exercise 06 - Conditionals",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 06",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 06 - Conditionals"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I7": {
+                    "name": "I7",
+                    "full_name": "Exercise 07: Code Tracing and Error Identification with Logical Expressions",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 07",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 07: Code Tracing and Error Identification with Logical Expressions"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I6"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "i8b": {
+                    "name": "ICE08-B - ART + Arduino",
+                    "full_name": "Exercise 08-B - Art and Arduinos",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 08B - Art and Arduinos",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 08-B - Art and Arduinos"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": []
+                    }
+                },
+                "i8": {
+                    "name": "ICE08",
+                    "full_name": "Exercise 08 - Logical Expressions",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 08",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 08 - Logical Expressions"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I9": {
+                    "name": "ICE09",
+                    "full_name": "Exercise 09: Code Tracing and Fixing Errors with Iterative Statements (Loops)",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 09",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 09: Code Tracing and Fixing Errors with Iterative Statements (Loops)"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I10": {
+                    "name": "ICE10",
+                    "full_name": "Exercise 10 - Iterative Statements (Loops)",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 10",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 10  - Iterative Statements (Loops)"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I9"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "Group_Exercise_1": {
+                    "name": "Group_Exercise_1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Group Exercise 1",
+                    "canvas_api": {
+                        "canvas_name": "Group Exercise 1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Midterm": {
+                    "name": "Midterm",
+                    "canvas_api": {
+                        "canvas_name": "Midterm Exam: Placeholder for the In-Person Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I11": {
+                    "name": "ICE11",
+                    "full_name": "Exercise 11: Conditionals and Loops",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 11",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 11: Conditionals and Loops"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I10"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I14": {
+                    "name": "I14",
+                    "full_name": "Exercise 14: Code Tracing and Fixing Errors with Methods and Parameters",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 14",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 14: Code Tracing and Fixing Errors with Methods and Parameters"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I15": {
+                    "name": "I15",
+                    "full_name": "Exercise 15 - Methods and Parameters",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 15",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 15 - Methods and Parameters"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I16": {
+                    "name": "I16",
+                    "full_name": "Exercise 16: Methods, Parameters, & Return Values",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 16",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 16: Methods, Parameters, & Return Values"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I17": {
+                    "name": "I17",
+                    "full_name": "Exercise 17: Code Tracing and Error Fixing with Arrays",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 17",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 17: Code Tracing and Error Fixing with Arrays"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I18": {
+                    "name": "I18",
+                    "full_name": "Exercise 18: Code Tracing and Error Fixing with Arrays and Random Numbers",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 18",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 18: Code Tracing and Error Fixing with Arrays and Random Numbers"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I19": {
+                    "name": "I19",
+                    "full_name": "Exercise 19 - Arrays Continued",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 19 - Arrays Continued",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 19 - Arrays Continued"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I20": {
+                    "name": "ICE20",
+                    "full_name": "Exercise 20 - Arrays Continued, Part 2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 20 - Arrays Continued, Part 2",
+                    "default_announcement_template": "weekly_no_feedback",
+                    "canvas_api": {
+                        "canvas_name": "Exercise 20 - Arrays Continued, Part 2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I19"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "Group_Exercise_2": {
+                    "name": "Group_Exercise_2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Group Exercise 2",
+                    "canvas_api": {
+                        "canvas_name": "Group Exercise 2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "FinalExam": {
+                    "name": "FinalExam",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Exercise 05_ Conditional Code Tracing, Finding, and Fixing Errors",
+                    "canvas_api": {
+                        "canvas_name": "Final Exam: Placeholder for the In-Person Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I20"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                }
+            }
+        },
+        "test": {
+            "full_name": "test",
+            "inherits_from": "115",
+            "canvas_api": {
+                // "sz_re_course": "IT-CS 115 \\(2023 Fall\\)"
+                "sz_re_course": "115 Test - remove stuff"
+            },
+            "announcement_templates": {
+                "title_weekly": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_weekly.html",
+                "message_weekly": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_weekly.html",
+                "title_hwv1": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_hwv1.html",
+                "message_hwv1": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_hwv1.html",
+                "title_hwr": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\title_hwr.html",
+                "message_hwr": "C:\\MIkesStuff\\Pers\\Dropbox\\Personal\\home\\.gradingtool\\announcement_templates\\message_hwr.html"
+            }
+        },
+        "142-2": {
+            "full_name": "142-2",
+            // This course (142-2) will use it's own settings, and if it can't find a setting here, then 142's settings:
+            "inherits_from": "142",
+            "canvas_api": {
+                "sz_re_course": "IT-CS 142 \\(2024 Spring\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Tues"
+                ]
+            },
+            "dest_dir_suffix": "-H2"
+        },
+        "142": {
+            "full_name": "142",
+            "inherits_from": "base_course",
+            "canvas_api": {
+                // "sz_re_course": "IT-CS143 F24 - Ruby/Panitz Master"
+                "sz_re_course": "IT-CS 142 \\(2025 Fall\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Tue"
+                ],
+                "class_on_noninstructional_days": true
             },
             "github": {
                 "org_name": "BIT-142-Classroom$",
@@ -93,173 +1426,535 @@
             "assignments": {
                 "a1": {
                     "name": "Assignment_01_Space_Needle",
-                    "full_name": "Assignment 1 (Space_Needle)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A1_SpaceNeedle",
+                    "full_name": "Assignment 1 - Space Needle - Opportunity #1",
+                    "dest_dir": "{student_work_base_dir}\\IT_CS_142_New\\A1_SpaceNeedle",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a1r",
                     "github": {
                         "sz_re_repo": "assignment_space_needle-"
                     },
+                    "grading_template": "{courses_base_dir}\\_IT_CS_142\\Rubrics_Java\\A1_SpaceNeedle.docx",
+                    "next_version": "a1r",
                     "canvas_api": {
-                        "canvas_name": "Assignment 1 First Version"
+                        "canvas_name": "Assignment 1 - Space Needle - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "+2 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a1r": {
                     "name": "Assignment_01_Space_Needle_REVISION",
-                    "full_name": "Assignment 1 (Space_Needle) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A1_SpaceNeedle_REVISION",
+                    "full_name": "Assignment 1 - Space Needle - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A1_SpaceNeedle_REVISION",
+                    "default_announcement_template": "hwr",
                     "canvas_api": {
-                        "canvas_name": "Assignment 1 Final, Revised Version"
+                        "canvas_name": "Assignment 1 - Space Needle - Opportunity #2"
+                    },
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A1_SpaceNeedle.docx",
+                    "prior_version": "a1",
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
                     }
                 },
                 "a2": {
                     "name": "Assignment_02_Birthdays",
-                    "full_name": "Assignment 2 (Birthdays)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A2_Birthdays",
+                    "full_name": "Assignment 2 - Birthdays - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A2_Birthdays",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A2_BirthdayInfo.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a2r",
                     "github": {
                         "sz_re_repo": "assignment_birthdays-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 2 First Version"
+                        "canvas_name": "Assignment 2 - Birthdays - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a2r": {
                     "name": "Assignment_02_Birthdays_REVISION",
-                    "full_name": "Assignment 2 (Birthdays) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A2_Birthdays_REVISION",
+                    "full_name": "Assignment 2 - Birthdays - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A2_Birthdays_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A2_BirthdayInfo.docx",
+                    "default_announcement_template": "hwr",
                     "canvas_api": {
-                        "canvas_name": "Assignment 2 Final, Revised Version"
+                        "canvas_name": "Assignment 2 - Birthdays - Opportunity #2"
+                    },
+                    "prior_version": "a2",
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
                     }
                 },
                 "a3": {
                     "name": "Assignment_03_Adding_Large_Integers",
-                    "full_name": "Assignment 3 (Adding Large Integers)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A3_Adding_Large_Integers",
+                    "full_name": "Assignment 3 - Adding Large Integers - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A3_Adding_Large_Integers",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A3_Adding_Large_Integers.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a3r",
                     "github": {
                         "sz_re_repo": "assignment_adding_large_integers-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 3 First Version"
+                        "canvas_name": "Assignment 3 - Adding Large Integers - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "a1"
+                        },
+                        "offsets": []
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a3r": {
                     "name": "Assignment_03_Adding_Large_Integers_REVISION",
-                    "full_name": "Assignment 3 (Adding Large Integers) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A3_Adding_Large_Integers_REVISION",
+                    "full_name": "Assignment 3 - Adding Large Integers - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A3_Adding_Large_Integers_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A3_Adding_Large_Integers.docx",
+                    "default_announcement_template": "hwr",
+                    "prior_version": "a3",
                     "canvas_api": {
-                        "canvas_name": "Assignment 3 Final, Revised Version"
+                        "canvas_name": "Assignment 3 - Adding Large Integers - Opportunity #2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
                     }
                 },
                 "a4": {
                     "name": "Assignment_04_Grocery_List",
-                    "full_name": "Assignment 4 (Grocery List)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A4_Grocery_List",
+                    "full_name": "Assignment 4 - Grocery List - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A4_Grocery_List",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A4_Grocery_List.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a4r",
                     "github": {
                         "sz_re_repo": "assignment_grocery_list-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 4 First Version"
+                        "canvas_name": "Assignment 4 - Grocery List - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a4r": {
                     "name": "Assignment_04_Grocery_List_REVISION",
-                    "full_name": "Assignment 4 (Grocery List) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\A4_Grocery_List_REVISION",
+                    "full_name": "Assignment 4 - Grocery List - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\A4_Grocery_List_REVISION",
+                    "prior_version": "a4",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\A4_Grocery_List.docx",
+                    "default_announcement_template": "hwr",
                     "canvas_api": {
-                        "canvas_name": "Assignment 4 Final, Revised Version"
+                        "canvas_name": "Assignment 4 - Grocery List - Opportunity #2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_01_Forum": {
+                    "name": "Week_01_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 01 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "START_OF_QUARTER"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_02_Forum": {
+                    "name": "Week_02_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 02 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_03_Forum": {
+                    "name": "Week_03_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 03 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "i3"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_04_Forum": {
+                    "name": "Week_04_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 04 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_05_Forum": {
+                    "name": "Week_05_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 05 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_06_Forum": {
+                    "name": "Week_06_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 06 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_07_Forum": {
+                    "name": "Week_07_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 07 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_08_Forum": {
+                    "name": "Week_08_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 08 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_09_Forum": {
+                    "name": "Week_09_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 09 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_10_Forum": {
+                    "name": "Week_10_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 10 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_11_Forum": {
+                    "name": "Week_11_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 11 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Final"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "I1": {
                     "name": "ICE01",
                     "full_name": "ICE 01",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE01",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE01",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 01.docx",
+                    "grading_search_strings": [
+                        "answer for #8",
+                        "answer for #16",
+                        "answer for #20"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-01-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 01"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I2": {
                     "name": "ICE02",
                     "full_name": "ICE 02",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE02",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE02",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 02.docx",
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-02-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 02"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": []
                     }
                 },
                 "I3": {
                     "name": "ICE03",
                     "full_name": "ICE 03",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE03",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE03",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 03.docx",
+                    "grading_search_strings": [
+                        "your answer for #3A",
+                        "your answer for #3B"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-03-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 03"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I2"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I4": {
                     "name": "ICE04",
                     "full_name": "ICE 04",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE04",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE04",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 04.docx",
+                    "grading_search_strings": [
+                        "static.*printGrid",
+                        "printGrid"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-04-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 04"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": []
                     }
                 },
                 "I5": {
                     "name": "ICE05",
                     "full_name": "ICE 05",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE05",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE05",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 05.docx",
+                    "grading_search_strings": [
+                        "static.*printRange",
+                        "printRange"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-05-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 05"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I4"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I6": {
                     "name": "ICE06",
                     "full_name": "ICE 06",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE06",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE06",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 06.docx",
+                    "grading_search_strings": [
+                        "void.*printAverage.*(",
+                        "printAverage"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-06-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 06"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": []
                     }
                 },
                 "I7": {
                     "name": "ICE07",
                     "full_name": "ICE 07",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE07",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE07",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 07.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "static.*boygirl.*(",
+                        "boygirl"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-07-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 07"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I6"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I8": {
                     "name": "ICE08",
                     "full_name": "ICE 08",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE08",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE08",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 08.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "static.*fliplines.*(",
+                        "flipline"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-08-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 08"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": []
                     }
                 },
                 // "I9": {
                 //     "name": "ICE09",
                 //     "full_name" : "ICE 09",
-                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE09",
-                //     "github": {
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE09",
+                //                         "default_announcement_template": "weekly",  "github": {
                 //         "sz_re_repo": "lecture-09-"
                 //     },
                 // "canvas_api": {
@@ -269,108 +1964,749 @@
                 // "I10": {
                 //     "name": "ICE10",
                 //     "full_name" : "ICE 10",
-                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE10",
-                //     "github": {
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE10",
+                //                         "default_announcement_template": "weekly",  "github": {
                 //         "sz_re_repo": "lecture-10-"
                 //     },
                 // "canvas_api": {
                 //     "canvas_name": "In Class Exercises: Lecture 10"
                 // }
                 // },
+                "Midterm": {
+                    "name": "Midterm",
+                    "full_name": "Midterm",
+                    "canvas_api": {
+                        "canvas_name": "Midterm Exam: Placeholder for the In-Person Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
                 "I11": {
                     "name": "ICE11",
                     "full_name": "ICE 11",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE11",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE11",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 11.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "double.*average.*(",
+                        "average"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-11-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 11"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I12": {
                     "name": "ICE12",
                     "full_name": "ICE 12",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE12",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE12",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 12.docx",
+                    "default_announcement_template": "weekly",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "static.*lastindexof.*(",
+                        "lastindexof"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-12-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 12"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": []
                     }
                 },
                 "I13": {
                     "name": "ICE13",
                     "full_name": "ICE 13",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE13",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE13",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 13.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "boolean.*isunique.*(",
+                        "isunique"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-13-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 13"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I14": {
                     "name": "ICE14",
                     "full_name": "ICE 14",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE14",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE14",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 14.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "getnormalorder.*(",
+                        "getreverseorder.*(",
+                        "tostring.*("
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-14-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 14"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": []
                     }
                 },
                 "I15": {
                     "name": "ICE15",
                     "full_name": "ICE 15",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE15",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE15",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 15.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "class.*bankaccount",
+                        "bankaccount",
+                        "transfer.*(",
+                        "transfer"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-15-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 15"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
-                // "I16": {
-                //     "name": "ICE16",
-                //     "full_name": "ICE 16",
-                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE16",
-                //     "github": {
-                //         "sz_re_repo": "lecture-16-"
-                //     },
-                //     "canvas_api": {
-                //         "canvas_name": "In Class Exercises: Lecture 16"
-                //     }
-                // },
+                "I16": {
+                    "name": "ICE16",
+                    "full_name": "ICE 16",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE16",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 16.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "class.*janitor",
+                        "janitor"
+                    ],
+                    "github": {
+                        "sz_re_repo": "lecture-16-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 16"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": []
+                    }
+                },
                 "I17": {
                     "name": "ICE17",
                     "full_name": "ICE 17",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE17",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE17",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 17.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "class.*ticket",
+                        "ticket",
+                        "class.*walkup",
+                        "walkup"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-17-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 17"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I18": {
                     "name": "ICE18",
                     "full_name": "ICE 18",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_142_New\\ICE18",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE18",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 18.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "sequentialincrementer",
+                        "randomincrementer",
+                        "interface.*incrementable",
+                        "class.*sequentialincrementer",
+                        "class.*randomincrementer"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-18-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 18"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I19": {
+                    "name": "ICE19",
+                    "full_name": "ICE 19",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_142_New\\ICE19",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Rubrics_Java\\In Class Exercises - Lecture 19.docx",
+                    "grading_search_strings": [
+                        "printNumsRecursively_3("
+                    ],
+                    "default_announcement_template": "weekly",
+                    "github": {
+                        "sz_re_repo": "lecture-19-"
+                    },
+                    "canvas_api": {
+                        "canvas_name": "In Class Exercises: Lecture 19 - Recursion"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "Final": {
+                    "name": "Final",
+                    "full_name": "Final",
+                    "canvas_api": {
+                        "canvas_name": "Final Exam: Placeholder for the In-Person Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I19"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Plans_To_Take_Exams": {
+                    "name": "Plans_To_Take_Exams",
+                    "full_name": "Plans_To_Take_Exams",
+                    "canvas_api": {
+                        "canvas_name": "Confirm that you've made plans to take the Midterm & final exams"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Feedback_Survey": {
+                    "name": "Feedback_Survey",
+                    "full_name": "Feedback Survey",
+                    "canvas_api": {
+                        "canvas_name": "Week 1 Feedback Survey"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": []
+                    }
+                }
+            }
+        },
+        "142s": {
+            "full_name": "142-Summer",
+            // This course (142-Summer) will use it's own settings, and if it can't find a setting here, then 142's settings:
+            "inherits_from": "142",
+            "canvas_api": {
+                "sz_re_course": "IT-CS 142 \\(2025 Summer\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Tue"
+                ],
+                "class_on_noninstructional_days": true
+            },
+            "assignments": {
+                "a1": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a1r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "a2": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a2r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "a3": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a3r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "a4": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "+2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a4r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_01_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_02_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_03_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "i3"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_04_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_05_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_06_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_07_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_08_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_09_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_10_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_11_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Final"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I1": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I2": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I3": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I2"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I4": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I5": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I4"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I6": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I7": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I6"
+                        },
+                        "offsets": [
+                            "+4 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I8": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY",
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Midterm": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY",
+                            "18:00 ABS_TIME"
+                        ]
+                    }
+                },
+                "I11": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I12": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I13": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "+4 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I14": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I15": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I16": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I17": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I18": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I19": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Final": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY",
+                            "18:00 ABS_TIME"
+                        ]
+                    }
+                },
+                "Plans_To_Take_Exams": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Feedback_Survey": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": [
+                            "+3 CLASS_DAY"
+                        ]
                     }
                 }
             }
         },
         "143": {
-            "full_name": "BIT 143",
+            "full_name": "IT-CS 143",
+            "inherits_from": "base_course",
             "canvas_api": {
-                "sz_re_course": "IT-CS 143 \\(2023 Summer\\)"
+                "sz_re_course": "IT-CS 143 \\(2025 Spring\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Tue"
+                ],
+                "class_on_noninstructional_days": true
             },
             "github": {
                 "org_name": "BIT-143-Classroom$",
@@ -382,180 +2718,539 @@
             "assignments": {
                 "a1": {
                     "name": "Assignment_01_Shopping_Cart",
-                    "full_name": "Assignment 1 (Shopping Cart)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A1_Shopping_Cart",
+                    "full_name": "Assignment 1 - Shopping Cart - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A1_Shopping_Cart",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A1_Shopping_Cart.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a1r",
                     "github": {
                         "sz_re_repo": "assignment_shopping_cart-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 1 First Version"
+                        "canvas_name": "Assignment 1 - Shopping Cart - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "-3 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a1r": {
                     "name": "Assignment_01_Shopping_Cart_REVISION",
-                    "full_name": "Assignment 1 (Shopping Cart) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A1_Shopping_Cart_REVISION",
+                    "full_name": "Assignment 1 - Shopping Cart - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A1_Shopping_Cart_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A1_Shopping_Cart.docx",
+                    "default_announcement_template": "hwr",
+                    "prior_version": "a1",
                     "canvas_api": {
-                        "canvas_name": "Assignment 1 Final, Revised Version"
+                        "canvas_name": "Assignment 1 - Shopping Cart - Opportunity #2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
                     }
                 },
                 "a2": {
                     "name": "Assignment_02_Ranked_Choice_Voting",
-                    "full_name": "Assignment 2 (Ranked Choice Voting)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Ranked_Choice_Voting",
+                    "full_name": "Assignment 2 - Ranked Choice Voting - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A2_Ranked_Choice_Voting",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A2_RankedChoiceVoting.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a2r",
                     "github": {
                         "sz_re_repo": "assignment_ranked_choice_voting-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 2 First Version"
+                        "canvas_name": "Assignment 2 - Ranked Choice Voting - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "-3 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a2r": {
                     "name": "Assignment_02_Ranked_Choice_Voting_REVISION",
-                    "full_name": "Assignment 2 (Ranked Choice Voting) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Ranked_Choice_Voting_REVISION",
+                    "full_name": "Assignment 2 - Ranked Choice Voting - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A2_Ranked_Choice_Voting_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A2_RankedChoiceVoting.docx",
+                    "default_announcement_template": "hwr",
+                    "prior_version": "a2",
                     "canvas_api": {
-                        "canvas_name": "Assignment 2 Final, Revised Version"
+                        "canvas_name": "Assignment 2 - Ranked Choice Voting - Opportunity #2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
                     }
                 },
                 // "a2_stable_marriage": {
                 //     "name": "Assignment_02_Stable_Marriage",
-                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A2_Stable_Marriage",
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A2_Stable_Marriage",
                 //     "github": {
                 //         "sz_re_repo": "assignment_stable_marriage-"
                 //     }
                 // },
                 "a3": {
                     "name": "Assignment_03_Student_Services_Desk",
-                    "full_name": "Assignment 3 (Student Services Desk)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A3_Student_Services_Desk",
+                    "full_name": "Assignment 3 - Student Services Desk - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A3_Student_Services_Desk",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A3_StudentServicesDesk.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a3r",
                     "github": {
                         "sz_re_repo": "assignment_student_services_desk-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 3 First Version"
+                        "canvas_name": "Assignment 3 - Student Services Desk - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "-3 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a3r": {
                     "name": "Assignment_03_Student_Services_Desk_REVISION",
-                    "full_name": "Assignment 3 (Student Services Desk) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A3_Student_Services_Desk_REVISION",
+                    "full_name": "Assignment 3 - Student Services Desk - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A3_Student_Services_Desk_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A3_StudentServicesDesk.docx",
+                    "default_announcement_template": "hwr",
+                    "prior_version": "a3",
                     "canvas_api": {
-                        "canvas_name": "Assignment 3 Final, Revised Version"
+                        "canvas_name": "Assignment 3 - Student Services Desk - Opportunity #2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
                     }
                 },
                 "a4": {
                     "name": "Assignment_04_Reverse_Polish_Notation",
-                    "full_name": "Assignment 4 (Reverse Polish Notation)",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A4_Reverse_Polish_Notation",
+                    "full_name": "Assignment 4 - Reverse Polish Notation - Opportunity #1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A4_Reverse_Polish_Notation",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A4_RPN.docx",
+                    "default_announcement_template": "hwv1",
+                    "next_version": "a1r",
                     "github": {
                         "sz_re_repo": "assignment_reverse_polish_notation-"
                     },
                     "canvas_api": {
-                        "canvas_name": "Assignment 4 First Version"
+                        "canvas_name": "Assignment 4 - Reverse Polish Notation - Opportunity #1"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "-3 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "a4r": {
                     "name": "Assignment_04_Reverse_Polish_Notation_REVISION",
-                    "full_name": "Assignment 4 (Reverse Polish Notation) - Final, Revised Version",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\A4_Reverse_Polish_Notation_REVISION",
+                    "full_name": "Assignment 4 - Reverse Polish Notation - Opportunity #2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\A4_Reverse_Polish_Notation_REVISION",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\A4_RPN.docx",
+                    "default_announcement_template": "hwr",
+                    "prior_version": "a4",
                     "canvas_api": {
-                        "canvas_name": "Assignment 4 Final, Revised Version"
+                        "canvas_name": "Assignment 4 - Reverse Polish Notation - Opportunity #2"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_01_Forum": {
+                    "name": "Week_01_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 01 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "START_OF_QUARTER"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_02_Forum": {
+                    "name": "Week_02_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 02 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_03_Forum": {
+                    "name": "Week_03_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 03 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "i3"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_04_Forum": {
+                    "name": "Week_04_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 04 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_05_Forum": {
+                    "name": "Week_05_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 05 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_06_Forum": {
+                    "name": "Week_06_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 06 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_07_Forum": {
+                    "name": "Week_07_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 07 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_08_Forum": {
+                    "name": "Week_08_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 08 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_09_Forum": {
+                    "name": "Week_09_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 09 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_10_Forum": {
+                    "name": "Week_10_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 10 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_11_Forum": {
+                    "name": "Week_11_Forum",
+                    "canvas_api": {
+                        "canvas_name": "Week 11 Forum"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
                     }
                 },
                 "I1": {
                     "name": "ICE01",
                     "full_name": "ICE 01",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE01",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE01",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 01.docx",
+                    "grading_search_strings": [
+                        "class.*Food",
+                        "Food.*new.*Food"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-01-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 01"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I2": {
                     "name": "ICE02",
                     "full_name": "ICE 02",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE02",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE02",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 02.docx",
+                    "grading_search_strings": [
+                        "Put your answer for #7 here:"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-02-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 02"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": []
                     }
                 },
                 "I3": {
                     "name": "ICE03",
                     "full_name": "ICE 03",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE03",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE03",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 03.docx",
+                    "grading_search_strings": [
+                        "CalendarDate",
+                        " int.*compareTo.*("
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-03-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 03"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I2"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I4": {
                     "name": "ICE04",
                     "full_name": "ICE 04",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE04",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE04",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 04.docx",
+                    "grading_search_strings": [
+                        "How do you perform a union operation on two sets",
+                        "List.*<.*Integer.*>.*alternate.*(",
+                        "alternate.*("
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-04-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 04"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": []
                     }
                 },
                 "I5": {
                     "name": "ICE05",
                     "full_name": "ICE 05",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE05",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE05",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 05.docx",
+                    "grading_search_strings": [
+                        " int.*countunique.*(",
+                        "countunique"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-05-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 05"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I4"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I6": {
                     "name": "ICE06",
                     "full_name": "ICE 06",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE06",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE06",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 06.docx",
+                    "grading_search_strings": [
+                        "Put your answer for #3 here:",
+                        "Put your answer for #6 here:",
+                        "mystery1.*(.*16",
+                        "mysteryXY.*(.*8.*,.*2.*)"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-06-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 06"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": []
                     }
                 },
                 "I7": {
                     "name": "ICE07",
                     "full_name": "ICE 07",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE07",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE07",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 07.docx",
+                    "grading_search_strings": [
+                        "boolean.*isReverse.*(.*String",
+                        "isReverse"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-07-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 07"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I6"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I8": {
                     "name": "ICE08",
                     "full_name": "ICE 08",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE08",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE08",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 08.docx",
+                    "grading_search_strings": [
+                        "25.*Trace",
+                        "Trace the execution of the selection sort algorithm "
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-08-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 08"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": []
                     }
                 },
                 // "I9": {
                 //     "name": "ICE09",
                 //     "full_name" : "ICE 09",
-                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE09",
-                //     "github": {
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE09",
+                //                         "default_announcement_template": "weekly",  "github": {
                 //         "sz_re_repo": "lecture-09-"
                 //     },
                 // "canvas_api": {
@@ -565,148 +3260,715 @@
                 // "I10": {
                 //     "name": "ICE10",
                 //     "full_name" : "ICE 10",
-                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE10",
-                //     "github": {
+                //     "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE10",
+                //                         "default_announcement_template": "weekly",  "github": {
                 //         "sz_re_repo": "lecture-10-"
                 //     },
                 // "canvas_api": {
                 //     "canvas_name": "In Class Exercises: Lecture 10"
                 // }
                 // },
+                "Midterm": {
+                    "name": "Midterm",
+                    "full_name": "Midterm",
+                    "canvas_api": {
+                        "canvas_name": "Midterm Exam: Placeholder for the In-Person Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
                 "I11": {
                     "name": "ICE11",
                     "full_name": "ICE 11",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE11",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE11",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 11.docx",
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-11-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 11"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I12": {
                     "name": "ICE12",
                     "full_name": "ICE 12",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE12",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE12",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 12.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "static.*printLongest",
+                        "longest"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-12-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 12"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": []
                     }
                 },
                 "I13": {
                     "name": "ICE13",
                     "full_name": "ICE 13",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE13",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE13",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 13.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "min.*(",
+                        "max.*(",
+                        "int.*min",
+                        "int.*max"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-13-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 13"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I14": {
                     "name": "ICE14",
                     "full_name": "ICE 14",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE14",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE14",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 14.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "average.*(",
+                        "double.*average"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-14-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 14"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": []
                     }
                 },
                 "I15": {
                     "name": "ICE15",
                     "full_name": "ICE 15",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE15",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE15",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 15.docx",
+                    "default_announcement_template": "weekly",
+                    "grading_search_strings": [
+                        "24"
+                    ],
                     "github": {
                         "sz_re_repo": "lecture-15-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 15"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I16": {
                     "name": "ICE16",
                     "full_name": "ICE 16",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE16",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE16",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 16.docx",
+                    "grading_search_strings": [
+                        "public.*void.*rotate",
+                        "rotate"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-16-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 16"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": []
                     }
                 },
                 "I17": {
                     "name": "ICE17",
                     "full_name": "ICE 17",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE17",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE17",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 17.docx",
+                    "grading_search_strings": [
+                        "public.*int.*min",
+                        "min.*(",
+                        "public.*int.*max",
+                        "max.*("
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-17-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 17"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
                     }
                 },
                 "I18": {
                     "name": "ICE18",
                     "full_name": "ICE 18",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_143_New\\ICE18",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_143_New\\ICE18",
+                    "grading_template": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Rubrics_Java\\In Class Exercises - Lecture 18.docx",
+                    "grading_search_strings": [
+                        "public.*int.*matches",
+                        "matches"
+                    ],
+                    "default_announcement_template": "weekly",
                     "github": {
                         "sz_re_repo": "lecture-18-"
                     },
                     "canvas_api": {
                         "canvas_name": "In Class Exercises: Lecture 18"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Final": {
+                    "name": "Final",
+                    "full_name": "Final",
+                    "canvas_api": {
+                        "canvas_name": "Final Exam: Placeholder for the In-Person Exam"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "Plans_To_Take_Exams": {
+                    "name": "Plans_To_Take_Exams",
+                    "full_name": "Plans_To_Take_Exams",
+                    "canvas_api": {
+                        "canvas_name": "Confirm that you've made plans to take the Midterm & final exams"
+                    },
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": []
+                    }
+                }
+            }
+        },
+        "143s": {
+            "full_name": "143-Summer",
+            // This course (143-Summer) will use it's own settings, and if it can't find a setting here, then 143's settings:
+            "inherits_from": "143",
+            "canvas_api": {
+                "sz_re_course": "IT-CS 143 \\(2025 Summer\\)"
+            },
+            "due_date_info": {
+                "days_of_week": [
+                    "Tue"
+                ],
+                "class_on_noninstructional_days": true
+            },
+            "assignments": {
+                "a1": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "-3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a1r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "a2": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "-3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a2r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "a3": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "+2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a3r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "a4": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "+2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "a4r": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "NO_DUE_DATE"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_01_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": []
+                    }
+                },
+                "Week_02_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_03_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "i3"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_04_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_05_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_06_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_07_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": [
+                            "-4 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_08_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_09_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_10_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Week_11_Forum": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Final"
+                        },
+                        "offsets": [
+                            "-2 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I1": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I2": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I1"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I3": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I2"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I4": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I3"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I5": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I4"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I6": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I5"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I7": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I6"
+                        },
+                        "offsets": [
+                            "+4 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I8": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I7"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY",
+                            "-1 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "Midterm": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I8"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY",
+                            "18:00 ABS_TIME"
+                        ]
+                    }
+                },
+                "I11": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "Midterm"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I12": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I11"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I13": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I12"
+                        },
+                        "offsets": [
+                            "+4 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I14": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I13"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I15": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I14"
+                        },
+                        "offsets": []
+                    }
+                },
+                "I16": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I15"
+                        },
+                        "offsets": [
+                            "+3 CALENDAR_DAY"
+                        ]
+                    }
+                },
+                "I17": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I16"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY"
+                        ]
+                    }
+                },
+                "I18": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I17"
+                        },
+                        "offsets": [
+                            "18:00 ABS_TIME"
+                        ]
+                    }
+                },
+                "Final": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "ASSIGNMENT",
+                            "assignment_name": "I18"
+                        },
+                        "offsets": [
+                            "+1 CLASS_DAY",
+                            "18:00 ABS_TIME"
+                        ]
+                    }
+                },
+                "Plans_To_Take_Exams": {
+                    "due_date": {
+                        "relative_to": {
+                            "type": "FIRST_CLASS_OF_QUARTER"
+                        },
+                        "offsets": []
                     }
                 }
             }
         },
         "265": {
-            "full_name": "BIT 265",
+            "full_name": "IT-CS 265",
             "canvas_api": {
-                "sz_re_course": "Mike's BIT 265 \\(2023 Spring\\)"
+                "sz_re_course": "Mike's IT-CS 265 \\(2023 Spring\\)"
             },
             "assignments": {
                 "A1": {
                     "name": "A1",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Assignment_1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_265_New\\Assignment_1",
                     "canvas_api": {
                         "canvas_name": "Assignment 1 (first version)"
                     }
                 },
                 "A1R": {
                     "name": "A1R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_115_New\\Assignment_1_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_115_New\\Assignment_1_REVISION",
                     "canvas_api": {
                         "canvas_name": "Assignment 1 Revision"
                     }
                 },
                 "Al1": {
                     "name": "Al1",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_1",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_265_New\\Algorithm_1",
                     "canvas_api": {
                         "canvas_name": "Algorithm #1 First Version"
                     }
                 },
                 "Al1R": {
                     "name": "Al1R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_1_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_265_New\\Algorithm_1_REVISION",
                     "canvas_api": {
                         "canvas_name": "Algorithm #1 Final, Revised Version"
                     }
                 },
                 "Al2": {
                     "name": "Al2",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_2",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_265_New\\Algorithm_2",
                     "canvas_api": {
                         "canvas_name": "Algorithm #2 First Version"
                     }
                 },
                 "Al2R": {
                     "name": "Al2R",
-                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\BIT_265_New\\Algorithm_2_REVISION",
+                    "dest_dir": "C:\\MIkesStuff\\Pers\\Dropbox\\Work\\Student_Work\\IT_CS_265_New\\Algorithm_2_REVISION",
                     "canvas_api": {
                         "canvas_name": "Algorithm #2 Final, Revised Version"
                     }
@@ -732,11 +3994,14 @@
         "LateMarker": "_LATE",
         "StudentSubFolderMarker": "_FROM_CANVAS",
         "InstructorFeedbackSlug": "_INSTRUCTORFEEDBACK",
-        "InstructorFeedbackFileNameRegex": "INSTRUCTOR.?FEEDBACK",
+        //"InstructorFeedbackFileNameRegex": "INSTRUCTOR.?FEEDBACK( \\(\\d+\\))?",
+        "InstructorFeedbackFileNameRegex": "INSTRUCTOR.?FEEDBACK[^\\.]*",
+        "MissingNameSubstituteForFileNames": "NoNameSupplied",
         // Remember that Canvas allows for nicknames (instead of firstnames), write as "(Niko)", so we'll need to allow for the parens in names
-        "StudentName": "^[^~][a-zA-Z][a-zA-Z0-9\\-)]+_[a-zA-Z][a-zA-Z0-9]+",
-        "StudentNameIDFileNum": "^[^~][a-zA-Z][a-zA-Z0-9\\-)]+_[a-zA-Z][a-zA-Z0-9]+_(LATE_)?[0-9]+_[0-9]+_",
-        "StudentNameAndID": "([a-zA-z\\(][a-zA-Z0-9\\)-]+_[a-zA-z][a-zA-Z0-9]+_(LATE_)?\\d+?_)", // this one has spaced 
+        // Previous: "StudentName": "^[^~][a-zA-Z][a-zA-Z0-9\\-)]+_[a-zA-Z][a-zA-Z0-9]+", // if first char is in a-zA-Z then it can't be a tilde
+        "StudentName": "^[a-zA-Z0-9\\-\\.)]+_[a-zA-Z0-9\\.]+",
+        "StudentNameIDFileNum": "^[a-zA-Z0-9\\-\\.)]+_[a-zA-Z0-9\\.]+_(LATE_)?[0-9]+_[0-9]+_",
+        "StudentNameAndID": "([a-zA-z\\(][a-zA-Z0-9\\\\.)-]+_[a-zA-Z0-9\\.]+_(LATE_)?\\d+?_)", // this one has spaced
         "FileSubmissionNumber": "-\\d+(\\.[a-zA-z]+)$",
         "OptionalFileSubmissionNumber": "(-\\d+)?", // used in packaging feedback files for Canvas
         // to match e.g., "-1.cs" in "Program-1.cs",
@@ -745,7 +4010,7 @@
         //"StudentNameAndID": "([a-zA-z][a-zA-Z0-9]+_(LATE_)?\\d+?_)", // orig
     },
     "github": {
-        "api_key": "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",
+        "api_key": "",
         // for "PyCharm Github Integration Plugin access token"
         "grading_list": {
             "tag": "GradedByInstructor"
@@ -763,7 +4028,7 @@
                 "fnExam": "%Y |Q| BIT 115 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 115 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_115\\Exams\\Midterm",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_115\\Exams\\Midterm",
                 "filesToConcat_exam": [
                     "Common\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -799,7 +4064,7 @@
                 "fnExam": "%Y |Q| BIT 142 Final %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Final Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Final",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Final",
                 "filesToConcat_exam": [
                     "Common\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -860,7 +4125,7 @@
                 "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Midterm",
                 "filesToConcat_exam": [
                     "Common\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -923,7 +4188,7 @@
                 "fnExam": "%Y |Q| BIT 142 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 142 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_142\\Midterm",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_142\\Midterm",
                 "filesToConcat_exam": [
                     "Common\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -987,7 +4252,7 @@
                 "fnExam": "%Y |Q| BIT 143 Midterm %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 143 Midterm Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Midterm",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Midterm",
                 "filesToConcat_exam": [
                     "Common\\DocPreamble.tex",
                     "ExamTotalPoints=150",
@@ -1044,7 +4309,7 @@
                 "fnExam": "%Y |Q| BIT 143 Final %b %d  %H-%M-%S",
                 "fnGradingGuide": "%Y |Q| BIT 143 Final Grading Guide %b %d  %H-%M-%S",
                 "fpBaseDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\ExamGeneration",
-                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\BIT_143\\Final",
+                "fpDefaultOutputDir": "C:\\MikesStuff\\Pers\\Dropbox\\Work\\Courses\\_IT_CS_143\\Final",
                 "filesToConcat_exam": [
                     "Common\\DocPreamble.tex",
                     "ExamTotalPoints=150",

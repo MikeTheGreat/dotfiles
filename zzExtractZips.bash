@@ -12,6 +12,8 @@
 function main() {
     ONLY_EXTRACT_THESE=".*"
 
+    echo "WARNING: This only extracts .zip files in the target directory; it does NOT recursively search subdirs!"
+
     if [[ -z "$1" ]]
         then
         echo Required first param: Path to folder containing ZIPFILEs to unzip

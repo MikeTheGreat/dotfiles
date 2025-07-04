@@ -3,6 +3,11 @@
 #  fzf for searching for files / through stdin
 
 
+# alias mpd="/cygdrive/c/Program Files/Pd/bin/wish86.exe" "C:\Program Files\Pd\tcl\pd-gui.tcl" &
+
+alias m=mikesgradingtool.exe
+alias gt=mikesgradingtool.exe
+
 
 # This is no longer needed, since the SetupMyMac.sh will add a launchd config file to do this
 # across the entire mac (and on Windows we'll set the environment variable)
@@ -44,8 +49,6 @@ alias ll='ls -al'
 alias h=history
 # Using this we can open files, such as "o Code.java".  "o" by itself starts the File Explorer
 alias o='explorer.exe'
-# Download all the 265 homework:
-alias d265='g 265; gt c d 265 Al1 ; gt c d 265 Al1R ; gt c d 265 Al2 ; gt c d 265 Al2r'
 
 #alias dio='"/cygdrive/c/Program Files/GPSoftware/Directory Opus/dopus.exe" $1'
 alias dio='PWD=`pwd` && PWD=`cygpath -w "$PWD"` &&  "/cygdrive/c/Program Files/GPSoftware/Directory Opus/dopus.exe" "$PWD"'
@@ -53,7 +56,7 @@ alias dio='PWD=`pwd` && PWD=`cygpath -w "$PWD"` &&  "/cygdrive/c/Program Files/G
 git config --global core.pager off
 alias gdt='git difftool'
 alias gal='less /cygdrive/c/MikesStuff/Pers/Dropbox/Personal/home/.oh-my-zsh/plugins/git/README.md'
-alias gtt='gt g t '
+# alias gtt='gt g t '
 # # git - recently changed (by a student)
 # # --date is strftime format
 # function grc() {
@@ -191,11 +194,6 @@ setopt SHARE_HISTORY
 #     echo "Done - popping"
 #     popd    
 # }
-
-function gtdl() {
-    gt g d $1 $2
-    gt g l $1 $2
-}
 
 # --yes-playlist would be nice, but doesn't seem to work
 function dl() {

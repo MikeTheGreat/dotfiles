@@ -6,10 +6,12 @@ then
     echo "ERROR: No arguments supplied"
     echo ""
     echo "USAGE:"
-    echo "      $0 <dir to clean>"
-    echo "  <optional second argument, meaning delete .git dirs too"
+    echo "      $0 <zip file to clean>"
     echo ""
-    echo "This script removes 'junk' files from directories (like \*.class files)"
+    echo "This script cleans ZIP files."
+    echo "It removes 'junk' files from a ZIP file (like \*.class files, VS files, etc)"
+    echo ""
+    echo ""    
     exit 1
 fi
 

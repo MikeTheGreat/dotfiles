@@ -83,6 +83,9 @@ mas install 1233965871
 # NOTE: Doesn't work with current MacOS (May 2021)
 brew install --cask mouse-locator
 
+########################## Misc. Apps ##################################
+
+brew install --cask supercollider
 
 ########################## System upgrades ##################################
 
@@ -108,6 +111,7 @@ brew install --cask karabiner-elements
 
 #clipboard management:
 brew install --cask jumpcut
+# Another alternative: https://maccy.app/
 
 # Fix mouse-wheel scrolling for non-Apple mice:
 # SmoothScroll is nicer, but it's also paid software (it does have a free trial)
